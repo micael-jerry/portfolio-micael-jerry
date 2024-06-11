@@ -26,7 +26,7 @@ const sections = [
 		component: <ProjetsSection />,
 	},
 	{
-		secitonId: SectionIdEnum.CONTACT,
+		sectionId: SectionIdEnum.CONTACT,
 		component: <ContactSection />,
 	},
 ];
@@ -35,7 +35,7 @@ const App: React.FC = () => {
 	return (
 		<Layout>
 			{sections.map(({ sectionId, component }) => (
-				<SectionContainer sectionId={sectionId!} key={sectionId}>
+				<SectionContainer sectionId={sectionId} key={sectionId}>
 					{component}
 				</SectionContainer>
 			))}
