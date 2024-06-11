@@ -3,19 +3,19 @@ import { SectionIdEnum } from "../../types/sectionId/sectionId";
 import { Box, Container } from "@mui/material";
 
 export type SectionContainerProps = {
-  children: React.ReactNode;
-  sectionId: SectionIdEnum;
+	children: React.ReactNode;
+	sectionId: SectionIdEnum;
 };
 
 export const SectionContainer: React.FC<SectionContainerProps> = ({
-  children,
-  sectionId,
+	children,
+	sectionId,
 }) => {
-  return (
-    <div id={sectionId} key={sectionId}>
-      <Container>
-        <Box minHeight={"100vh"}>{children}</Box>
-      </Container>
-    </div>
-  );
+	return (
+		<div id={sectionId} key={sectionId}>
+			<Container>
+				<Box minHeight={"100vh"}>{children}</Box>
+			</Container>
+		</div>
+	);
 };
