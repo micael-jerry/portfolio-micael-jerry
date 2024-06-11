@@ -1,4 +1,6 @@
+import React from "react"
 import { Layout } from "./components/Layout/Layout"
+import { SectionContainer } from "./components/SectionContainer/SectionContainer"
 import { AboutSection } from "./sections/about/AboutSection"
 import { ContactSection } from "./sections/contact/ContactSection"
 import { IntroSection } from "./sections/intro/IntroSection"
@@ -13,30 +15,30 @@ const sections = [
   },
   {
     sectionId: SectionIdEnum.ABOUT,
-    component: <IntroSection />,
+    component: <AboutSection />,
   },
   {
     sectionId: SectionIdEnum.SKILLS,
-    component: <IntroSection />,
+    component: <SkillsSection />,
   },
   {
     sectionId: SectionIdEnum.PROJECTS,
-    component: <IntroSection />,
+    component: <ProjetsSection />,
   },
   {
     secitonId: SectionIdEnum.CONTACT,
-    component: <IntroSection />,
+    component: <ContactSection />,
   },
 ];
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <Layout>
       {
         sections.map(({ sectionId, component }) => (
-          <section key={sectionId} id={sectionId}>
+          <SectionContainer sectionId={sectionId!} key={sectionId}>
             {component}
-          </section>
+          </SectionContainer>
         ))
       }
     </Layout>
