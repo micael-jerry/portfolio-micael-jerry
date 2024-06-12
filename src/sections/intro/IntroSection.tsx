@@ -3,6 +3,7 @@ import { IMAGES } from "../../assets";
 import "./IntroSection.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SectionIdEnum } from "../../types/sectionId/sectionId";
+import { ME } from "../../constants/me";
 
 export const IntroSection: React.FC = () => {
 	return (
@@ -18,7 +19,7 @@ export const IntroSection: React.FC = () => {
 					<Box>
 						<Typography variant="h6">Hello, my name is</Typography>
 						<Typography variant="h2" mb={1} fontWeight={500}>
-							Micael Jerry
+							{ME.firstname}
 						</Typography>
 						<Typography variant="h5" mb={3}>
 							Computer science student with a passion for technology

@@ -5,6 +5,7 @@ import { NavMenu } from "./NavMenu/NavMenu";
 import { IMAGES } from "../../assets";
 import { SectionIdEnum } from "../../types/sectionId/sectionId";
 import "./Layout.css";
+import { ME } from "../../constants/me";
 
 export type LayoutProps = {
 	children: React.ReactNode;
@@ -20,14 +21,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 							className="anchor-link"
 						>
 							<Box display={"flex"} alignItems={"center"} gap={0.5}>
-								<img
-									width={"40px"}
-									height={"30px"}
-									alt="logo"
-									src={IMAGES.logo}
-								/>
+								<img width={"30px"} alt="logo" src={IMAGES.logo} />
 								<Typography variant="h5" sx={{ width: "fit-content" }}>
-									Micael Jerry
+									{ME.firstname}
 								</Typography>
 							</Box>
 						</AnchorLink>

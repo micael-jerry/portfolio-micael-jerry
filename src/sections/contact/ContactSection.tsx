@@ -1,6 +1,7 @@
 import { Box, Button, Card, Grid, Typography } from "@mui/material";
 import { IMAGES } from "../../assets";
 import "./ContactSection.css";
+import { ME } from "../../constants/me";
 
 export const ContactSection: React.FC = () => {
 	return (
@@ -18,20 +19,29 @@ export const ContactSection: React.FC = () => {
 						Me Contacter
 					</Typography>
 					<Box sx={{ display: "flex", gap: 2, marginTop: 4 }}>
-						<Button variant="contained" color="warning" size="large">
-							Email
-						</Button>
-						<Button variant="outlined" color="warning" size="large">
+						<a href={`mailto:${ME.email.hei}`} target="_blank">
+							<Button variant="contained" color="warning" size="large">
+								Email
+							</Button>
+						</a>
+						<Button
+							href={ME.link.linkedIn}
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="outlined"
+							color="warning"
+							size="large"
+						>
 							LinkedIn
 						</Button>
 					</Box>
 					<Typography variant="h6" component="p" sx={{ marginTop: 2 }}>
-						N'hésitez pas à me contacter pour en savoir plus !
+						Don't hesitate to contact me for more information!
 					</Typography>
 					<Typography variant="body1" component="p" sx={{ marginTop: 1 }}>
-						Je serais ravi de discuter de mes projets et de mes expériences, et
-						d'échanger sur les opportunités futures. Vous pouvez me joindre par
-						email ou via LinkedIn.
+						I'd be delighted to discuss my projects and experiences, and talk
+						about future opportunities. You can reach me by email or via
+						LinkedIn.
 					</Typography>
 				</Grid>
 				<Grid item xs={12} md={6}>
