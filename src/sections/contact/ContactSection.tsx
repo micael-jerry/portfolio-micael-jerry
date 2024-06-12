@@ -19,7 +19,7 @@ export const ContactSection: React.FC = () => {
 						Contact Me
 					</Typography>
 					<Box sx={{ display: "flex", gap: 2, marginTop: 4 }}>
-						<a href={`mailto:${ME.email.hei}`} target="_blank">
+						<a href={`mailto:${ME.email.personal}`} target="_blank">
 							<Button variant="contained" color="warning" size="large">
 								Email
 							</Button>
