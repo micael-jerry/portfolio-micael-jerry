@@ -3,19 +3,25 @@ import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { NavMenu } from "./NavMenu/NavMenu";
 import { IMAGES } from "../../assets";
+import { SectionIdEnum } from "../../types/sectionId/sectionId";
 
 export type LayoutProps = {
 	children: React.ReactNode;
 };
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
-		<Box height={"100vh"}>
-			<AppBar position="fixed" sx={{ background: "black" }}>
+		<div id="layout">
+			<AppBar position="fixed" sx={{ background: "transparent" }}>
 				<Toolbar>
 					<Box flexGrow={1}>
-						<AnchorLink>
+						<AnchorLink href={`#${SectionIdEnum.INTRO}`}>
 							<Box display={"flex"} alignItems={"center"} gap={0.5}>
-								<img width={"54px"} height={"54px"} alt="logo" src={IMAGES.logo} />
+								<img
+									width={"40px"}
+									height={"30px"}
+									alt="logo"
+									src={IMAGES.logo}
+								/>
 								<Typography variant="h5" sx={{ width: "fit-content" }}>
 									Micael Jerry
 								</Typography>
@@ -29,6 +35,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 				<Toolbar />
 				{children}
 			</Box>
-		</Box>
+		</div>
 	);
 };
