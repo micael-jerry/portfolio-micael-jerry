@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-export const AboutSection: React.FC = () => {
+export const ProjectsSection: React.FC = () => {
 	return (
 		<Box py={4}>
-			<Typography variant="h1">About</Typography>
+			<Typography variant="h1">Project</Typography>
 		</Box>
 	);
 };

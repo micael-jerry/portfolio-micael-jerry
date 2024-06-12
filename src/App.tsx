@@ -5,7 +5,7 @@ import { SectionContainer } from "./components/SectionContainer/SectionContainer
 import { AboutSection } from "./sections/about/AboutSection";
 import { ContactSection } from "./sections/contact/ContactSection";
 import { IntroSection } from "./sections/intro/IntroSection";
-import { ProjetsSection } from "./sections/projets/ProjetsSection";
+import { ProjectsSection } from "./sections/projects/ProjectsSection";
 import { SkillsSection } from "./sections/skills/SkillsSection";
 import { SectionIdEnum } from "./types/sectionId/sectionId";
 
@@ -24,7 +24,7 @@ const sections = [
 	},
 	{
 		sectionId: SectionIdEnum.PROJECTS,
-		component: <ProjetsSection />,
+		component: <ProjectsSection />,
 	},
 	{
 		sectionId: SectionIdEnum.CONTACT,

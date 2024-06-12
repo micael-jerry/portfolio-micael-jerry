@@ -16,7 +16,7 @@ export const ContactSection: React.FC = () => {
 			<Grid container spacing={4} alignItems="center">
 				<Grid item xs={12} md={6}>
 					<Typography variant="h2" component="h1" gutterBottom>
-						Me Contacter
+						Contact Me
 					</Typography>
 					<Box sx={{ display: "flex", gap: 2, marginTop: 4 }}>
 						<a href={`mailto:${ME.email.hei}`} target="_blank">
