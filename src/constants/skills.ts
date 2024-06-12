@@ -53,7 +53,11 @@ export const BACK_END_SKILLS = [
 
 export const OTHER_SKILLS = [
 	{
-		name: "Git & Github",
+		name: "Git",
+		logo: LOGO.git,
+	},
+	{
+		name: "Github",
 		logo: LOGO.github,
 	},
 	{

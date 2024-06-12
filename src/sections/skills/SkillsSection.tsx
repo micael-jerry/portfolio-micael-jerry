@@ -23,10 +23,10 @@ export const SkillsSection: React.FC = () => {
 			</Typography>
 			<Grid container justifyContent={"center"} spacing={3}>
 				<Grid item xs={12} md={4}>
-					<SkillCard title="Front-end" skills={FRONT_END_SKILLS} />
+					<SkillCard title="Front-End" skills={FRONT_END_SKILLS} />
 				</Grid>
 				<Grid item xs={12} md={4}>
-					<SkillCard title="Back-end" skills={BACK_END_SKILLS} />
+					<SkillCard title="Back-End" skills={BACK_END_SKILLS} />
 				</Grid>
 				<Grid item xs={12} md={4}>
 					<SkillCard title="Other" skills={OTHER_SKILLS} />

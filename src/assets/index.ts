@@ -24,6 +24,7 @@ export const LOGO = {
 	express: new URL("./logo/express-logo.png", import.meta.url).href,
 	postgreSql: new URL("./logo/postgresql-logo.png", import.meta.url).href,
 	mongoDb: new URL("./logo/mongodb-logo.png", import.meta.url).href,
+	git: new URL("./logo/git-logo.png", import.meta.url).href,
 	github: new URL("./logo/github-logo.png", import.meta.url).href,
 	ciCd: new URL("./logo/ci-cd-logo.png", import.meta.url).href,
 	jira: new URL("./logo/jira-logo.png", import.meta.url).href,
