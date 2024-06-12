@@ -1,5 +1,4 @@
 export const IMAGES = {
-	logo: new URL("./images/logo.png", import.meta.url).href,
 	blueGradientBg: new URL("./images/blue-gradient-bg.png", import.meta.url)
 		.href,
 	jerryImg: new URL("./images/jerry.jpg", import.meta.url).href,
@@ -7,5 +6,27 @@ export const IMAGES = {
 		"./images/contact-removebg.png",
 		import.meta.url,
 	).href,
-	skillsIllustratorBg: new URL("./images/skills-illustrator.jpg", import.meta.url).href
+	skillsIllustratorBg: new URL(
+		"./images/skills-illustrator.jpg",
+		import.meta.url,
+	).href,
+};
+
+export const LOGO = {
+	logoApp: new URL("./logo/logo.png", import.meta.url).href,
+	html: new URL("./logo/html-logo.png", import.meta.url).href,
+	css: new URL("./logo/css-logo.png", import.meta.url).href,
+	javascript: new URL("./logo/javascript-logo.png", import.meta.url).href,
+	typescript: new URL("./logo/typescript-logo.png", import.meta.url).href,
+	react: new URL("./logo/react-logo.png", import.meta.url).href,
+	java: new URL("./logo/java-logo.png", import.meta.url).href,
+	springBoot: new URL("./logo/springboot-logo.png", import.meta.url).href,
+	express: new URL("./logo/express-logo.png", import.meta.url).href,
+	postgreSql: new URL("./logo/postgresql-logo.png", import.meta.url).href,
+	mongoDb: new URL("./logo/mongodb-logo.png", import.meta.url).href,
+	github: new URL("./logo/github-logo.png", import.meta.url).href,
+	ciCd: new URL("./logo/ci-cd-logo.png", import.meta.url).href,
+	jira: new URL("./logo/jira-logo.png", import.meta.url).href,
+	ruby: new URL("./logo/ruby-logo.png", import.meta.url).href,
+	python: new URL("./logo/python-logo.png", import.meta.url).href,
 };
