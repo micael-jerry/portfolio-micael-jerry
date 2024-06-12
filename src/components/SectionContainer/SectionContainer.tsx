@@ -13,7 +13,7 @@ export const SectionContainer: React.FC<SectionContainerProps> = ({
 }) => {
 	return (
 		<div id={sectionId} key={sectionId}>
-			<Container>
+			<Container maxWidth={"lg"}>
 				<Box minHeight={"100vh"}>{children}</Box>
 			</Container>
 		</div>

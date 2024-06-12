@@ -31,9 +31,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 					<NavMenu />
 				</Toolbar>
 			</AppBar>
-			<Box>
-				{children}
-			</Box>
+			<Box>{children}</Box>
 		</div>
 	);
 };
