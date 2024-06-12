@@ -4,6 +4,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { NavMenu } from "./NavMenu/NavMenu";
 import { IMAGES } from "../../assets";
 import { SectionIdEnum } from "../../types/sectionId/sectionId";
+import "./Layout.css";
 
 export type LayoutProps = {
 	children: React.ReactNode;
@@ -14,7 +15,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 			<AppBar position="fixed" sx={{ background: "transparent" }}>
 				<Toolbar>
 					<Box flexGrow={1}>
-						<AnchorLink href={`#${SectionIdEnum.INTRO}`}>
+						<AnchorLink
+							href={`#${SectionIdEnum.INTRO}`}
+							className="anchor-link"
+						>
 							<Box display={"flex"} alignItems={"center"} gap={0.5}>
 								<img
 									width={"40px"}

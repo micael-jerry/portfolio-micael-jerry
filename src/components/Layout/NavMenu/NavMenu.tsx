@@ -31,7 +31,7 @@ export const NavMenu: React.FC = () => {
 		<Box>
 			{navigationItems.map(({ to, text }) => {
 				return (
-					<AnchorLink href={`#${to}`} key={to}>
+					<AnchorLink href={`#${to}`} key={to} className="anchor-link">
 						<Button color="inherit" size="large">
 							{text}
 						</Button>
