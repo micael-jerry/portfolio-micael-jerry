@@ -1,14 +1,7 @@
-#intro, #about, #skills, #projects, #contact {
+/* If set background by section */
+/* #intro, #about, #skills, #projects, #contact {
 	background-image: url('./assets/images/blue-gradient-bg.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-}
-
-/* #skills {
-	background-image: url('./assets/images/skills-illustrator.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	filter: brightness(4%);
 } */

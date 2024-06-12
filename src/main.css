@@ -4,4 +4,7 @@ body {
   min-height: 100vh;
 
   color: white;
+
+  background: url('./assets/images/blue-gradient-bg.png') no-repeat center center fixed;
+  background-size: cover;
 }
