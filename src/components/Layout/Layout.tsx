@@ -32,7 +32,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 				</Toolbar>
 			</AppBar>
 			<Box>
-				<Toolbar />
 				{children}
 			</Box>
 		</div>

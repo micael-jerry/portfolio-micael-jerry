@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 export const IntroSection: React.FC = () => {
 	return (
-		<Box py={4}>
+		<Box pt={"6%"} pb={4}>
 			<Typography variant="h6">Hello, my name is</Typography>
 			<Typography variant="h2" mb={1} fontWeight={500}>
 				Micael Jerry

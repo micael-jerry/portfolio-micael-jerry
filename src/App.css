@@ -1,3 +1,8 @@
 #intro {
-	background-color: blue;
+	background-image: url('./assets/images/blue-gradient-bg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	color: white
 }
