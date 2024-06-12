@@ -7,4 +7,5 @@ export const IMAGES = {
 		"./images/contact-removebg.png",
 		import.meta.url,
 	).href,
+	skillsIllustratorBg: new URL("./images/skills-illustrator.jpg", import.meta.url).href
 };

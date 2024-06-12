@@ -17,7 +17,7 @@ export const IntroSection: React.FC = () => {
 			<Grid container spacing={4} alignItems="center">
 				<Grid item xs={12} md={6}>
 					<Box>
-						<Typography variant="h6">Hello, my name is</Typography>
+						<Typography variant="h6">Hello 👋, my name is</Typography>
 						<Typography variant="h2" mb={1} fontWeight={500}>
 							{ME.firstname}
 						</Typography>
