@@ -26,6 +26,10 @@ export const FRONT_END_SKILLS = [
 		name: "React",
 		logo: LOGO.react,
 	},
+	{
+		name: "Next",
+		logo: LOGO.next,
+	}
 ];
 
 export const BACK_END_SKILLS = [
@@ -49,6 +53,10 @@ export const BACK_END_SKILLS = [
 		name: "MongoDB",
 		logo: LOGO.mongoDb,
 	},
+	{
+		name: "Firebase",
+		logo: LOGO.firebase,
+	}
 ];
 
 export const OTHER_SKILLS = [

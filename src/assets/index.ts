@@ -30,4 +30,6 @@ export const LOGO = {
 	jira: new URL("./logo/jira-logo.png", import.meta.url).href,
 	ruby: new URL("./logo/ruby-logo.png", import.meta.url).href,
 	python: new URL("./logo/python-logo.png", import.meta.url).href,
+	firebase: new URL("./logo/firebase-logo.png", import.meta.url).href,
+	next: new URL("./logo/next-js-logo.png", import.meta.url).href,
 };
