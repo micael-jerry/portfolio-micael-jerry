@@ -5,13 +5,11 @@ import { Email, GitHub, LinkedIn, Phone } from "@mui/icons-material";
 
 export const Footer: React.FC = () => {
 	return (
-		<Box
+		<Grid
 			component="footer"
+			container
+			alignItems={"center"}
 			sx={{
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				justifyContent: "center",
 				py: 3,
 				px: 2,
 				mt: "auto",
@@ -21,55 +19,48 @@ export const Footer: React.FC = () => {
 				height: "15vh",
 			}}
 		>
-			<Grid container spacing={2}>
-				<Grid item xs={12} md={6}>
-					<Typography variant="h6">{ME.firstname} Portfolio</Typography>
-				</Grid>
-				<Grid
-					item
-					xs={12}
-					md={6}
-					sx={{
-						display: "flex",
-						flexDirection: "column",
-						justifyContent: "center",
-						mb: 2,
-					}}
-				>
-					<Box display={"flex"} alignItems={"center"} gap={0.5}>
-						<Email />
-						<Typography component={"p"} sx={{ mx: 1 }}>
-							{ME.email.personal}
-						</Typography>
-					</Box>
-					<Box display={"flex"} alignItems={"center"} gap={0.5}>
-						<Phone />
-						<Typography component={"p"} sx={{ mx: 1 }}>
-							{ME.phone}
-						</Typography>
-					</Box>
-				</Grid>
+			<Grid
+				item
+				sx={{
+					display: "flex",
+					flexDirection: "column",
+				}}
+				md={6}
+			>
+				<Typography variant="h6">{ME.firstname} Portfolio</Typography>
+				<Typography variant="body2">
+					© {new Date().getFullYear()} Developed by {ME.firstname}
+				</Typography>
 			</Grid>
-			<Grid container spacing={2}>
-				<Grid item xs={12} md={6}>
-					<Typography variant="body2">
-						© {new Date().getFullYear()} Developed by {ME.firstname}
+			<Grid
+				item
+				sx={{
+					display: "flex",
+					flexDirection: "column",
+				}}
+				md={6}
+			>
+				<Box display={"flex"} alignItems={"center"} gap={0.5}>
+					<Email />
+					<Typography component={"p"} sx={{ mx: 1 }}>
+						{ME.email.personal}
 					</Typography>
-				</Grid>
-				<Grid
-					item
-					xs={12}
-					md={6}
-					sx={{ display: "flex", justifyContent: "center", mb: 2 }}
-				>
+				</Box>
+				<Box display={"flex"} alignItems={"center"} gap={0.5}>
+					<Phone />
+					<Typography component={"p"} sx={{ mx: 1 }}>
+						{ME.phone}
+					</Typography>
+				</Box>
+				<Box display={"flex"} alignItems={"center"}>
 					<IconButton href={ME.link.linkedIn} target="_blank" color="inherit">
 						<LinkedIn />
 					</IconButton>
 					<IconButton href={ME.link.github} target="_blank" color="inherit">
 						<GitHub />
 					</IconButton>
-				</Grid>
+				</Box>
 			</Grid>
-		</Box>
+		</Grid>
 	);
 };
