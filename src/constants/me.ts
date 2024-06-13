@@ -1,6 +1,7 @@
 export const ME = {
 	name: "FIDIMALALA",
 	firstname: "Micaël Jerry",
+	phone: "+261 34 71 661 90",
 	email: {
 		hei: "hei.jerry.2@gmail.com",
 		personal: "fidimalala.mj@gmail.com",
