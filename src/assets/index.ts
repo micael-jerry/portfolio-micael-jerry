@@ -10,6 +10,10 @@ export const IMAGES = {
 		"./images/skills-illustrator.jpg",
 		import.meta.url,
 	).href,
+	aboutMeImageIllustrator: new URL(
+		"./images/about-me-removebg.png",
+		import.meta.url,
+	).href,
 };
 
 export const LOGO = {
