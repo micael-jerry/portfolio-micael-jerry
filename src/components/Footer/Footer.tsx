@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
 						<GitHub />
 					</IconButton>
 					<IconButton href={ME.link.instagram} target="_blank" color="inherit">
-						<Instagram/>
+						<Instagram />
 					</IconButton>
 				</Box>
 			</Grid>
