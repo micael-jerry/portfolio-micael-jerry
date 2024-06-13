@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, IconButton, Grid } from "@mui/material";
 import { ME } from "../../constants/me";
-import { Email, GitHub, LinkedIn, Phone } from "@mui/icons-material";
+import { Email, GitHub, Instagram, LinkedIn, Phone } from "@mui/icons-material";
 
 export const Footer: React.FC = () => {
 	return (
@@ -58,6 +58,9 @@ export const Footer: React.FC = () => {
 					</IconButton>
 					<IconButton href={ME.link.github} target="_blank" color="inherit">
 						<GitHub />
+					</IconButton>
+					<IconButton href={ME.link.instagram} target="_blank" color="inherit">
+						<Instagram/>
 					</IconButton>
 				</Box>
 			</Grid>
