@@ -21,10 +21,10 @@ export const IntroSection: React.FC = () => {
 						<Typography variant="h2" mb={1} fontWeight={500}>
 							{ME.firstname}
 						</Typography>
-						<Typography variant="h5" mb={3}>
+						<Typography variant="h4" mb={3}>
 							Computer science student with a passion for technology
 						</Typography>
-						<Typography maxWidth={500}>
+						<Typography variant="h6">
 							I am passionate about technology and I love to learn new things.
 						</Typography>
 					</Box>
