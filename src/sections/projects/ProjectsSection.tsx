@@ -15,12 +15,15 @@ export const ProjectsSection: React.FC = () => {
 				p: 5,
 			}}
 		>
-			<Typography variant="h2" align="center" gutterBottom>
+			<Typography variant="h2" gutterBottom color="white">
 				Projects
 			</Typography>
-			<Grid container spacing={4} justifyContent="center">
+			<Typography variant="h6" gutterBottom color="white">
+				Here are a few projects I've worked on recently.
+			</Typography>
+			<Grid container spacing={2} justifyContent={"center"}>
 				{PROJECTS.map((project: ProjectType) => (
-					<Grid item xs={12} sm={6} md={4} key={project.name}>
+					<Grid item xs={12} sm={6} md={4} key={project.title}>
 						<ProjectCard project={project} />
 					</Grid>
 				))}

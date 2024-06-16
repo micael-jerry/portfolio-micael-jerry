@@ -14,6 +14,10 @@ export const IMAGES = {
 		"./images/about-me-removebg.png",
 		import.meta.url,
 	).href,
+	projectDefaultImg: new URL(
+		"./images/project-default-image.jpg",
+		import.meta.url,
+	).href,
 };
 
 export const LOGO = {

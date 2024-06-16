@@ -4,46 +4,35 @@ export enum ProjectStatusEnum {
 }
 
 export type ProjectType = {
-	name: string;
+	title: string;
 	status: ProjectStatusEnum;
-	githubRepository: string;
 	description: string;
+	image?: string;
+	githubLink: string;
+	demoLink?: string;
 };
 
 export const PROJECTS: ProjectType[] = [
 	{
-		name: "Portfolio",
-		status: ProjectStatusEnum.IN_PROGRESS,
-		githubRepository: "https://github.com/micael-jerry/portfolio-micael-jerry",
+		title: "Chatify",
+		status: ProjectStatusEnum.COMPLETED,
 		description:
-			"Design and development of a portfolio website to showcase my skills and achievements.",
+			"Personal Chat Room or Workspace to share resources and hangout with friends...",
+		githubLink: "https://github.com/your-github/chatify",
+		demoLink: "https://chatify-demo-link",
 	},
 	{
-		name: "Portfolio1",
-		status: ProjectStatusEnum.IN_PROGRESS,
-		githubRepository: "https://github.com/micael-jerry/portfolio-micael-jerry",
-		description:
-			"Design and development of a portfolio websi aejr ;aelrn Design and development of a portfolio websi aejr ;aelrn a; na tae tou kant ae aeljtn Design and development of a portfolio websi aejr ;aelrn a; na tae tou kant ae aeljtn Design and development of a portfolio websi aejr ;aelrn a; na tae tou kant ae aeljtn a; na tae tou kant ae aeljtn ajent aette to showcase my skills and achievements.",
+		title: "Bits-of-Code",
+		status: ProjectStatusEnum.COMPLETED,
+		description: "My personal blog page build with Next.js and Tailwind CSS...",
+		githubLink: "https://github.com/your-github/bits-of-code",
+		demoLink: "https://bits-of-code-demo-link",
 	},
 	{
-		name: "Portfolio2",
-		status: ProjectStatusEnum.IN_PROGRESS,
-		githubRepository: "https://github.com/micael-jerry/portfolio-micael-jerry",
-		description:
-			"Design and development of a portfolio website to showcase my skills and achievements Design and development of a portfolio websi aejr ;aelrn a; na tae tou kant ae aeljtn.",
-	},
-	{
-		name: "Portfolio3",
-		status: ProjectStatusEnum.IN_PROGRESS,
-		githubRepository: "https://github.com/micael-jerry/portfolio-micael-jerry",
-		description:
-			"Design and development of a portfolio website to showcase my skills and achievements.",
-	},
-	{
-		name: "Portfolio4",
-		status: ProjectStatusEnum.IN_PROGRESS,
-		githubRepository: "https://github.com/micael-jerry/portfolio-micael-jerry",
-		description:
-			"Design and development of a portfolio website to showcase my skills and achievements.",
+		title: "Bits-of-Code2",
+		status: ProjectStatusEnum.COMPLETED,
+		description: "My personal blog page build with Next.js and Tailwind CSS...",
+		githubLink: "https://github.com/your-github/bits-of-code",
+		demoLink: "https://bits-of-code-demo-link",
 	},
 ];

@@ -1,48 +1,55 @@
 import React from "react";
-import { Typography, Link, Paper } from "@mui/material";
-import { ProjectStatusEnum, ProjectType } from "../../constants/projects";
+import {
+	Card,
+	CardContent,
+	CardMedia,
+	Typography,
+	Button,
+	CardActions,
+} from "@mui/material";
+import { ProjectType } from "../../constants/projects";
+import { IMAGES } from "../../assets";
 
-type ProjectCardProps = {
+interface ProjectCardProps {
 	project: ProjectType;
-};
+}
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+	const { image, title, description, githubLink, demoLink } = project;
 	return (
-		<Paper
-			elevation={3}
+		<Card
 			sx={{
-				p: 2,
-				m: 2,
-				borderRadius: "15px",
-				backgroundColor: "#1e1e1e",
-				color: "#fff",
-				border: "1px solid #e0e0e0",
+				maxWidth: 345,
+				margin: "auto",
+				backgroundColor: "transparent",
+				boxShadow: 9,
 			}}
 		>
-			<Typography
-				variant="h6"
-				sx={{
-					mb: 1,
-					color:
-						project.status === ProjectStatusEnum.IN_PROGRESS
-							? "#ffb74d"
-							: "#64dd17",
-				}}
-			>
-				{project.name}
-			</Typography>
-			<Typography variant="body2" sx={{ mb: 1 }}>
-				{project.description}
-			</Typography>
-			<Link
-				href={project.githubRepository}
-				target="_blank"
-				rel="noopener"
-				color="secondary"
-			>
-				GitHub Repository
-			</Link>
-		</Paper>
+			<CardMedia
+				component="img"
+				height="140"
+				image={image ?? IMAGES.projectDefaultImg}
+				alt={title}
+			/>
+			<CardContent>
+				<Typography gutterBottom variant="h5" component="div" color="white">
+					{title}
+				</Typography>
+				<Typography variant="body2" color="white">
+					{description}
+				</Typography>
+			</CardContent>
+			<CardActions>
+				<Button size="small" color="primary" href={githubLink} target="_blank">
+					GitHub
+				</Button>
+				{demoLink && (
+					<Button size="small" color="primary" href={demoLink} target="_blank">
+						Demo
+					</Button>
+				)}
+			</CardActions>
+		</Card>
 	);
 };
 
