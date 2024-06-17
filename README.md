@@ -1,6 +1,8 @@
 # Micael Jerry Portfolio
 
-[![Continuous Integration](https://github.com/micael-jerry/portfolio-micael-jerry/actions/workflows/CI.yml/badge.svg?branch=dev)](https://github.com/micael-jerry/portfolio-micael-jerry/actions/workflows/CI.yml)
+[![Continuous Integration](https://github.com/micael-jerry/portfolio-micael-jerry/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/micael-jerry/portfolio-micael-jerry/actions/workflows/CI.yml)
+
+[![CD](https://github.com/micael-jerry/portfolio-micael-jerry/actions/workflows/CD.yml/badge.svg?branch=master)](https://github.com/micael-jerry/portfolio-micael-jerry/actions/workflows/CD.yml)
 
 [![forthebadge](https://forthebadge.com/images/featured/featured-built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-react.svg)](https://forthebadge.com)
