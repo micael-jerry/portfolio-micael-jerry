@@ -18,6 +18,7 @@ export const IMAGES = {
 		"./images/project-default-image.jpg",
 		import.meta.url,
 	).href,
+	portfolioImg: new URL("./images/portfolio-image.png", import.meta.url).href,
 };
 
 export const LOGO = {

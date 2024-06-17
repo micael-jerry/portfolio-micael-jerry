@@ -1,3 +1,5 @@
+import { IMAGES } from "../assets";
+
 export enum ProjectStatusEnum {
 	IN_PROGRESS = "In progress",
 	COMPLETED = "Completed",
@@ -14,25 +16,17 @@ export type ProjectType = {
 
 export const PROJECTS: ProjectType[] = [
 	{
-		title: "Chatify",
-		status: ProjectStatusEnum.COMPLETED,
+		title: "Portfolio",
+		status: ProjectStatusEnum.IN_PROGRESS,
+		image: IMAGES.portfolioImg,
 		description:
-			"Personal Chat Room or Workspace to share resources and hangout with friends...",
-		githubLink: "https://github.com/your-github/chatify",
-		demoLink: "https://chatify-demo-link",
+			"My portfolio that showcases my creative and technical skills in various professional fields. (build with react-ts)",
+		githubLink: "https://github.com/micael-jerry/portfolio-micael-jerry",
 	},
 	{
-		title: "Bits-of-Code",
-		status: ProjectStatusEnum.COMPLETED,
-		description: "My personal blog page build with Next.js and Tailwind CSS...",
-		githubLink: "https://github.com/your-github/bits-of-code",
-		demoLink: "https://bits-of-code-demo-link",
-	},
-	{
-		title: "Bits-of-Code2",
-		status: ProjectStatusEnum.COMPLETED,
-		description: "My personal blog page build with Next.js and Tailwind CSS...",
-		githubLink: "https://github.com/your-github/bits-of-code",
-		demoLink: "https://bits-of-code-demo-link",
+		title: "Exchange API",
+		status: ProjectStatusEnum.IN_PROGRESS,
+		description: "API for exchange rate manipulation (build with spring-boot)",
+		githubLink: "https://github.com/micael-jerry/exchange-api",
 	},
 ];
