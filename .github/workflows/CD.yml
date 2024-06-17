@@ -1,18 +1,15 @@
 name: CD
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
+  push:
+    branches:
+      - "master"
+  workflow_dispatch:
+    
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      contains(github.event.workflow_run.head_branch, 'master') &&
-      (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'pull_request')
 
     strategy:
       matrix:
@@ -25,6 +22,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
 
       - name: Deploy with gh-pages
         run: |
