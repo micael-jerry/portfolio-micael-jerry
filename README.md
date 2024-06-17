@@ -19,3 +19,7 @@
 - Typescript
 - VS-Code
 - Github
+
+## Deploy on github pages
+
+> [link to portfolio](https://micael-jerry.github.io/portfolio-micael-jerry/)
