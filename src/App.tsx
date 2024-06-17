@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import React from "react";
+import { Layout } from "./components/Layout/Layout";
+import { SectionContainer } from "./components/SectionContainer/SectionContainer";
+import { AboutSection } from "./sections/about/AboutSection";
+import { ContactSection } from "./sections/contact/ContactSection";
+import { IntroSection } from "./sections/intro/IntroSection";
+import { ProjectsSection } from "./sections/projects/ProjectsSection";
+import { SkillsSection } from "./sections/skills/SkillsSection";
+import { SectionIdEnum } from "./types/sectionId/sectionId";
 
-function App() {
-  const [count, setCount] = useState(0)
+const sections = [
+	{
+		sectionId: SectionIdEnum.INTRO,
+		component: <IntroSection />,
+	},
+	{
+		sectionId: SectionIdEnum.ABOUT,
+		component: <AboutSection />,
+	},
+	{
+		sectionId: SectionIdEnum.SKILLS,
+		component: <SkillsSection />,
+	},
+	{
+		sectionId: SectionIdEnum.PROJECTS,
+		component: <ProjectsSection />,
+	},
+	{
+		sectionId: SectionIdEnum.CONTACT,
+		component: <ContactSection />,
+	},
+];
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+const App: React.FC = () => {
+	return (
+		<Layout>
+			{sections.map(({ sectionId, component }) => (
+				<SectionContainer sectionId={sectionId} key={sectionId}>
+					{component}
+				</SectionContainer>
+			))}
+		</Layout>
+	);
+};
 
-export default App
+export default App;
