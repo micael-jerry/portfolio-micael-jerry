@@ -19,6 +19,10 @@ export const IMAGES = {
 		import.meta.url,
 	).href,
 	portfolioImg: new URL("./images/portfolio-image.png", import.meta.url).href,
+	reactRekognitionImage: new URL(
+		"./images/react-rekognition-image.png",
+		import.meta.url,
+	).href,
 };
 
 export const LOGO = {

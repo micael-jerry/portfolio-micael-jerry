@@ -29,4 +29,12 @@ export const PROJECTS: ProjectType[] = [
 		description: "API for exchange rate manipulation (build with spring-boot)",
 		githubLink: "https://github.com/micael-jerry/exchange-api",
 	},
+	{
+		title: "React Rekognition",
+		status: ProjectStatusEnum.COMPLETED,
+		image: IMAGES.reactRekognitionImage,
+		description:
+			"React Rekognition is a web application that allows users to analyze a facial photo using AWS Rekognition.",
+		githubLink: "https://github.com/micael-jerry/react-rekognition",
+	},
 ];
