@@ -6,6 +6,7 @@ import {
 	Typography,
 	Button,
 	CardActions,
+	Box,
 } from "@mui/material";
 import { ProjectType } from "../../constants/projects";
 import { IMAGES } from "../../assets";
@@ -15,7 +16,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-	const { image, title, description, githubLink, demoLink } = project;
+	const { image, title, description, githubLink, demoLink, status } = project;
 	return (
 		<Card
 			sx={{
@@ -38,6 +39,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 				<Typography variant="body2" color="white">
 					{description}
 				</Typography>
+				<Box mt={2}>
+					<Typography variant="body2" color="primary">
+						Status: {status.toUpperCase()}
+					</Typography>
+				</Box>
 			</CardContent>
 			<CardActions>
 				<Button size="small" color="primary" href={githubLink} target="_blank">
