@@ -15,12 +15,23 @@ export const IMAGES = {
 		import.meta.url,
 	).href,
 	projectDefaultImg: new URL(
-		"./images/project-default-image.jpg",
+		"./images/projects/project-default-image.jpg",
 		import.meta.url,
 	).href,
-	portfolioImg: new URL("./images/portfolio-image.png", import.meta.url).href,
-	reactRekognitionImage: new URL(
-		"./images/react-rekognition-image.png",
+	portfolioImg: new URL(
+		"./images/projects/portfolio-image.png",
+		import.meta.url,
+	).href,
+	exchangeApiImg: new URL(
+		"./images/projects/exchange-api-image.jpg",
+		import.meta.url,
+	).href,
+	reactRekognitionImg: new URL(
+		"./images/projects/react-rekognition-image.png",
+		import.meta.url,
+	).href,
+	signCraftImg: new URL(
+		"./images/projects/signcraft-image.png",
 		import.meta.url,
 	).href,
 };
