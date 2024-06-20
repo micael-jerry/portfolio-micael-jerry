@@ -17,10 +17,12 @@
 
 ## Build With
 
-- React
-- Typescript
-- VS-Code
+- [Vite](https://vitejs.dev/)
+- [React](https://fr.legacy.reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Material UI](https://mui.com/material-ui/)
 - Github
+- VS-Code
 
 ## Deploy on github pages
 
