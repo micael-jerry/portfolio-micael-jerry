@@ -41,7 +41,7 @@ export const NavMenu: React.FC = () => {
 				);
 			})}
 			<Button color="inherit" size="large" target="_blank" href={ME.link.cv}>
-				<Avatar src={LOGO.cv} alt="cv" />
+				<Avatar variant="square" src={LOGO.cv} alt="cv" />
 			</Button>
 		</Box>
 	);
