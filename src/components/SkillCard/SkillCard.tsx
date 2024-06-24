@@ -1,13 +1,5 @@
 import React from "react";
-import {
-	Card,
-	CardContent,
-	Typography,
-	List,
-	ListItem,
-	ListItemAvatar,
-	Avatar,
-} from "@mui/material";
+import { Card, CardContent, Typography, List, ListItem, ListItemAvatar, Avatar } from "@mui/material";
 import { SkillType } from "../../constants/skills";
 
 export interface SkillCardProps {

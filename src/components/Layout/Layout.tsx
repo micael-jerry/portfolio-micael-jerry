@@ -16,10 +16,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 			<AppBar position="fixed" sx={{ background: "transparent" }}>
 				<Toolbar>
 					<Box flexGrow={1}>
-						<AnchorLink
-							href={`#${SectionIdEnum.INTRO}`}
-							className="anchor-link"
-						>
+						<AnchorLink href={`#${SectionIdEnum.INTRO}`} className="anchor-link">
 							<Box display={"flex"} alignItems={"center"} gap={0.5}>
 								<Avatar src={LOGO.logoApp} alt={"Logo"} />
 								<Typography variant="h5" sx={{ width: "fit-content" }}>

@@ -7,10 +7,7 @@ export type SectionContainerProps = {
 	sectionId: SectionIdEnum;
 };
 
-export const SectionContainer: React.FC<SectionContainerProps> = ({
-	children,
-	sectionId,
-}) => {
+export const SectionContainer: React.FC<SectionContainerProps> = ({ children, sectionId }) => {
 	return (
 		<div id={sectionId} key={sectionId}>
 			<Container maxWidth={"lg"}>
