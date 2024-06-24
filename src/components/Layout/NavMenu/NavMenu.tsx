@@ -1,7 +1,9 @@
 import React from "react";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { Box, Button } from "@mui/material";
+import { Avatar, Box, Button } from "@mui/material";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { ME } from "../../../constants/me";
+import { LOGO } from "../../../assets";
 
 const navigationItems = [
 	{
@@ -38,6 +40,9 @@ export const NavMenu: React.FC = () => {
 					</AnchorLink>
 				);
 			})}
+			<Button color="inherit" size="large" target="_blank" href={ME.link.cv}>
+				<Avatar src={LOGO.cv} alt="cv" />
+			</Button>
 		</Box>
 	);
 };

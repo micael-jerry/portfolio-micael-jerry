@@ -56,4 +56,5 @@ export const LOGO = {
 	python: new URL("./logo/python-logo.png", import.meta.url).href,
 	firebase: new URL("./logo/firebase-logo.png", import.meta.url).href,
 	next: new URL("./logo/next-js-logo.png", import.meta.url).href,
+	cv: new URL("./logo/cv-logo.png", import.meta.url).href
 };
