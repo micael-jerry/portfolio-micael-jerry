@@ -12,7 +12,6 @@ export const AboutSection: React.FC = () => {
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
-					height: "90vh",
 				}}
 			>
 				<Grid container spacing={4} alignItems="center">

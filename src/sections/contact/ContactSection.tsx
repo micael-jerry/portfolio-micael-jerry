@@ -12,7 +12,6 @@ export const ContactSection: React.FC = () => {
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
-					height: "80vh",
 				}}
 			>
 				<Grid container spacing={4} alignItems="center">

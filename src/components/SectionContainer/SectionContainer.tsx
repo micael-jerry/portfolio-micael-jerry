@@ -11,7 +11,9 @@ export const SectionContainer: React.FC<SectionContainerProps> = ({ children, se
 	return (
 		<div id={sectionId} key={sectionId}>
 			<Container maxWidth={"lg"}>
-				<Box minHeight={"100vh"}>{children}</Box>
+				<Box minHeight={"100vh"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+					{children}
+				</Box>
 			</Container>
 		</div>
 	);

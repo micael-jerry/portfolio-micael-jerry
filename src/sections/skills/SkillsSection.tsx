@@ -26,7 +26,7 @@ export const SkillsSection: React.FC = () => {
 				flexDirection: "column",
 				alignItems: "center",
 				justifyContent: "center",
-				height: "90vh",
+				width: "100%",
 				p: 5,
 			}}
 		>

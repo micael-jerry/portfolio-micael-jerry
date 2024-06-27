@@ -7,7 +7,7 @@ import { ME } from "../../constants/me";
 
 export const IntroSection: React.FC = () => {
 	return (
-		<Box display={"flex"} alignItems={"center"} pt={"6%"} pb={4} height={"80vh"}>
+		<Box display={"flex"} alignItems={"center"} pt={"6%"} pb={4}>
 			<Grid container spacing={4} alignItems="center">
 				<Grid item xs={12} md={6}>
 					<Box>

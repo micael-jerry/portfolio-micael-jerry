@@ -11,7 +11,6 @@ export const ProjectsSection: React.FC = () => {
 				flexDirection: "column",
 				alignItems: "center",
 				justifyContent: "center",
-				height: "90vh",
 				p: 5,
 			}}
 		>
