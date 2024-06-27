@@ -16,7 +16,6 @@ export const Footer: React.FC = () => {
 				backgroundColor: "transparent",
 				borderTop: "1px solid white",
 				color: "white",
-				height: "15vh",
 			}}
 		>
 			<Grid

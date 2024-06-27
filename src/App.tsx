@@ -9,7 +9,7 @@ import { ProjectsSection } from "./sections/projects/ProjectsSection";
 import { SkillsSection } from "./sections/skills/SkillsSection";
 import { SectionIdEnum } from "./types/sectionId/sectionId";
 
-const sections = [
+const SECTIONS = [
 	{
 		sectionId: SectionIdEnum.INTRO,
 		component: <IntroSection />,
@@ -35,7 +35,7 @@ const sections = [
 const App: React.FC = () => {
 	return (
 		<Layout>
-			{sections.map(({ sectionId, component }) => (
+			{SECTIONS.map(({ sectionId, component }) => (
 				<SectionContainer sectionId={sectionId} key={sectionId}>
 					{component}
 				</SectionContainer>

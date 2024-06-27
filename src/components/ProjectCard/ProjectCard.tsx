@@ -1,13 +1,5 @@
 import React from "react";
-import {
-	Card,
-	CardContent,
-	CardMedia,
-	Typography,
-	Button,
-	CardActions,
-	Box,
-} from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Button, CardActions, Box } from "@mui/material";
 import { ProjectType } from "../../constants/projects";
 import { IMAGES } from "../../assets";
 
@@ -26,12 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 				boxShadow: 9,
 			}}
 		>
-			<CardMedia
-				component="img"
-				height="140"
-				image={image ?? IMAGES.projectDefaultImg}
-				alt={title}
-			/>
+			<CardMedia component="img" height="140" image={image ?? IMAGES.projectDefaultImg} alt={title} />
 			<CardContent>
 				<Typography gutterBottom variant="h5" component="div" color="white">
 					{title}

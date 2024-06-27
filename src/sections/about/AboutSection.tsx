@@ -12,7 +12,6 @@ export const AboutSection: React.FC = () => {
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
-					height: "90vh",
 				}}
 			>
 				<Grid container spacing={4} alignItems="center">
@@ -23,11 +22,7 @@ export const AboutSection: React.FC = () => {
 								background: "transparent",
 							}}
 						>
-							<img
-								alt="contact illustrator"
-								src={IMAGES.aboutMeImageIllustrator}
-								id="about-me-illustrator"
-							/>
+							<img alt="contact illustrator" src={IMAGES.aboutMeImageIllustrator} id="about-me-illustrator" />
 						</Card>
 					</Grid>
 					<Grid item xs={12} md={6}>
@@ -35,21 +30,18 @@ export const AboutSection: React.FC = () => {
 							About Me
 						</Typography>
 						<Typography variant="h6" component="p" gutterBottom>
-							Hello ! I'm {`${ME.name} ${ME.firstname}`}, a keen student who is
-							currently in his third year at HEI and first year at 42, and is
-							pursuing computer science studies with great enthusiasm.
+							Hello ! I'm {`${ME.name} ${ME.firstname}`}, a keen student who is currently in his third year at HEI and
+							first year at 42, and is pursuing computer science studies with great enthusiasm.
 						</Typography>
 						<Typography variant="h6" component="p" gutterBottom>
-							I have a diverse range of interests including web development and
-							programming, which allow me to tackle various aspects of computer
-							science with ease. I enjoy taking on creative challenges and
-							designing innovative solutions to meet project needs.
+							I have a diverse range of interests including web development and programming, which allow me to tackle
+							various aspects of computer science with ease. I enjoy taking on creative challenges and designing
+							innovative solutions to meet project needs.
 						</Typography>
 						<Typography variant="h6" component="p" gutterBottom>
-							In my spare time, I like to explore new technologies, learn from
-							online courses, and work on improving my skills through practical
-							experiences. I believe in continuous learning and always strive to
-							stay updated with the latest trends in the tech world.
+							In my spare time, I like to explore new technologies, learn from online courses, and work on improving my
+							skills through practical experiences. I believe in continuous learning and always strive to stay updated
+							with the latest trends in the tech world.
 						</Typography>
 					</Grid>
 				</Grid>

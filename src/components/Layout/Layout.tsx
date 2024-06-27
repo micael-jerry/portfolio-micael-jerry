@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, Toolbar, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { NavMenu } from "./NavMenu/NavMenu";
@@ -11,16 +11,15 @@ export type LayoutProps = {
 	children: React.ReactNode;
 };
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
+	const isSmall = useMediaQuery("(max-width:950px)");
+
 	return (
 		<div id="layout">
 			<AppBar position="fixed" sx={{ background: "transparent" }}>
 				<Toolbar>
 					<Box flexGrow={1}>
-						<AnchorLink
-							href={`#${SectionIdEnum.INTRO}`}
-							className="anchor-link"
-						>
-							<Box display={"flex"} alignItems={"center"} gap={0.5}>
+						<AnchorLink href={`#${SectionIdEnum.INTRO}`} offset={isSmall ? "56px" : "64px"} className="anchor-link">
+							<Box display={"flex"} alignItems={"center"} gap={0.5} sx={{ cursor: "pointer" }}>
 								<Avatar src={LOGO.logoApp} alt={"Logo"} />
 								<Typography variant="h5" sx={{ width: "fit-content" }}>
 									{ME.firstname}
@@ -28,7 +27,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 							</Box>
 						</AnchorLink>
 					</Box>
-					<NavMenu />
+					<NavMenu isSmall={isSmall} />
 				</Toolbar>
 			</AppBar>
 			<Box>{children}</Box>

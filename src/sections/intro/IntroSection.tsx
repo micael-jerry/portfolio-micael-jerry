@@ -7,13 +7,7 @@ import { ME } from "../../constants/me";
 
 export const IntroSection: React.FC = () => {
 	return (
-		<Box
-			display={"flex"}
-			alignItems={"center"}
-			pt={"6%"}
-			pb={4}
-			height={"80vh"}
-		>
+		<Box display={"flex"} alignItems={"center"} pt={"6%"} pb={4}>
 			<Grid container spacing={4} alignItems="center">
 				<Grid item xs={12} md={6}>
 					<Box>
@@ -24,9 +18,7 @@ export const IntroSection: React.FC = () => {
 						<Typography variant="h4" mb={3}>
 							Computer science student with a passion for technology
 						</Typography>
-						<Typography variant="h6">
-							I am passionate about technology and I love to learn new things.
-						</Typography>
+						<Typography variant="h6">I am passionate about technology and I love to learn new things.</Typography>
 					</Box>
 					<Box sx={{ display: "flex", gap: 2, marginTop: 2 }}>
 						<AnchorLink href={`#${SectionIdEnum.ABOUT}`}>
