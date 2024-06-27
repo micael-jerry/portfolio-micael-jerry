@@ -5,15 +5,7 @@ import { PROJECTS, ProjectType } from "../../constants/projects";
 
 export const ProjectsSection: React.FC = () => {
 	return (
-		<Box
-			sx={{
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				justifyContent: "center",
-				p: 5,
-			}}
-		>
+		<Box display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"} p={5}>
 			<Typography variant="h2" gutterBottom color="white">
 				Projects
 			</Typography>

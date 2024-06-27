@@ -13,7 +13,7 @@ export const ContactSection: React.FC = () => {
 						<Typography variant="h2" component="h1" gutterBottom>
 							Contact Me
 						</Typography>
-						<Box sx={{ display: "flex", gap: 2, marginTop: 4 }}>
+						<Box display={"flex"} gap={2} mt={4}>
 							<Button
 								variant="contained"
 								color="warning"

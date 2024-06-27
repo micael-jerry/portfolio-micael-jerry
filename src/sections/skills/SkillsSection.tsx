@@ -20,16 +20,7 @@ const SKILLS = [
 
 export const SkillsSection: React.FC = () => {
 	return (
-		<Box
-			sx={{
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				justifyContent: "center",
-				width: "100%",
-				p: 5,
-			}}
-		>
+		<Box display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"} width={"100%"} p={5}>
 			<Typography variant="h2" align="center" gutterBottom>
 				Skills
 			</Typography>
