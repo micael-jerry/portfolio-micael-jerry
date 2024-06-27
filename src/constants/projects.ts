@@ -22,6 +22,7 @@ export const PROJECTS: ProjectType[] = [
 		description:
 			"My portfolio that showcases my creative and technical skills in various professional fields. (build with react-ts)",
 		githubLink: "https://github.com/micael-jerry/portfolio-micael-jerry",
+		demoLink: "https://micael-jerry.github.io/portfolio-micael-jerry/"
 	},
 	{
 		title: "Exchange API",
