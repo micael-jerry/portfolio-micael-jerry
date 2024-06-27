@@ -9,36 +9,22 @@ export const Footer: React.FC = () => {
 			component="footer"
 			container
 			alignItems={"center"}
+			py={3}
+			px={2}
+			mt={"auto"}
+			borderTop={"1px solid white"}
+			color={"white"}
 			sx={{
-				py: 3,
-				px: 2,
-				mt: "auto",
 				backgroundColor: "transparent",
-				borderTop: "1px solid white",
-				color: "white",
 			}}
 		>
-			<Grid
-				item
-				sx={{
-					display: "flex",
-					flexDirection: "column",
-				}}
-				md={6}
-			>
+			<Grid item display={"flex"} flexDirection={"column"} md={6}>
 				<Typography variant="h6">{ME.firstname} Portfolio</Typography>
 				<Typography variant="body2">
 					© {new Date().getFullYear()} Developed by {ME.firstname}
 				</Typography>
 			</Grid>
-			<Grid
-				item
-				sx={{
-					display: "flex",
-					flexDirection: "column",
-				}}
-				md={6}
-			>
+			<Grid item display={"flex"} flexDirection={"column"} md={6}>
 				<Box display={"flex"} alignItems={"center"} gap={0.5}>
 					<Email />
 					<Typography component={"p"} sx={{ mx: 1 }}>

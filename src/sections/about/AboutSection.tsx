@@ -7,13 +7,7 @@ import { ME } from "../../constants/me";
 export const AboutSection: React.FC = () => {
 	return (
 		<Box>
-			<Box
-				sx={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-				}}
-			>
+			<Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
 				<Grid container spacing={4} alignItems="center">
 					<Grid item xs={12} md={6}>
 						<Card

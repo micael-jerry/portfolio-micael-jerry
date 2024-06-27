@@ -7,24 +7,22 @@ import { Footer } from "../../components/Footer/Footer";
 export const ContactSection: React.FC = () => {
 	return (
 		<Box>
-			<Box
-				sx={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-				}}
-			>
+			<Box display={"flex"} alignItems={"center"}>
 				<Grid container spacing={4} alignItems="center">
 					<Grid item xs={12} md={6}>
 						<Typography variant="h2" component="h1" gutterBottom>
 							Contact Me
 						</Typography>
-						<Box sx={{ display: "flex", gap: 2, marginTop: 4 }}>
-							<a href={`mailto:${ME.email.personal}`} target="_blank">
-								<Button variant="contained" color="warning" size="large">
-									Email
-								</Button>
-							</a>
+						<Box display={"flex"} gap={2} mt={4}>
+							<Button
+								variant="contained"
+								color="warning"
+								size="large"
+								href={`mailto:${ME.email.personal}`}
+								target="_blank"
+							>
+								Email
+							</Button>
 							<Button
 								href={ME.link.linkedIn}
 								target="_blank"

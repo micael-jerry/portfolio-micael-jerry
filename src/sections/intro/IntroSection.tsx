@@ -20,7 +20,7 @@ export const IntroSection: React.FC = () => {
 						</Typography>
 						<Typography variant="h6">I am passionate about technology and I love to learn new things.</Typography>
 					</Box>
-					<Box sx={{ display: "flex", gap: 2, marginTop: 2 }}>
+					<Box display={"flex"} gap={2} mt={2}>
 						<AnchorLink href={`#${SectionIdEnum.ABOUT}`}>
 							<Button variant="contained" color="warning" size="large">
 								About
