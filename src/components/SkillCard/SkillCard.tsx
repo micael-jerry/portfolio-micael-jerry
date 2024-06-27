@@ -18,7 +18,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ title, skills }) => {
 			}}
 		>
 			<CardContent>
-				<Typography variant="h4" component="div" gutterBottom>
+				<Typography variant="h4" textAlign={"center"} component="div" gutterBottom>
 					{title}
 				</Typography>
 				<List>
