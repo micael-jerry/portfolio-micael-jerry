@@ -33,11 +33,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 				</Box>
 			</CardContent>
 			<CardActions>
-				<Button size="small" color="primary" href={githubLink} target="_blank">
+				<Button size="small" color="primary" variant="outlined" href={githubLink} target="_blank">
 					GitHub
 				</Button>
 				{demoLink && (
-					<Button size="small" color="primary" href={demoLink} target="_blank">
+					<Button size="small" color="primary" variant="outlined" href={demoLink} target="_blank">
 						Demo
 					</Button>
 				)}

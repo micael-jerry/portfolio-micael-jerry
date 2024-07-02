@@ -53,7 +53,13 @@ export const NavMenu: React.FC<NavMenyProps> = ({ isSmall }) => {
 	const mappedItems = navigationItems.map(({ to, text }) => {
 		return (
 			<AnchorLink href={`#${to}`} key={to} offset={isSmall ? "56px" : "64px"} className="anchor-link">
-				<Button color="inherit" size="large" fullWidth={isSmall} onClick={onCloseHandler}>
+				<Button
+					color="inherit"
+					variant={isSmall ? "text" : "outlined"}
+					size="medium"
+					fullWidth={isSmall}
+					onClick={onCloseHandler}
+				>
 					{text}
 				</Button>
 			</AnchorLink>
@@ -106,7 +112,14 @@ export const NavMenu: React.FC<NavMenyProps> = ({ isSmall }) => {
 			) : (
 				<Box display={"flex"} gap={2}>
 					{mappedItems}
-					<Button color="inherit" size="large" target="_blank" href={ME.link.cv} fullWidth={isSmall}>
+					<Button
+						color="inherit"
+						variant="outlined"
+						size="medium"
+						target="_blank"
+						href={ME.link.cv}
+						fullWidth={isSmall}
+					>
 						CV
 					</Button>
 				</Box>
