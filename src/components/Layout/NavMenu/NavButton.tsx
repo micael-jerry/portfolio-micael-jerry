@@ -11,11 +11,14 @@ interface NavButtonProps {
 }
 
 export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAnchorLink, onCloseHandler }) => {
-	const isSmallAttribut: Partial<ButtonProps> = isSmall
+	const otherProps: Partial<ButtonProps> = isSmall
 		? {
 				onClick: onCloseHandler,
 				color: "warning",
 				variant: "text",
+				sx: {
+					fontSize: "40px",
+				},
 			}
 		: {
 				color: "inherit",
@@ -24,12 +27,12 @@ export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAncho
 
 	return !isAnchorLink ? (
 		<AnchorLink href={`#${to}`} key={to} offset={isSmall ? "56px" : "64px"} className="anchor-link">
-			<Button size="medium" fullWidth={isSmall} {...isSmallAttribut}>
+			<Button size="medium" fullWidth={isSmall} {...otherProps}>
 				{text}
 			</Button>
 		</AnchorLink>
 	) : (
-		<Button component="a" href={to} target="_blank" size="medium" fullWidth={isSmall} {...isSmallAttribut}>
+		<Button component="a" href={to} target="_blank" size="medium" fullWidth={isSmall} {...otherProps}>
 			{text}
 		</Button>
 	);

@@ -99,7 +99,7 @@ export const NavMenu: React.FC = () => {
 									</IconButton>
 								</Toolbar>
 							</AppBar>
-							<Box display={"flex"} flexDirection={"column"} py={3} width={"100%"}>
+							<Box display={"flex"} flexDirection={"column"} justifyContent={"center"} py={3} width={"100%"}>
 								{mappedItems}
 							</Box>
 						</Box>
