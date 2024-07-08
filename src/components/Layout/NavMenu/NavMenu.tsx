@@ -1,10 +1,11 @@
-import React, { ReactElement, useState } from "react";
+import "./NavMenu.css";
+import React, { useState } from "react";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { AppBar, Box, Dialog, IconButton, Slide, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import { ME } from "../../../constants/user/me.ts";
 import { Close, Menu } from "@mui/icons-material";
-import { TransitionProps } from "@mui/material/transitions";
 import { NavButton } from "./NavButton.tsx";
+import { motion, Variants } from "framer-motion";
 
 const navigationItems = [
 	{
@@ -39,19 +40,28 @@ const navigationItems = [
 	},
 ];
 
-const Transition = React.forwardRef(
-	(
-		props: TransitionProps & {
-			children: ReactElement;
-		},
-		ref: React.Ref<unknown>,
-	) => {
-		return <Slide direction="left" ref={ref} {...props} />;
-	},
-);
-
 export type NavMenuProps = {
 	isSmall: boolean;
+};
+
+const variants: Variants = {
+	open: {
+		clipPath: "circle(1200px at 50px 50px)",
+		transition: {
+			type: "spring",
+			stiffness: 20,
+		},
+	},
+	closed: {
+		clipPath: "circle(30px at 50px 50px)",
+		opacity: 0,
+		transition: {
+			delay: 0,
+			type: "spring",
+			stiffness: 400,
+			damping: 40,
+		},
+	},
 };
 
 export const NavMenu: React.FC<NavMenuProps> = ({ isSmall }) => {
@@ -79,32 +89,23 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isSmall }) => {
 					<IconButton onClick={onOpenHandler}>
 						<Menu color="warning" />
 					</IconButton>
-					<Dialog
-						open={open}
-						fullScreen
-						fullWidth
-						TransitionComponent={Transition}
-						hideBackdrop
-						PaperProps={{
-							sx: {
-								boxShadow: "none",
-							},
-						}}
-					>
-						<AppBar position="static" sx={{ background: "white", color: "text.primary" }}>
-							<Toolbar>
-								<Typography variant="h5" sx={{ flexGrow: 1 }}>
-									Menu
-								</Typography>
-								<IconButton onClick={onCloseHandler}>
-									<Close color="warning" />
-								</IconButton>
-							</Toolbar>
-						</AppBar>
-						<Box display={"flex"} flexDirection={"column"} py={3} width={"100%"}>
-							{mappedItems}
+					<Box component={motion.div} className="nav-menu" animate={open ? "open" : "closed"}>
+						<Box component={motion.div} className="nav-menu-open" variants={variants}>
+							<AppBar position="static" sx={{ background: "inherit" }}>
+								<Toolbar>
+									<Typography variant="h5" sx={{ flexGrow: 1 }}>
+										Menu
+									</Typography>
+									<IconButton onClick={onCloseHandler}>
+										<Close color="warning" />
+									</IconButton>
+								</Toolbar>
+							</AppBar>
+							<Box display={"flex"} flexDirection={"column"} py={3} width={"100%"}>
+								{mappedItems}
+							</Box>
 						</Box>
-					</Dialog>
+					</Box>
 				</>
 			) : (
 				<Box display={"flex"} gap={2}>

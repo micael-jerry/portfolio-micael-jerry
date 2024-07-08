@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, ButtonProps } from "@mui/material";
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
@@ -11,34 +11,25 @@ interface NavButtonProps {
 }
 
 export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAnchorLink, onCloseHandler }) => {
-	const isSmallAttribut = isSmall
+	const isSmallAttribut: Partial<ButtonProps> = isSmall
 		? {
 				onClick: onCloseHandler,
+				color: "warning",
+				variant: "text",
 			}
-		: {};
+		: {
+				color: "inherit",
+				variant: "outlined",
+			};
 
 	return !isAnchorLink ? (
 		<AnchorLink href={`#${to}`} key={to} offset={isSmall ? "56px" : "64px"} className="anchor-link">
-			<Button
-				color="inherit"
-				variant={isSmall ? "text" : "outlined"}
-				size="medium"
-				fullWidth={isSmall}
-				{...isSmallAttribut}
-			>
+			<Button size="medium" fullWidth={isSmall} {...isSmallAttribut}>
 				{text}
 			</Button>
 		</AnchorLink>
 	) : (
-		<Button
-			href={to}
-			target="_blank"
-			color="inherit"
-			variant={isSmall ? "text" : "outlined"}
-			size="medium"
-			fullWidth={isSmall}
-			{...isSmallAttribut}
-		>
+		<Button component="a" href={to} target="_blank" size="medium" fullWidth={isSmall} {...isSmallAttribut}>
 			{text}
 		</Button>
 	);
