@@ -6,6 +6,7 @@ import { ME } from "../../../constants/user/me.ts";
 import { Close, Menu } from "@mui/icons-material";
 import { NavButton } from "./NavButton.tsx";
 import { motion, Variants } from "framer-motion";
+import { useIsSmallWidthScreen } from "../../../hooks/useIsSmallWidthScreen.ts";
 
 const navigationItems = [
 	{
@@ -40,10 +41,6 @@ const navigationItems = [
 	},
 ];
 
-export type NavMenuProps = {
-	isSmall: boolean;
-};
-
 const variants: Variants = {
 	open: {
 		clipPath: "circle(1200px at 50px 50px)",
@@ -64,8 +61,9 @@ const variants: Variants = {
 	},
 };
 
-export const NavMenu: React.FC<NavMenuProps> = ({ isSmall }) => {
+export const NavMenu: React.FC = () => {
 	const [open, setOpen] = useState<boolean>(false);
+	const isSmall = useIsSmallWidthScreen();
 
 	const onOpenHandler = () => setOpen(true);
 	const onCloseHandler = () => setOpen(false);
