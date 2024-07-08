@@ -2,7 +2,7 @@ import "./AboutSection.css";
 import { Box, Card, Grid, Typography } from "@mui/material";
 import React from "react";
 import { IMAGES } from "../../assets";
-import { ME } from "../../constants/me";
+import { ME } from "../../constants/user/me.ts";
 
 export const AboutSection: React.FC = () => {
 	return (

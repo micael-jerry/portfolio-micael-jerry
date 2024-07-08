@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import { PROJECTS, ProjectType } from "../../constants/projects";
+import { PROJECTS, ProjectType } from "../../constants/user/projects.ts";
 
 export const ProjectsSection: React.FC = () => {
 	return (

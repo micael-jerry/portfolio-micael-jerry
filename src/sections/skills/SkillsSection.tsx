@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { SkillCard } from "../../components/SkillCard/SkillCard";
-import { BACK_END_SKILLS, FRONT_END_SKILLS, OTHER_SKILLS } from "../../constants/skills";
+import { BACK_END_SKILLS, FRONT_END_SKILLS, OTHER_SKILLS } from "../../constants/user/skills.ts";
 
 const SKILLS = [
 	{

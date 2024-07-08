@@ -3,7 +3,7 @@ import { IMAGES } from "../../assets";
 import "./IntroSection.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SectionIdEnum } from "../../types/sectionId/sectionId";
-import { ME } from "../../constants/me";
+import { ME } from "../../constants/user/me.ts";
 
 export const IntroSection: React.FC = () => {
 	return (
