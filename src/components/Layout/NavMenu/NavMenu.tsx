@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from "react";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
 import { AppBar, Box, Button, Dialog, IconButton, Slide, Toolbar, Typography } from "@mui/material";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { ME } from "../../../constants/me";
+import { ME } from "../../../constants/user/me.ts";
 import { Close, Menu } from "@mui/icons-material";
 import { TransitionProps } from "@mui/material/transitions";
 
@@ -40,11 +40,11 @@ const Transition = React.forwardRef(
 	},
 );
 
-export type NavMenyProps = {
+export type NavMenuProps = {
 	isSmall: boolean;
 };
 
-export const NavMenu: React.FC<NavMenyProps> = ({ isSmall }) => {
+export const NavMenu: React.FC<NavMenuProps> = ({ isSmall }) => {
 	const [open, setOpen] = useState<boolean>(false);
 
 	const onOpenHandler = () => setOpen(true);

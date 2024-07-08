@@ -1,7 +1,7 @@
 import { Box, Button, Card, Grid, Typography } from "@mui/material";
 import { IMAGES } from "../../assets";
 import "./ContactSection.css";
-import { ME } from "../../constants/me";
+import { ME } from "../../constants/user/me.ts";
 import { Footer } from "../../components/Footer/Footer";
 
 export const ContactSection: React.FC = () => {

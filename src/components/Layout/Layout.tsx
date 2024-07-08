@@ -5,7 +5,7 @@ import { NavMenu } from "./NavMenu/NavMenu";
 import { LOGO } from "../../assets";
 import { SectionIdEnum } from "../../types/sectionId/sectionId";
 import "./Layout.css";
-import { ME } from "../../constants/me";
+import { ME } from "../../constants/user/me.ts";
 
 export type LayoutProps = {
 	children: React.ReactNode;

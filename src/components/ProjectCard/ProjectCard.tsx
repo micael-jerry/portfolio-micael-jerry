@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography, Button, CardActions, Box } from "@mui/material";
-import { ProjectType } from "../../constants/projects";
+import { ProjectType } from "../../constants/user/projects.ts";
 import { IMAGES } from "../../assets";
 
 interface ProjectCardProps {
