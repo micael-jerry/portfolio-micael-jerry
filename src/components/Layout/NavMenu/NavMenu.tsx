@@ -1,31 +1,41 @@
 import React, { ReactElement, useState } from "react";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { AppBar, Box, Button, Dialog, IconButton, Slide, Toolbar, Typography } from "@mui/material";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { AppBar, Box, Dialog, IconButton, Slide, Toolbar, Typography } from "@mui/material";
 import { ME } from "../../../constants/user/me.ts";
 import { Close, Menu } from "@mui/icons-material";
 import { TransitionProps } from "@mui/material/transitions";
+import { NavButton } from "./NavButton.tsx";
 
 const navigationItems = [
 	{
 		to: SectionIdEnum.INTRO,
 		text: "Intro",
+		anchor: false,
 	},
 	{
 		to: SectionIdEnum.ABOUT,
 		text: "About",
+		anchor: false,
 	},
 	{
 		to: SectionIdEnum.SKILLS,
 		text: "Skills",
+		anchor: false,
 	},
 	{
 		to: SectionIdEnum.PROJECTS,
 		text: "Projects",
+		anchor: false,
 	},
 	{
 		to: SectionIdEnum.CONTACT,
 		text: "Contact",
+		anchor: false,
+	},
+	{
+		to: ME.link.cv,
+		text: "CV",
+		anchor: true,
 	},
 ];
 
@@ -50,19 +60,16 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isSmall }) => {
 	const onOpenHandler = () => setOpen(true);
 	const onCloseHandler = () => setOpen(false);
 
-	const mappedItems = navigationItems.map(({ to, text }) => {
+	const mappedItems = navigationItems.map(({ to, text, anchor }) => {
 		return (
-			<AnchorLink href={`#${to}`} key={to} offset={isSmall ? "56px" : "64px"} className="anchor-link">
-				<Button
-					color="inherit"
-					variant={isSmall ? "text" : "outlined"}
-					size="medium"
-					fullWidth={isSmall}
-					onClick={onCloseHandler}
-				>
-					{text}
-				</Button>
-			</AnchorLink>
+			<NavButton
+				key={text}
+				to={to}
+				text={text}
+				isSmall={isSmall}
+				isAnchorLink={anchor}
+				onCloseHandler={onCloseHandler}
+			/>
 		);
 	});
 	return (
@@ -96,32 +103,12 @@ export const NavMenu: React.FC<NavMenuProps> = ({ isSmall }) => {
 						</AppBar>
 						<Box display={"flex"} flexDirection={"column"} py={3} width={"100%"}>
 							{mappedItems}
-							<Button
-								color="inherit"
-								size="large"
-								target="_blank"
-								href={ME.link.cv}
-								fullWidth={isSmall}
-								onClick={onCloseHandler}
-							>
-								CV
-							</Button>
 						</Box>
 					</Dialog>
 				</>
 			) : (
 				<Box display={"flex"} gap={2}>
 					{mappedItems}
-					<Button
-						color="inherit"
-						variant="outlined"
-						size="medium"
-						target="_blank"
-						href={ME.link.cv}
-						fullWidth={isSmall}
-					>
-						CV
-					</Button>
 				</Box>
 			)}
 		</Box>
