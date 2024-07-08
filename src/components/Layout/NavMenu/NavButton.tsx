@@ -17,7 +17,7 @@ export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAncho
 				color: "warning",
 				variant: "text",
 				sx: {
-					fontSize: "40px",
+					fontSize: "30px",
 				},
 			}
 		: {
