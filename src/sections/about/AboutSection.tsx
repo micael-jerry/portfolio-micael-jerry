@@ -3,22 +3,26 @@ import { Box, Card, Grid, Typography } from "@mui/material";
 import React from "react";
 import { IMAGES } from "../../assets";
 import { ME } from "../../constants/user/me.ts";
+import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
 
 export const AboutSection: React.FC = () => {
+	const checkScreenWidth = useScreenSizeChecker(899);
 	return (
 		<Box>
 			<Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
 				<Grid container spacing={4} alignItems="center">
-					<Grid item xs={12} md={6}>
-						<Card
-							sx={{
-								boxShadow: 0,
-								background: "transparent",
-							}}
-						>
-							<img alt="contact illustrator" src={IMAGES.aboutMeImageIllustrator} id="about-me-illustrator" />
-						</Card>
-					</Grid>
+					{!checkScreenWidth && (
+						<Grid item xs={12} md={6}>
+							<Card
+								sx={{
+									boxShadow: 0,
+									background: "transparent",
+								}}
+							>
+								<img alt="contact illustrator" src={IMAGES.aboutMeImageIllustrator} id="about-me-illustrator" />
+							</Card>
+						</Grid>
+					)}
 					<Grid item xs={12} md={6}>
 						<Typography variant="h2" component="h1" gutterBottom>
 							About Me
