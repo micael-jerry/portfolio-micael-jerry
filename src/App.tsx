@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import { Layout } from "./components/Layout/Layout";
 import { SectionContainer } from "./components/SectionContainer/SectionContainer";

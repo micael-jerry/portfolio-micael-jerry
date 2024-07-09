@@ -32,4 +32,5 @@ export const LOGO = {
 	firebase: new URL("./logo/firebase-logo.png", import.meta.url).href,
 	next: new URL("./logo/next-js-logo.png", import.meta.url).href,
 	cv: new URL("./logo/cv-logo.png", import.meta.url).href,
+	scroll: new URL("./logo/scroll.png", import.meta.url).href,
 };
