@@ -6,7 +6,7 @@ import { ME } from "../../../constants/user/me.ts";
 import { Close, Menu } from "@mui/icons-material";
 import { NavButton } from "./NavButton.tsx";
 import { motion, Variants } from "framer-motion";
-import { useIsSmallWidthScreen } from "../../../hooks/useIsSmallWidthScreen.ts";
+import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen.ts";
 
 const navigationItems = [
 	{
@@ -63,7 +63,7 @@ const variants: Variants = {
 
 export const NavMenu: React.FC = () => {
 	const [open, setOpen] = useState<boolean>(false);
-	const isSmall = useIsSmallWidthScreen();
+	const isSmall = useIsSmallScreen();
 
 	const onOpenHandler = () => setOpen(true);
 	const onCloseHandler = () => setOpen(false);

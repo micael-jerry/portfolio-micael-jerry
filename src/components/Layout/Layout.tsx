@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, BoxProps, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { NavMenu } from "./NavMenu/NavMenu";
@@ -6,13 +6,21 @@ import { LOGO } from "../../assets";
 import { SectionIdEnum } from "../../types/sectionId/sectionId";
 import "./Layout.css";
 import { ME } from "../../constants/user/me.ts";
-import { useIsSmallWidthScreen } from "../../hooks/useIsSmallWidthScreen.ts";
+import { useIsSmallScreen } from "../../hooks/useIsSmallScreen.ts";
+import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
 
 export type LayoutProps = {
 	children: React.ReactNode;
 };
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-	const isSmall = useIsSmallWidthScreen();
+	const isSmall = useIsSmallScreen();
+	const checkScreenWidth = useScreenSizeChecker(899);
+
+	const otherProps: Partial<BoxProps> = checkScreenWidth
+		? {
+				mt: 5,
+			}
+		: {};
 
 	return (
 		<div id="layout">
@@ -31,7 +39,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 					<NavMenu />
 				</Toolbar>
 			</AppBar>
-			<Box>{children}</Box>
+			<Box {...otherProps}>{children}</Box>
 		</div>
 	);
 };

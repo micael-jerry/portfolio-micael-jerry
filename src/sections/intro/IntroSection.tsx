@@ -7,7 +7,7 @@ import { SectionIdEnum } from "../../types/sectionId/sectionId";
 import { ME } from "../../constants/user/me.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import { Variants, motion } from "framer-motion";
-import { useIsSmallWidthScreen } from "../../hooks/useIsSmallWidthScreen.ts";
+import { useIsSmallScreen } from "../../hooks/useIsSmallScreen.ts";
 
 const textVariants: Variants = {
 	initial: {
@@ -33,7 +33,7 @@ const textVariants: Variants = {
 };
 
 export const IntroSection: React.FC = () => {
-	const isSmall = useIsSmallWidthScreen();
+	const isSmall = useIsSmallScreen();
 
 	return (
 		<Box display={"flex"} alignItems={"center"} pt={"6%"} pb={4}>
