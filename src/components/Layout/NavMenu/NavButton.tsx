@@ -16,14 +16,12 @@ export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAncho
 		? {
 				onClick: onCloseHandler,
 				color: "warning",
-				variant: "text",
 				sx: {
 					fontSize: "30px",
 				},
 			}
 		: {
 				color: "inherit",
-				variant: "outlined",
 			};
 
 	return !isAnchorLink ? (
@@ -31,9 +29,10 @@ export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAncho
 			<Button
 				component={motion.button}
 				size="medium"
+				variant="text"
 				fullWidth={isSmall}
 				{...otherProps}
-				whileHover={{ scale: 1.15 }}
+				whileHover={{ scale: 1.5 }}
 				whileTap={{ scale: 0.95 }}
 			>
 				{text}
@@ -45,9 +44,10 @@ export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAncho
 			href={to}
 			target="_blank"
 			size="medium"
+			variant="text"
 			fullWidth={isSmall}
 			{...otherProps}
-			whileHover={{ scale: 1.15 }}
+			whileHover={{ scale: 1.5 }}
 			whileTap={{ scale: 0.95 }}
 		>
 			{text}
