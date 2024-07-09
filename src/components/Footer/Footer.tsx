@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, IconButton, Grid } from "@mui/material";
 import { ME } from "../../constants/user/me.ts";
 import { Email, GitHub, Instagram, LinkedIn, Phone } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 export const Footer: React.FC = () => {
 	return (
@@ -38,15 +39,21 @@ export const Footer: React.FC = () => {
 					</Typography>
 				</Box>
 				<Box display={"flex"} alignItems={"center"}>
-					<IconButton href={ME.link.linkedIn} target="_blank" color="inherit">
-						<LinkedIn />
-					</IconButton>
-					<IconButton href={ME.link.github} target="_blank" color="inherit">
-						<GitHub />
-					</IconButton>
-					<IconButton href={ME.link.instagram} target="_blank" color="inherit">
-						<Instagram />
-					</IconButton>
+					<Box component={motion.div} whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
+						<IconButton href={ME.link.linkedIn} target="_blank" color="inherit">
+							<LinkedIn />
+						</IconButton>
+					</Box>
+					<Box component={motion.div} whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
+						<IconButton href={ME.link.github} target="_blank" color="inherit">
+							<GitHub />
+						</IconButton>
+					</Box>
+					<Box component={motion.div} whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
+						<IconButton href={ME.link.instagram} target="_blank" color="inherit">
+							<Instagram />
+						</IconButton>
+					</Box>
 				</Box>
 			</Grid>
 		</Grid>
