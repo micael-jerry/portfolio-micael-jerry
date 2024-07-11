@@ -9,7 +9,7 @@ export type ProjectType = {
 	title: string;
 	status: ProjectStatusEnum;
 	description: string;
-	image?: string;
+	image: string;
 	githubLink: string;
 	demoLink?: string;
 };
