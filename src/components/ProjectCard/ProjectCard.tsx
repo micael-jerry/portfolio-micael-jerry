@@ -1,7 +1,8 @@
-import React from "react";
-import { Card, CardContent, CardMedia, Typography, Button, CardActions, Box } from "@mui/material";
+import "./ProjectCard.css"
+import React, { useRef } from "react";
+import { Typography, Box, Container } from "@mui/material";
 import { ProjectType } from "../../constants/user/projects.ts";
-import { IMAGES } from "../../assets";
+import { useScroll, useTransform } from "framer-motion";
 
 interface ProjectCardProps {
 	project: ProjectType;
@@ -9,40 +10,25 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 	const { image, title, description, githubLink, demoLink, status } = project;
+	const ref = useRef(null);
+	const { scrollYProgress } = useScroll({ target: ref });
+	const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 	return (
-		<Card
-			sx={{
-				maxWidth: 345,
-				margin: "auto",
-				backgroundColor: "transparent",
-				boxShadow: 9,
-			}}
-		>
-			<CardMedia component="img" height="140" image={image ?? IMAGES.projectDefaultImg} alt={title} />
-			<CardContent>
-				<Typography gutterBottom variant="h5" component="div" color="white">
-					{title}
-				</Typography>
-				<Typography variant="body2" color="white">
-					{description}
-				</Typography>
-				<Box mt={2}>
-					<Typography variant="body2" color="primary">
-						Status: {status.toUpperCase()}
+		<Container maxWidth="lg">
+			<Box ref={ref} height={"70vh"} maxWidth={"100vw"} display={"flex"} alignItems={"center"}>
+				<Box width={"50%"} borderRadius={"2rem"} boxShadow={10} overflow={"hidden"}>
+					<img src={image} alt={title} className="project-img" />
+				</Box>
+				<Box sx={{ width: "50%", marginLeft: "2rem" }}>
+					<Typography variant="h3" component="h1" gutterBottom>
+						{title}
+					</Typography>
+					<Typography variant="body1" paragraph>
+						{description}
 					</Typography>
 				</Box>
-			</CardContent>
-			<CardActions>
-				<Button size="small" color="primary" variant="outlined" href={githubLink} target="_blank">
-					GitHub
-				</Button>
-				{demoLink && (
-					<Button size="small" color="primary" variant="outlined" href={demoLink} target="_blank">
-						Demo
-					</Button>
-				)}
-			</CardActions>
-		</Card>
+			</Box>
+		</Container>
 	);
 };
 
