@@ -18,13 +18,20 @@ export const ProjectsSection: React.FC = () => {
 			flexDirection={"column"}
 			alignItems={"center"}
 			justifyContent={"center"}
-			p={5}
+			p={"6%"}
+			maxWidth={"100%"}
 		>
 			<Box component={motion.div} className="progress" pt={8} textAlign={"center"}>
-				<Typography component={motion.h2} variant="h2" gutterBottom whileHover={{ color: COLOR_WARNING.dark }}>
+				<Typography
+					component={motion.h2}
+					variant="h2"
+					gutterBottom
+					color={COLOR_WARNING.dark}
+					whileHover={{ color: "white" }}
+				>
 					Projects
 				</Typography>
-				<Typography variant="h6" gutterBottom color="white">
+				<Typography variant="h6" gutterBottom>
 					Here are a few projects I've worked on recently.
 				</Typography>
 				<Box component={motion.div} style={{ scaleX }} className="progress-bar"></Box>
