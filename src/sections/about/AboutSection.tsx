@@ -4,6 +4,8 @@ import React from "react";
 import { IMAGES } from "../../assets";
 import { ME } from "../../constants/user/me.ts";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
+import { motion } from "framer-motion";
+import { COLOR_WARNING } from "../../utils/color.ts";
 
 export const AboutSection: React.FC = () => {
 	const checkScreenWidth = useScreenSizeChecker(899);
@@ -24,7 +26,7 @@ export const AboutSection: React.FC = () => {
 						</Grid>
 					)}
 					<Grid item xs={12} md={6}>
-						<Typography variant="h2" component="h1" gutterBottom>
+						<Typography component={motion.h2} variant="h2" gutterBottom whileHover={{ color: COLOR_WARNING.dark }}>
 							About Me
 						</Typography>
 						<Typography variant="h6" component="p" gutterBottom>
