@@ -1,30 +1,60 @@
 import "./AboutSection.css";
 import { Box, Card, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import { IMAGES } from "../../assets";
 import { ME } from "../../constants/user/me.ts";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
+import { motion, useInView, Variants } from "framer-motion";
+import { COLOR_WARNING } from "../../utils/color.ts";
+
+const variants: Variants = {
+	initial: {
+		x: -500,
+		y: 100,
+		opacity: 0,
+	},
+	animate: {
+		x: 0,
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 1,
+			staggedChildren: 0.1,
+		},
+	},
+};
 
 export const AboutSection: React.FC = () => {
+	const aboutSectionRef = useRef(null);
+	const isInView = useInView(aboutSectionRef, { margin: "100px" });
 	const checkScreenWidth = useScreenSizeChecker(899);
+
 	return (
-		<Box>
-			<Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
-				<Grid container spacing={4} alignItems="center">
+		<Box
+			ref={aboutSectionRef}
+			component={motion.div}
+			variants={variants}
+			initial={"initial"}
+			animate={isInView && "animate"}
+		>
+			<Box display={"flex"} alignItems={"center"} justifyContent={"center"} component={motion.div} variants={variants}>
+				<Grid container spacing={4} alignItems="center" component={motion.div} variants={variants}>
 					{!checkScreenWidth && (
-						<Grid item xs={12} md={6}>
+						<Grid item xs={12} md={6} component={motion.div} variants={variants}>
 							<Card
 								sx={{
 									boxShadow: 0,
 									background: "transparent",
 								}}
+								component={motion.div}
+								variants={variants}
 							>
 								<img alt="contact illustrator" src={IMAGES.aboutMeImageIllustrator} id="about-me-illustrator" />
 							</Card>
 						</Grid>
 					)}
-					<Grid item xs={12} md={6}>
-						<Typography variant="h2" component="h1" gutterBottom>
+					<Grid item xs={12} md={6} component={motion.div} variants={variants}>
+						<Typography component={motion.h2} variant="h2" gutterBottom whileHover={{ color: COLOR_WARNING.dark }}>
 							About Me
 						</Typography>
 						<Typography variant="h6" component="p" gutterBottom>

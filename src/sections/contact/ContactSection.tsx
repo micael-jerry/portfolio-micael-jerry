@@ -3,6 +3,8 @@ import { IMAGES } from "../../assets";
 import "./ContactSection.css";
 import { ME } from "../../constants/user/me.ts";
 import { Footer } from "../../components/Footer/Footer";
+import { motion } from "framer-motion";
+import { COLOR_WARNING } from "../../utils/color.ts";
 
 export const ContactSection: React.FC = () => {
 	return (
@@ -10,7 +12,7 @@ export const ContactSection: React.FC = () => {
 			<Box display={"flex"} alignItems={"center"}>
 				<Grid container spacing={4} alignItems="center">
 					<Grid item xs={12} md={6}>
-						<Typography variant="h2" component="h1" gutterBottom>
+						<Typography component={motion.h2} variant="h2" gutterBottom whileHover={{ color: COLOR_WARNING.dark }}>
 							Contact Me
 						</Typography>
 						<Box display={"flex"} gap={2} mt={4}>

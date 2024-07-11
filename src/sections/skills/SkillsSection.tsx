@@ -2,6 +2,8 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { SkillCard } from "../../components/SkillCard/SkillCard";
 import { BACK_END_SKILLS, FRONT_END_SKILLS, OTHER_SKILLS } from "../../constants/user/skills.ts";
+import { motion } from "framer-motion";
+import { COLOR_WARNING } from "../../utils/color.ts";
 
 const SKILLS = [
 	{
@@ -21,7 +23,7 @@ const SKILLS = [
 export const SkillsSection: React.FC = () => {
 	return (
 		<Box display={"flex"} flexDirection={"column"} alignItems={"center"} justifyContent={"center"} width={"100%"} p={5}>
-			<Typography variant="h2" align="center" gutterBottom>
+			<Typography component={motion.h2} variant="h2" gutterBottom whileHover={{ color: COLOR_WARNING.dark }}>
 				Skills
 			</Typography>
 			<Grid container spacing={2} justifyContent={"center"}>

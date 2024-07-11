@@ -1,12 +1,13 @@
 import "./NavMenu.css";
 import React, { useState } from "react";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Avatar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import { ME } from "../../../constants/user/me.ts";
 import { Close, Menu } from "@mui/icons-material";
 import { NavButton } from "./NavButton.tsx";
 import { motion, Variants } from "framer-motion";
 import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen.ts";
+import { LOGO } from "../../../assets/index.ts";
 
 const navigationItems = [
 	{
@@ -91,6 +92,7 @@ export const NavMenu: React.FC = () => {
 						<Box component={motion.div} className="nav-menu-open" variants={variants}>
 							<AppBar position="static" sx={{ background: "inherit" }}>
 								<Toolbar>
+									<Avatar src={LOGO.logoApp} alt={"Logo"} />
 									<Typography variant="h5" sx={{ flexGrow: 1 }}>
 										Menu
 									</Typography>
