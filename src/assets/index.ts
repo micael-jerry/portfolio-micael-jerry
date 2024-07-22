@@ -9,6 +9,7 @@ export const IMAGES = {
 	exchangeApiImg: new URL("./images/projects/exchange-api-image.jpg", import.meta.url).href,
 	reactRekognitionImg: new URL("./images/projects/react-rekognition-image.png", import.meta.url).href,
 	signCraftImg: new URL("./images/projects/signcraft-image.png", import.meta.url).href,
+	donaImg: new URL("./images/projects/dona-image.png", import.meta.url).href,
 };
 
 export const LOGO = {
