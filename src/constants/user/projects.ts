@@ -25,6 +25,14 @@ export const PROJECTS: ProjectType[] = [
 		demoLink: "https://micael-jerry.github.io/portfolio-micael-jerry/",
 	},
 	{
+		title: "Dona",
+		status: ProjectStatusEnum.IN_PROGRESS,
+		image: IMAGES.donaImg,
+		description:
+			"This project is a React application and an Express API inspired by Waze. It allows users to report police positions and potentially other incidents on a map using Leaflet. Users can sign up, view reports on the map, and report incidents themselves.",
+		githubLink: "https://github.com/micael-jerry/dona-backend/tree/dev",
+	},
+	{
 		title: "Exchange API",
 		status: ProjectStatusEnum.IN_PROGRESS,
 		image: IMAGES.exchangeApiImg,
