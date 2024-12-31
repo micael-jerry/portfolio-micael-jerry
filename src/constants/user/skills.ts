@@ -30,9 +30,17 @@ export const FRONT_END_SKILLS = [
 		name: "Next",
 		logo: LOGO.next,
 	},
+	{
+		name: "Tailwind CSS",
+		logo: LOGO.tailwind,
+	},
 ];
 
 export const BACK_END_SKILLS = [
+	{
+		name: "NestJS",
+		logo: LOGO.nest,
+	},
 	{
 		name: "Java",
 		logo: LOGO.java,
@@ -46,16 +54,16 @@ export const BACK_END_SKILLS = [
 		logo: LOGO.express,
 	},
 	{
+		name: "GraphQL",
+		logo: LOGO.graphQl,
+	},
+	{
 		name: "PostgreSQL",
 		logo: LOGO.postgreSql,
 	},
 	{
 		name: "MongoDB",
 		logo: LOGO.mongoDb,
-	},
-	{
-		name: "Firebase",
-		logo: LOGO.firebase,
 	},
 ];
 
@@ -71,6 +79,10 @@ export const OTHER_SKILLS = [
 	{
 		name: "CI/CD",
 		logo: LOGO.ciCd,
+	},
+	{
+		name: "Docker",
+		logo: LOGO.docker,
 	},
 	{
 		name: "Jira",

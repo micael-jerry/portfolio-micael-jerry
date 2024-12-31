@@ -30,8 +30,11 @@ export const LOGO = {
 	jira: new URL("./logo/jira-logo.png", import.meta.url).href,
 	ruby: new URL("./logo/ruby-logo.png", import.meta.url).href,
 	python: new URL("./logo/python-logo.png", import.meta.url).href,
-	firebase: new URL("./logo/firebase-logo.png", import.meta.url).href,
+	nest: new URL("./logo/nestjs-logo.png", import.meta.url).href,
 	next: new URL("./logo/next-js-logo.png", import.meta.url).href,
 	cv: new URL("./logo/cv-logo.png", import.meta.url).href,
 	scroll: new URL("./logo/scroll.png", import.meta.url).href,
+	docker: new URL("./logo/docker-logo.png", import.meta.url).href,
+	graphQl: new URL("./logo/graphql-logo.png", import.meta.url).href,
+	tailwind: new URL("./logo/tailwind-logo.png", import.meta.url).href,
 };
