@@ -17,7 +17,7 @@ export type ProjectType = {
 export const PROJECTS: ProjectType[] = [
 	{
 		title: "Portfolio",
-		status: ProjectStatusEnum.IN_PROGRESS,
+		status: ProjectStatusEnum.COMPLETED,
 		image: IMAGES.portfolioImg,
 		description:
 			"My portfolio that showcases my creative and technical skills in various professional fields. (build with react-ts)",
