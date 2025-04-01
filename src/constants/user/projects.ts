@@ -40,19 +40,10 @@ export const PROJECTS: ProjectType[] = [
 		githubLink: "https://github.com/micael-jerry/exchange-api",
 	},
 	{
-		title: "React Rekognition",
-		status: ProjectStatusEnum.COMPLETED,
-		image: IMAGES.reactRekognitionImg,
-		description:
-			"React Rekognition is a web application that allows users to analyze a facial photo using AWS Rekognition.",
-		githubLink: "https://github.com/micael-jerry/react-rekognition",
-	},
-	{
 		title: "SignCraft",
 		status: ProjectStatusEnum.IN_PROGRESS,
 		image: IMAGES.signCraftImg,
 		description: "Online document signature application",
 		githubLink: "https://github.com/SignCraft2024/signcraft",
-		demoLink: "https://signcraft.onrender.com/login",
 	},
 ];
