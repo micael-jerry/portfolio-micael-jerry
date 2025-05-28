@@ -5,95 +5,35 @@ export type SkillType = {
 	logo: string;
 };
 
-export const FRONT_END_SKILLS = [
-	{
-		name: "HTML",
-		logo: LOGO.html,
-	},
-	{
-		name: "CSS",
-		logo: LOGO.css,
-	},
-	{
-		name: "Javascript",
-		logo: LOGO.javascript,
-	},
-	{
-		name: "Typescript",
-		logo: LOGO.typescript,
-	},
-	{
-		name: "React",
-		logo: LOGO.react,
-	},
-	{
-		name: "Next",
-		logo: LOGO.next,
-	},
-	{
-		name: "Tailwind CSS",
-		logo: LOGO.tailwind,
-	},
-];
+export const ALL_SKILLS: SkillType[] = [
+	// --- Language ---
+	{ name: "CSS", logo: LOGO.css },
+	{ name: "HTML", logo: LOGO.html },
+	{ name: "Javascript", logo: LOGO.javascript },
+	{ name: "Typescript", logo: LOGO.typescript },
+	{ name: "C", logo: LOGO.c },
+	{ name: "C++", logo: LOGO.cpp },
+	{ name: "Java", logo: LOGO.java },
+	{ name: "Python", logo: LOGO.python },
 
-export const BACK_END_SKILLS = [
-	{
-		name: "NestJS",
-		logo: LOGO.nest,
-	},
-	{
-		name: "Java",
-		logo: LOGO.java,
-	},
-	{
-		name: "Spring-Boot",
-		logo: LOGO.springBoot,
-	},
-	{
-		name: "Express.js",
-		logo: LOGO.express,
-	},
-	{
-		name: "GraphQL",
-		logo: LOGO.graphQl,
-	},
-	{
-		name: "PostgreSQL",
-		logo: LOGO.postgreSql,
-	},
-	{
-		name: "MongoDB",
-		logo: LOGO.mongoDb,
-	},
-];
+	// --- Frameworks / Library ---
+	{ name: "NestJS", logo: LOGO.nest },
+	{ name: "NextJS", logo: LOGO.next },
+	{ name: "ExpressJS", logo: LOGO.express },
+	{ name: "ReactJS", logo: LOGO.react },
+	{ name: "Spring-Boot", logo: LOGO.springBoot },
+	{ name: "Tailwind CSS", logo: LOGO.tailwind },
+	{ name: "GraphQL", logo: LOGO.graphQl },
 
-export const OTHER_SKILLS = [
-	{
-		name: "Git",
-		logo: LOGO.git,
-	},
-	{
-		name: "Github",
-		logo: LOGO.github,
-	},
-	{
-		name: "CI/CD",
-		logo: LOGO.ciCd,
-	},
-	{
-		name: "Docker",
-		logo: LOGO.docker,
-	},
-	{
-		name: "Jira",
-		logo: LOGO.jira,
-	},
-	{
-		name: "Ruby",
-		logo: LOGO.ruby,
-	},
-	{
-		name: "Python",
-		logo: LOGO.python,
-	},
+	// --- Database ---
+	{ name: "MongoDB", logo: LOGO.mongoDb },
+	{ name: "PostgreSQL", logo: LOGO.postgreSql },
+
+	// --- Tools / Others ---
+	{ name: "Linux", logo: LOGO.linux },
+	{ name: "CI/CD", logo: LOGO.ciCd },
+	{ name: "Docker", logo: LOGO.docker },
+	{ name: "Git", logo: LOGO.git },
+	{ name: "Github", logo: LOGO.github },
+	{ name: "Jira", logo: LOGO.jira },
 ];
