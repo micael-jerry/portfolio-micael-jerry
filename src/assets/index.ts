@@ -38,3 +38,9 @@ export const LOGO = {
 	graphQl: new URL("./logo/graphql-logo.png", import.meta.url).href,
 	tailwind: new URL("./logo/tailwind-logo.png", import.meta.url).href,
 };
+
+/* Suggestion d'image :
+  - https://undraw.co/illustrations
+  - https://storyset.com/technology
+  - https://icons8.com/illustrations/style--pablo
+*/
