@@ -11,7 +11,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 export const ContactSection: React.FC = () => {
 	return (
 		<Box sx={{ position: "relative", minHeight: { xs: "70vh", md: "80vh" }, pb: 0 }}>
-			{/* Halo animé derrière l'illustration */}
 			<motion.div
 				style={{
 					position: "absolute",
