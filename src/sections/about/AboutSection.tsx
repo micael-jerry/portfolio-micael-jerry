@@ -56,7 +56,6 @@ export const AboutSection: React.FC = () => {
 			>
 				<Grid
 					container
-					spacing={4}
 					alignItems="center"
 					component={motion.div}
 					initial="initial"
@@ -78,7 +77,7 @@ export const AboutSection: React.FC = () => {
 								justifyContent: "center",
 								alignItems: "center",
 								width: "100%",
-								maxWidth: { xs: "100%", md: "50%" },
+								maxWidth: { xs: "100%" },
 							}}
 						>
 							<Card
@@ -113,7 +112,7 @@ export const AboutSection: React.FC = () => {
 						variants={textVariants}
 						sx={{
 							width: "100%",
-							maxWidth: { xs: "100%", md: "50%" },
+							maxWidth: { xs: "100%", md: "45%" },
 						}}
 					>
 						<Box
