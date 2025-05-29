@@ -21,7 +21,15 @@ export const AboutSection: React.FC = () => {
 	const checkScreenWidth = useScreenSizeChecker(899);
 
 	return (
-		<Box sx={{ position: "relative", py: { xs: 4, md: 8 }, px: { xs: 1, md: 0 } }}>
+		<Box
+			sx={{
+				position: "relative",
+				py: { xs: 4, md: 8 },
+				px: { xs: 1, md: 0 },
+				overflowX: "hidden",
+				maxWidth: "100%",
+			}}
+		>
 			<motion.div
 				style={{
 					position: "absolute",
@@ -36,7 +44,16 @@ export const AboutSection: React.FC = () => {
 				animate={{ scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
 				transition={{ duration: 8, repeat: Infinity }}
 			/>
-			<Box display="flex" alignItems="center" justifyContent="center" sx={{ position: "relative", zIndex: 1 }}>
+			<Box
+				display="flex"
+				alignItems="center"
+				justifyContent="center"
+				sx={{
+					position: "relative",
+					zIndex: 1,
+					width: "100%",
+				}}
+			>
 				<Grid
 					container
 					spacing={4}
@@ -45,20 +62,60 @@ export const AboutSection: React.FC = () => {
 					initial="initial"
 					whileInView="animate"
 					viewport={{ once: true }}
+					sx={{
+						width: "100%",
+						margin: 0,
+					}}
 				>
 					{!checkScreenWidth && (
-						<Grid item xs={12} md={6} component={motion.div} variants={imageVariants}>
+						<Grid
+							item
+							md={6}
+							component={motion.div}
+							variants={imageVariants}
+							sx={{
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								width: "100%",
+								maxWidth: { xs: "100%", md: "50%" },
+							}}
+						>
 							<Card
 								sx={{
 									boxShadow: 0,
 									background: "transparent",
+									width: { xs: "90vw", sm: 320, md: 380 },
+									maxWidth: "100%",
+									mx: "auto",
 								}}
 							>
-								<img alt="contact illustrator" src={IMAGES.aboutMeImageIllustrator} id="about-me-illustrator" />
+								<img
+									alt="contact illustrator"
+									src={IMAGES.aboutMeImageIllustrator}
+									id="about-me-illustrator"
+									style={{
+										width: "100%",
+										height: "100%",
+										objectFit: "contain",
+										background: "transparent",
+										borderRadius: 16,
+									}}
+								/>
 							</Card>
 						</Grid>
 					)}
-					<Grid item xs={12} md={6} component={motion.div} variants={textVariants}>
+					<Grid
+						item
+						xs={12}
+						md={6}
+						component={motion.div}
+						variants={textVariants}
+						sx={{
+							width: "100%",
+							maxWidth: { xs: "100%", md: "50%" },
+						}}
+					>
 						<Box
 							component={motion.div}
 							whileHover={{ scale: 1.015, boxShadow: "0 8px 32px 0 rgba(0,0,0,0.18)" }}

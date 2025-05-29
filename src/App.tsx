@@ -17,18 +17,18 @@ const SECTIONS = [
 		sectionId: SectionIdEnum.ABOUT,
 		component: <AboutSection />,
 	},
-	{
-		sectionId: SectionIdEnum.SKILLS,
-		component: <SkillsSection />,
-	},
-	{
-		sectionId: SectionIdEnum.PROJECTS,
-		component: <ProjectsSection />,
-	},
-	{
-		sectionId: SectionIdEnum.CONTACT,
-		component: <ContactSection />,
-	},
+	// {
+	// 	sectionId: SectionIdEnum.SKILLS,
+	// 	component: <SkillsSection />,
+	// },
+	// {
+	// 	sectionId: SectionIdEnum.PROJECTS,
+	// 	component: <ProjectsSection />,
+	// },
+	// {
+	// 	sectionId: SectionIdEnum.CONTACT,
+	// 	component: <ContactSection />,
+	// },
 ];
 
 const App: React.FC = () => {
