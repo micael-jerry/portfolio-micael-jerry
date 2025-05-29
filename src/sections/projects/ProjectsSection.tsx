@@ -1,7 +1,7 @@
 import "./ProjectsSection.css";
 import { Box, Typography, Grid } from "@mui/material";
 import React, { useRef } from "react";
-import { PROJECTS, ProjectType } from "../../constants/user/projects.ts";
+import { PROJECTS, ProjectType } from "../../data/user/projects.ts";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import ProjectCard from "../../components/ProjectCard/ProjectCard.tsx";

@@ -2,7 +2,7 @@ import { Box, Typography, Chip, Grid, Paper } from "@mui/material";
 import React from "react";
 import { motion } from "framer-motion";
 import { COLOR_WARNING } from "../../utils/color.ts";
-import { ALL_SKILLS } from "../../constants/user/skills.ts";
+import { ALL_SKILLS } from "../../data/user/skills.ts";
 
 const skillVariants = {
 	initial: { opacity: 0, y: 30, scale: 0.95 },

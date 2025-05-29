@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, IconButton, Grid, Paper } from "@mui/material";
-import { ME } from "../../constants/user/me.ts";
+import { ME } from "../../data/user/me.ts";
 import { Email, GitHub, Instagram, LinkedIn, Phone } from "@mui/icons-material";
 import { motion } from "framer-motion";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Grid, Box, Button, Card, CardMedia, CardContent, Chip, CardActions } from "@mui/material";
-import { ProjectStatusEnum, ProjectType } from "../../constants/user/projects.ts";
+import { ProjectStatusEnum, ProjectType } from "../../data/user/projects.ts";
 import { motion } from "framer-motion";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";

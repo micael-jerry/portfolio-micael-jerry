@@ -4,7 +4,7 @@ import { IMAGES, LOGO } from "../../assets";
 import "./IntroSection.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { SectionIdEnum } from "../../types/sectionId/sectionId";
-import { ME } from "../../constants/user/me.ts";
+import { ME } from "../../data/user/me.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import { Variants, motion } from "framer-motion";
 import { useIsSmallScreen } from "../../hooks/useIsSmallScreen.ts";

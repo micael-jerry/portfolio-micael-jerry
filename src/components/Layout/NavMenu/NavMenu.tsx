@@ -2,7 +2,7 @@ import "./NavMenu.css";
 import React, { useState } from "react";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
 import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, Divider, Button } from "@mui/material";
-import { ME } from "../../../constants/user/me.ts";
+import { ME } from "../../../data/user/me.ts";
 import { Close, Menu, Description } from "@mui/icons-material";
 import { NavButton } from "./NavButton.tsx";
 import { motion, Variants } from "framer-motion";

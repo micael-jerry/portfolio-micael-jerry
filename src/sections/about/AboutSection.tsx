@@ -2,7 +2,7 @@ import "./AboutSection.css";
 import { Box, Card, Grid, Typography } from "@mui/material";
 import React from "react";
 import { IMAGES } from "../../assets";
-import { ME } from "../../constants/user/me.ts";
+import { ME } from "../../data/user/me.ts";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import { motion, Variants } from "framer-motion";

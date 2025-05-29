@@ -1,7 +1,7 @@
 import { Box, Button, Card, Grid, Typography } from "@mui/material";
 import { IMAGES } from "../../assets";
 import "./ContactSection.css";
-import { ME } from "../../constants/user/me.ts";
+import { ME } from "../../data/user/me.ts";
 import { Footer } from "../../components/Footer/Footer";
 import { motion } from "framer-motion";
 import { COLOR_WARNING } from "../../utils/color.ts";
