@@ -1,9 +1,9 @@
 import "./NavMenu.css";
 import React, { useState } from "react";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { AppBar, Avatar, Box, IconButton, Toolbar, Typography } from "@mui/material";
-import { ME } from "../../../constants/user/me.ts";
-import { Close, Menu } from "@mui/icons-material";
+import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, Divider, Button } from "@mui/material";
+import { ME } from "../../../data/user/me.ts";
+import { Close, Menu, Description } from "@mui/icons-material";
 import { NavButton } from "./NavButton.tsx";
 import { motion, Variants } from "framer-motion";
 import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen.ts";
@@ -35,11 +35,6 @@ const navigationItems = [
 		text: "Contact",
 		anchor: false,
 	},
-	{
-		to: ME.link.cv,
-		text: "CV",
-		anchor: true,
-	},
 ];
 
 const variants: Variants = {
@@ -69,18 +64,10 @@ export const NavMenu: React.FC = () => {
 	const onOpenHandler = () => setOpen(true);
 	const onCloseHandler = () => setOpen(false);
 
-	const mappedItems = navigationItems.map(({ to, text, anchor }) => {
-		return (
-			<NavButton
-				key={text}
-				to={to}
-				text={text}
-				isSmall={isSmall}
-				isAnchorLink={anchor}
-				onCloseHandler={onCloseHandler}
-			/>
-		);
-	});
+	const mappedItems = navigationItems.map(({ to, text, anchor }) => (
+		<NavButton key={text} to={to} text={text} isSmall={isSmall} isAnchorLink={anchor} onCloseHandler={onCloseHandler} />
+	));
+
 	return (
 		<Box>
 			{isSmall ? (
@@ -90,10 +77,10 @@ export const NavMenu: React.FC = () => {
 					</IconButton>
 					<Box component={motion.div} className="nav-menu" animate={open ? "open" : "closed"}>
 						<Box component={motion.div} className="nav-menu-open" variants={variants}>
-							<AppBar position="static" sx={{ background: "inherit" }}>
+							<AppBar position="static" sx={{ background: "rgba(20,20,30,0.95)", boxShadow: "none" }}>
 								<Toolbar>
 									<Avatar src={LOGO.logoApp} alt={"Logo"} />
-									<Typography variant="h5" sx={{ flexGrow: 1 }}>
+									<Typography variant="h5" sx={{ flexGrow: 1, fontWeight: 700, letterSpacing: 1 }}>
 										Menu
 									</Typography>
 									<IconButton onClick={onCloseHandler}>
@@ -101,15 +88,59 @@ export const NavMenu: React.FC = () => {
 									</IconButton>
 								</Toolbar>
 							</AppBar>
-							<Box display={"flex"} flexDirection={"column"} justifyContent={"center"} py={3} width={"100%"}>
+							<Box
+								display={"flex"}
+								flexDirection={"column"}
+								justifyContent={"center"}
+								alignItems="center"
+								py={3}
+								width={"100%"}
+								gap={1}
+							>
 								{mappedItems}
+								<Divider sx={{ my: 2, width: "60%" }} />
+								<Button
+									variant="outlined"
+									color="warning"
+									startIcon={<Description />}
+									href={ME.link.cv}
+									target="_blank"
+									sx={{
+										mt: 1,
+										fontWeight: 600,
+										borderRadius: 3,
+										px: 3,
+										fontSize: "1.08rem",
+										borderWidth: 2,
+										letterSpacing: 1,
+									}}
+								>
+									My CV
+								</Button>
 							</Box>
 						</Box>
 					</Box>
 				</>
 			) : (
-				<Box display={"flex"} gap={2}>
+				<Box display={"flex"} gap={2} alignItems="center">
 					{mappedItems}
+					<Button
+						variant="outlined"
+						color="warning"
+						startIcon={<Description />}
+						href={ME.link.cv}
+						target="_blank"
+						sx={{
+							fontWeight: 600,
+							borderRadius: 3,
+							px: 2.5,
+							fontSize: "1.08rem",
+							borderWidth: 2,
+							letterSpacing: 1,
+						}}
+					>
+						My CV
+					</Button>
 				</Box>
 			)}
 		</Box>

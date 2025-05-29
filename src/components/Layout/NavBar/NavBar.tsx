@@ -4,7 +4,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { NavMenu } from "../NavMenu/NavMenu";
 import { LOGO } from "../../../assets";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { ME } from "../../../constants/user/me";
+import { ME } from "../../../data/user/me";
 import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen";
 import { COLOR_MAIN } from "../../../utils/color";
 

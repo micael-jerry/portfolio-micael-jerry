@@ -27,7 +27,6 @@ export const LOGO = {
 	github: new URL("./logo/github-logo.png", import.meta.url).href,
 	ciCd: new URL("./logo/ci-cd-logo.png", import.meta.url).href,
 	jira: new URL("./logo/jira-logo.png", import.meta.url).href,
-	ruby: new URL("./logo/ruby-logo.png", import.meta.url).href,
 	python: new URL("./logo/python-logo.png", import.meta.url).href,
 	nest: new URL("./logo/nestjs-logo.png", import.meta.url).href,
 	next: new URL("./logo/next-js-logo.png", import.meta.url).href,
@@ -36,4 +35,13 @@ export const LOGO = {
 	docker: new URL("./logo/docker-logo.png", import.meta.url).href,
 	graphQl: new URL("./logo/graphql-logo.png", import.meta.url).href,
 	tailwind: new URL("./logo/tailwind-logo.png", import.meta.url).href,
+	c: new URL("./logo/c-logo.png", import.meta.url).href,
+	cpp: new URL("./logo/cpp-logo.png", import.meta.url).href,
+	linux: new URL("./logo/linux-logo.png", import.meta.url).href,
 };
+
+/* Suggestion d'image :
+  - https://undraw.co/illustrations
+  - https://storyset.com/technology
+  - https://icons8.com/illustrations/style--pablo
+*/
