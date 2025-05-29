@@ -57,7 +57,7 @@ export const ProjectsSection: React.FC = () => {
 			</Box>
 			<Grid container spacing={{ xs: 4, md: 6 }} justifyContent="center" alignItems="stretch">
 				{PROJECTS.map((project: ProjectType, i) => (
-					<ProjectCard project={project} i={i} />
+					<ProjectCard project={project} i={i} key={project.title} />
 				))}
 			</Grid>
 		</Box>
