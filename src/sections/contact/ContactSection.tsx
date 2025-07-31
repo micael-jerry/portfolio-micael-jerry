@@ -1,5 +1,4 @@
 import EmailIcon from "@mui/icons-material/Email";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box, Button, Card, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { ME } from "../../../data/user/me.ts";
@@ -67,7 +66,8 @@ export const ContactSection: React.FC = () => {
 								>
 									Email
 								</Button>
-								<Button
+							{/* INFO: enable when have a linkedin account */}
+								{/* <Button
 									href={ME.link.linkedIn}
 									target="_blank"
 									rel="noopener noreferrer"
@@ -84,7 +84,7 @@ export const ContactSection: React.FC = () => {
 									}}
 								>
 									LinkedIn
-								</Button>
+								</Button> */}
 							</Box>
 							<Typography variant="h6" component="p" sx={{ marginTop: 3, color: "#bdbdbd" }}>
 								Don't hesitate to contact me for more information!

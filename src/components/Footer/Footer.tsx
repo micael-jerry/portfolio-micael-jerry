@@ -1,4 +1,4 @@
-import { Email, GitHub, Instagram, LinkedIn, Phone } from "@mui/icons-material";
+import { Email, GitHub, Instagram, Phone } from "@mui/icons-material";
 import { Box, Grid, IconButton, Paper, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
@@ -44,11 +44,12 @@ export const Footer: React.FC = () => {
 							<Phone sx={{ color: "#ffc107" }} />
 						</Box>
 						<Box display={"flex"} alignItems={"center"} gap={1} mt={1}>
-							<Box component={motion.div} whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.95 }}>
+							{/* INFO: enable when have a linkedin account */}
+							{/* <Box component={motion.div} whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.95 }}>
 								<IconButton href={ME.link.linkedIn} target="_blank" color="inherit" sx={{ color: "#0a66c2" }}>
 									<LinkedIn />
 								</IconButton>
-							</Box>
+							</Box> */}
 							<Box component={motion.div} whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.95 }}>
 								<IconButton href={ME.link.github} target="_blank" color="inherit" sx={{ color: "#fff" }}>
 									<GitHub />
