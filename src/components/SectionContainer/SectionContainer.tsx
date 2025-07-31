@@ -1,6 +1,6 @@
-import React from "react";
-import { SectionIdEnum } from "../../types/sectionId/sectionId";
 import { Box, Container } from "@mui/material";
+import React from "react";
+import { SectionIdEnum } from "../../types/sectionId/sectionId.type";
 
 export type SectionContainerProps = {
 	children: React.ReactNode;

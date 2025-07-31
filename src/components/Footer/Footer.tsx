@@ -1,8 +1,8 @@
-import React from "react";
-import { Box, Typography, IconButton, Grid, Paper } from "@mui/material";
-import { ME } from "../../data/user/me.ts";
 import { Email, GitHub, Instagram, LinkedIn, Phone } from "@mui/icons-material";
+import { Box, Grid, IconButton, Paper, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import React from "react";
+import { ME } from "../../../data/user/me.ts";
 
 export const Footer: React.FC = () => {
 	return (

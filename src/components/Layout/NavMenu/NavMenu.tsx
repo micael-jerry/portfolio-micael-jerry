@@ -1,13 +1,13 @@
-import "./NavMenu.css";
-import React, { useState } from "react";
-import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { AppBar, Avatar, Box, IconButton, Toolbar, Typography, Divider, Button } from "@mui/material";
-import { ME } from "../../../data/user/me.ts";
-import { Close, Menu, Description } from "@mui/icons-material";
-import { NavButton } from "./NavButton.tsx";
+import { Close, Description, Menu } from "@mui/icons-material";
+import { AppBar, Avatar, Box, Button, Divider, IconButton, Toolbar, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
-import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen.ts";
+import React, { useState } from "react";
+import { ME } from "../../../../data/user/me.ts";
 import { LOGO } from "../../../assets/index.ts";
+import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen.ts";
+import { SectionIdEnum } from "../../../types/sectionId/sectionId.type.ts";
+import { NavButton } from "./NavButton.tsx";
+import "./NavMenu.css";
 
 const navigationItems = [
 	{

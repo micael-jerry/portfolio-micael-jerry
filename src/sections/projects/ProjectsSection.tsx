@@ -1,10 +1,10 @@
-import "./ProjectsSection.css";
-import { Box, Typography, Grid } from "@mui/material";
-import React, { useRef } from "react";
-import { PROJECTS, ProjectType } from "../../data/user/projects.ts";
+import { Box, Grid, Typography } from "@mui/material";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { COLOR_WARNING } from "../../utils/color.ts";
+import React, { useRef } from "react";
+import { PROJECTS, ProjectType } from "../../../data/user/projects.ts";
 import ProjectCard from "../../components/ProjectCard/ProjectCard.tsx";
+import { COLOR_WARNING } from "../../utils/color.ts";
+import "./ProjectsSection.css";
 
 export const ProjectsSection: React.FC = () => {
 	const ref = useRef(null);

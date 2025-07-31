@@ -1,9 +1,9 @@
-import React from "react";
-import { Typography, Grid, Box, Button, Card, CardMedia, CardContent, Chip, CardActions } from "@mui/material";
-import { ProjectStatusEnum, ProjectType } from "../../data/user/projects.ts";
-import { motion } from "framer-motion";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Grid, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import React from "react";
+import { ProjectStatusEnum, ProjectType } from "../../types/project.type";
 
 interface ProjectCardProps {
 	project: ProjectType;

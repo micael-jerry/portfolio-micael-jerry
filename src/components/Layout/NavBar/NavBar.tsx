@@ -1,12 +1,12 @@
-import React from "react";
 import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
+import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { NavMenu } from "../NavMenu/NavMenu";
+import { ME } from "../../../../data/user/me";
 import { LOGO } from "../../../assets";
-import { SectionIdEnum } from "../../../types/sectionId/sectionId";
-import { ME } from "../../../data/user/me";
 import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen";
+import { SectionIdEnum } from "../../../types/sectionId/sectionId.type";
 import { COLOR_MAIN } from "../../../utils/color";
+import { NavMenu } from "../NavMenu/NavMenu";
 
 export const NavBar: React.FC = () => {
 	const isSmall = useIsSmallScreen();

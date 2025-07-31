@@ -1,13 +1,13 @@
-import React from "react";
 import { Box, Button, Card, Grid, Typography } from "@mui/material";
-import { IMAGES, LOGO } from "../../assets";
-import "./IntroSection.css";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { SectionIdEnum } from "../../types/sectionId/sectionId";
-import { ME } from "../../data/user/me.ts";
-import { COLOR_WARNING } from "../../utils/color.ts";
 import { Variants, motion } from "framer-motion";
+import React from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { ME } from "../../../data/user/me.ts";
+import { IMAGES, LOGO } from "../../assets";
 import { useIsSmallScreen } from "../../hooks/useIsSmallScreen.ts";
+import { SectionIdEnum } from "../../types/sectionId/sectionId.type.ts";
+import { COLOR_WARNING } from "../../utils/color.ts";
+import "./IntroSection.css";
 
 const textVariants: Variants = {
 	initial: { opacity: 0, y: 40 },

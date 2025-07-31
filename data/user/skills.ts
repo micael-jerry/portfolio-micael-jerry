@@ -1,4 +1,4 @@
-import { LOGO } from "../../assets";
+import { LOGO } from "../../src/assets";
 
 export type SkillType = {
 	name: string;

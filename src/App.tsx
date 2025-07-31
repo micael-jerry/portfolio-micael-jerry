@@ -6,7 +6,7 @@ import { ContactSection } from "./sections/contact/ContactSection";
 import { IntroSection } from "./sections/intro/IntroSection";
 import { ProjectsSection } from "./sections/projects/ProjectsSection";
 import { SkillsSection } from "./sections/skills/SkillsSection";
-import { SectionIdEnum } from "./types/sectionId/sectionId";
+import { SectionIdEnum } from "./types/sectionId/sectionId.type";
 
 const SECTIONS = [
 	{

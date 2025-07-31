@@ -1,12 +1,12 @@
-import { Box, Button, Card, Grid, Typography } from "@mui/material";
-import { IMAGES } from "../../assets";
-import "./ContactSection.css";
-import { ME } from "../../data/user/me.ts";
-import { Footer } from "../../components/Footer/Footer";
-import { motion } from "framer-motion";
-import { COLOR_WARNING } from "../../utils/color.ts";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Box, Button, Card, Grid, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { ME } from "../../../data/user/me.ts";
+import { IMAGES } from "../../assets";
+import { Footer } from "../../components/Footer/Footer";
+import { COLOR_WARNING } from "../../utils/color.ts";
+import "./ContactSection.css";
 
 export const ContactSection: React.FC = () => {
 	return (
