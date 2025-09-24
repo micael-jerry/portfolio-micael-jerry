@@ -12,7 +12,6 @@ export const ALL_SKILLS: SkillType[] = [
 	{ name: "Javascript", logo: LOGO.javascript },
 	{ name: "Typescript", logo: LOGO.typescript },
 	{ name: "C", logo: LOGO.c },
-	{ name: "C++", logo: LOGO.cpp },
 	{ name: "Java", logo: LOGO.java },
 	{ name: "Python", logo: LOGO.python },
 

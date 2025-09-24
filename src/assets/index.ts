@@ -8,7 +8,7 @@ export const IMAGES = {
 	portfolioImg: new URL("./images/projects/portfolio-image.png", import.meta.url).href,
 	exchangeApiImg: new URL("./images/projects/exchange-api-image.jpg", import.meta.url).href,
 	signCraftImg: new URL("./images/projects/signcraft-image.png", import.meta.url).href,
-	donaImg: new URL("./images/projects/dona-image.png", import.meta.url).href,
+	coucouAppImg: new URL("./images/projects/coucou-app-image.png", import.meta.url).href,
 };
 
 export const LOGO = {
@@ -36,7 +36,6 @@ export const LOGO = {
 	graphQl: new URL("./logo/graphql-logo.png", import.meta.url).href,
 	tailwind: new URL("./logo/tailwind-logo.png", import.meta.url).href,
 	c: new URL("./logo/c-logo.png", import.meta.url).href,
-	cpp: new URL("./logo/cpp-logo.png", import.meta.url).href,
 	linux: new URL("./logo/linux-logo.png", import.meta.url).href,
 };
 

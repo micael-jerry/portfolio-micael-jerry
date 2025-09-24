@@ -26,11 +26,11 @@ export const PROJECTS: ProjectType[] = [
 		githubLink: "https://github.com/SignCraft2024/signcraft",
 	},
 	{
-		title: "Dona",
+		title: "Coucou App Api",
 		status: ProjectStatusEnum.IN_PROGRESS,
-		image: IMAGES.donaImg,
-		description:
-			"This project is a React application and an Express API inspired by Waze. It allows users to report police positions and potentially other incidents on a map using Leaflet. Users can sign up, view reports on the map, and report incidents themselves.",
-		githubLink: "https://github.com/micael-jerry/dona-backend/tree/dev",
-	},
+		image: IMAGES.coucouAppImg,
+		description: "Coucou API powers the backend of the Coucou chat app, managing authentication, real-time messaging, and conversations. Built with NestJS for scalability and maintainability, it serves as the foundation for a full-featured messenger.",
+		githubLink: "https://github.com/micael-jerry/coucou-api",
+		demoLink: "https://sour-georgena-micael-jerry-3c76162d.koyeb.app/api#/"
+	}
 ];
