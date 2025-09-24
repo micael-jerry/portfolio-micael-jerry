@@ -66,7 +66,7 @@ export const ContactSection: React.FC = () => {
 								>
 									Email
 								</Button>
-							{/* INFO: enable when have a linkedin account */}
+								{/* INFO: enable when have a linkedin account */}
 								{/* <Button
 									href={ME.link.linkedIn}
 									target="_blank"
