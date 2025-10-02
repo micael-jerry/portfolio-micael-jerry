@@ -26,6 +26,13 @@ export const PROJECTS: ProjectType[] = [
 		githubLink: "https://github.com/SignCraft2024/signcraft",
 	},
 	{
+		title: "So long",
+		status: ProjectStatusEnum.COMPLETED,
+		image: IMAGES.soLongImg,
+		description: 'So Long is a small 2D game. The objective is to navigate a player through a map, collect all the collectibles, and then reach the exit.',
+		githubLink: "https://github.com/micael-jerry/so_long",
+	},
+	{
 		title: "Coucou App Api",
 		status: ProjectStatusEnum.IN_PROGRESS,
 		image: IMAGES.coucouAppImg,
