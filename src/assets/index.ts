@@ -10,6 +10,7 @@ export const IMAGES = {
 	signCraftImg: new URL("./images/projects/signcraft-image.png", import.meta.url).href,
 	coucouAppImg: new URL("./images/projects/coucou-app-image.png", import.meta.url).href,
 	soLongImg: new URL("./images/projects/so-long-image.png", import.meta.url).href,
+	cub3dImg: new URL("./images/projects/cub3d-image.png", import.meta.url).href,
 };
 
 export const LOGO = {
