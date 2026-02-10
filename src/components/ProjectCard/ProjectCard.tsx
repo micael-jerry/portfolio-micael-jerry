@@ -91,23 +91,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 						</Typography>
 					</CardContent>
 					<CardActions sx={{ px: 3, pb: 2, pt: 0, justifyContent: "flex-end" }}>
-						<Button
-							size="medium"
-							color="warning"
-							variant="contained"
-							startIcon={<GitHubIcon />}
-							href={project.githubLink}
-							target="_blank"
-							sx={{
-								borderRadius: 2,
-								fontWeight: 600,
-								px: 2.5,
-								boxShadow: "0 2px 8px 0 rgba(255,193,7,0.08)",
-								mr: project.demoLink ? 1 : 0,
-							}}
-						>
-							GitHub
-						</Button>
+						{project.githubLink && (
+							<Button
+								size="medium"
+								color="warning"
+								variant="contained"
+								startIcon={<GitHubIcon />}
+								href={project.githubLink}
+								target="_blank"
+								sx={{
+									borderRadius: 2,
+									fontWeight: 600,
+									px: 2.5,
+									boxShadow: "0 2px 8px 0 rgba(255,193,7,0.08)",
+									mr: project.demoLink ? 1 : 0,
+								}}
+							>
+								GitHub
+							</Button>
+						)}
 						{project.demoLink && (
 							<Button
 								size="medium"

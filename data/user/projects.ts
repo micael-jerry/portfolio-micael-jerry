@@ -12,11 +12,11 @@ export const PROJECTS: ProjectType[] = [
 		demoLink: "https://micael-jerry.github.io/portfolio-micael-jerry/",
 	},
 	{
-		title: "Exchange API",
+		title: "Valentin Invitation",
 		status: ProjectStatusEnum.COMPLETED,
-		image: IMAGES.exchangeApiImg,
-		description: "API for exchange rate manipulation (build with spring-boot)",
-		githubLink: "https://github.com/micael-jerry/exchange-api",
+		image: IMAGES.saintValentinImg,
+		description: "A romantic and interactive digital invitation for a request for Valentine’s Day.",
+		demoLink: "https://www.valentin-invitation.quest",
 	},
 	{
 		title: "SignCraft",

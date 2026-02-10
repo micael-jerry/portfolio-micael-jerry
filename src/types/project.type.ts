@@ -8,6 +8,6 @@ export type ProjectType = {
 	status: ProjectStatusEnum;
 	description: string;
 	image: string;
-	githubLink: string;
+	githubLink?: string;
 	demoLink?: string;
 };
