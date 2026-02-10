@@ -10,4 +10,5 @@ export type ProjectType = {
 	image: string;
 	githubLink?: string;
 	demoLink?: string;
+	technologies?: string[];
 };

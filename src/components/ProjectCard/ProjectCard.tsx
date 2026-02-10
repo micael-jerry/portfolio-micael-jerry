@@ -89,6 +89,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 						<Typography variant="body1" sx={{ color: "#bdbdbd", mb: 2 }}>
 							{project.description}
 						</Typography>
+						{project.technologies && (
+							<Box sx={{ mb: 2 }}>
+								<Typography variant="body2" sx={{ color: "#999", mb: 1, fontWeight: 600 }}>
+									Technologies:
+								</Typography>
+								<Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+									{project.technologies.map((tech) => (
+										<Chip
+											key={tech}
+											label={tech}
+											size="small"
+											sx={{
+												fontSize: "0.75rem",
+												background: "rgba(255, 255, 255, 0.1)",
+												color: "#fff",
+												borderRadius: 1,
+											}}
+										/>
+									))}
+								</Box>
+							</Box>
+						)}
 					</CardContent>
 					<CardActions sx={{ px: 3, pb: 2, pt: 0, justifyContent: "flex-end" }}>
 						{project.githubLink && (
