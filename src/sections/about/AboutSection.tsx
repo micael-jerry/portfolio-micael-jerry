@@ -199,8 +199,8 @@ export const AboutSection: React.FC = () => {
 											Hey there! I'm{" "}
 											<span style={{ fontWeight: 700, color: COLOR_WARNING.main }}>{`${ME.firstname} ${ME.name}`}</span>
 											, a passionate developer and computer science graduate from{" "}
-											<span style={{ color: COLOR_WARNING.light }}>HEI</span> currently pursuing advanced training at{" "}
-											<span style={{ color: COLOR_WARNING.light }}>42 Antananarivo</span>.
+											<span style={{ color: COLOR_WARNING.main }}>HEI</span> currently pursuing advanced training at{" "}
+											<span style={{ color: COLOR_WARNING.main }}>42 Antananarivo</span>.
 										</Typography>
 										<Typography
 											variant="h6"
@@ -317,7 +317,7 @@ export const AboutSection: React.FC = () => {
 								<Typography
 									sx={{
 										fontStyle: "italic",
-										color: COLOR_WARNING.light,
+										color: COLOR_WARNING.main,
 										letterSpacing: 0.5,
 										fontWeight: 600,
 										fontSize: "1.05rem",
