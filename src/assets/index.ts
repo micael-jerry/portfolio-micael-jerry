@@ -14,8 +14,6 @@ export const IMAGES = {
 
 export const LOGO = {
 	logoApp: new URL("./logo/logo.png", import.meta.url).href,
-	html: new URL("./logo/html-logo.png", import.meta.url).href,
-	css: new URL("./logo/css-logo.png", import.meta.url).href,
 	javascript: new URL("./logo/javascript-logo.png", import.meta.url).href,
 	typescript: new URL("./logo/typescript-logo.png", import.meta.url).href,
 	react: new URL("./logo/react-logo.png", import.meta.url).href,
@@ -38,10 +36,11 @@ export const LOGO = {
 	tailwind: new URL("./logo/tailwind-logo.png", import.meta.url).href,
 	c: new URL("./logo/c-logo.png", import.meta.url).href,
 	linux: new URL("./logo/linux-logo.png", import.meta.url).href,
+	angular: new URL("./logo/angular-logo.png", import.meta.url).href,
 };
 
 /* Suggestion d'image :
-  - https://undraw.co/illustrations
-  - https://storyset.com/technology
-  - https://icons8.com/illustrations/style--pablo
+	- https://undraw.co/illustrations
+	- https://storyset.com/technology
+	- https://icons8.com/illustrations/style--pablo
 */

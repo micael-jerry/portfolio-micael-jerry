@@ -113,7 +113,7 @@ export const IntroSection: React.FC = () => {
 								mb: 2,
 							}}
 						>
-							Computer science student & Web developer
+							Computer science student & Fullstack developer
 						</Typography>
 						<Typography
 							component={motion.h5}

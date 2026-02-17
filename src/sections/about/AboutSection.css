@@ -5,4 +5,22 @@
 	object-fit: contain;
 	margin: 0;
 	padding: 0;
+	animation: float 6s ease-in-out infinite;
 }
+
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-15px);
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -1000px 0;
+	}
+	100% {
+		background-position: 1000px 0;
+	}

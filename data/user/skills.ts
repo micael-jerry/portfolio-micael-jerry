@@ -15,8 +15,6 @@ export const SKILL_CATEGORIES = {
 
 export const ALL_SKILLS: SkillType[] = [
 	// --- Languages ---
-	{ name: "CSS", logo: LOGO.css, category: SKILL_CATEGORIES.languages },
-	{ name: "HTML", logo: LOGO.html, category: SKILL_CATEGORIES.languages },
 	{ name: "Javascript", logo: LOGO.javascript, category: SKILL_CATEGORIES.languages },
 	{ name: "Typescript", logo: LOGO.typescript, category: SKILL_CATEGORIES.languages },
 	{ name: "C", logo: LOGO.c, category: SKILL_CATEGORIES.languages },
@@ -28,6 +26,7 @@ export const ALL_SKILLS: SkillType[] = [
 	{ name: "NextJS", logo: LOGO.next, category: SKILL_CATEGORIES.frameworks },
 	{ name: "ExpressJS", logo: LOGO.express, category: SKILL_CATEGORIES.frameworks },
 	{ name: "ReactJS", logo: LOGO.react, category: SKILL_CATEGORIES.frameworks },
+	{ name: "Angular", logo: LOGO.angular, category: SKILL_CATEGORIES.frameworks },
 	{ name: "Spring-Boot", logo: LOGO.springBoot, category: SKILL_CATEGORIES.frameworks },
 	{ name: "Tailwind CSS", logo: LOGO.tailwind, category: SKILL_CATEGORIES.frameworks },
 	{ name: "GraphQL", logo: LOGO.graphQl, category: SKILL_CATEGORIES.frameworks },
