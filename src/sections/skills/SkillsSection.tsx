@@ -33,6 +33,7 @@ const groupedSkills = ALL_SKILLS.reduce(
 export const SkillsSection: React.FC = () => {
 	return (
 		<Box
+			component="section"
 			width="100%"
 			py={{ xs: 6, md: 10 }}
 			px={{ xs: 0, md: 0 }}
@@ -191,6 +192,7 @@ export const SkillsSection: React.FC = () => {
 														<img
 															src={skill.logo}
 															alt={skill.name}
+															loading="lazy"
 															style={{
 																width: 32,
 																height: 32,

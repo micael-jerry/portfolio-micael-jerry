@@ -32,6 +32,7 @@ export const IntroSection: React.FC = () => {
 
 	return (
 		<Box
+			component="section"
 			sx={{
 				position: "relative",
 				overflow: "hidden",
@@ -83,7 +84,7 @@ export const IntroSection: React.FC = () => {
 							Hello 👋, my name is
 						</Typography>
 						<Typography
-							component={motion.h2}
+							component={motion.h1}
 							variant="h2"
 							mb={1}
 							fontWeight={700}
@@ -99,7 +100,7 @@ export const IntroSection: React.FC = () => {
 							{ME.firstname}
 						</Typography>
 						<Typography
-							component={motion.h3}
+							component={motion.h2}
 							variant="h4"
 							mb={2}
 							fontWeight={500}
@@ -234,7 +235,7 @@ export const IntroSection: React.FC = () => {
 							elevation={6}
 						>
 							<img
-								alt="jerry"
+								alt="Micael Jerry Fidimalala - Software Engineer"
 								src={IMAGES.jerryImg}
 								id="jerry"
 								style={{

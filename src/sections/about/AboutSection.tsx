@@ -29,6 +29,7 @@ export const AboutSection: React.FC = () => {
 
 	return (
 		<Box
+			component="section"
 			sx={{
 				position: "relative",
 				py: { xs: 4, md: 8 },
@@ -96,7 +97,8 @@ export const AboutSection: React.FC = () => {
 								}}
 							>
 								<img
-									alt="contact illustrator"
+									loading="lazy"
+									alt="Micael Jerry Fidimalala - About Me Illustration"
 									src={IMAGES.aboutMeImageIllustrator}
 									id="about-me-illustrator"
 									style={{
@@ -235,8 +237,8 @@ export const AboutSection: React.FC = () => {
 									{ label: "Projects", value: PROJECTS.length },
 									{ label: "Skills", value: ALL_SKILLS.length },
 									{ label: "Experience", value: "1+ yr" },
-								].map((stat, idx) => (
-									<Grid size={{ xs: 4 }} key={idx}>
+								].map((stat) => (
+									<Grid size={{ xs: 4 }} key={stat.label}>
 										<motion.div
 											variants={statsVariants}
 											whileHover={{ y: -8, boxShadow: `0 12px 32px 0 rgba(0,180,255,0.25)` }}

@@ -68,7 +68,7 @@ export const ContactSection: React.FC = () => {
 	};
 
 	return (
-		<Box sx={{ position: "relative", minHeight: { xs: "70vh", md: "80vh" }, pb: 0 }}>
+		<Box component="section" sx={{ position: "relative", minHeight: { xs: "70vh", md: "80vh" }, pb: 0 }}>
 			<motion.div
 				style={{
 					position: "absolute",

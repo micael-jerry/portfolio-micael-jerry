@@ -3,9 +3,9 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import React, { useRef } from "react";
 import { PROJECTS } from "../../../data/user/projects.ts";
 import ProjectCard from "../../components/ProjectCard/ProjectCard.tsx";
+import { ProjectType } from "../../types/project.type.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import "./ProjectsSection.css";
-import { ProjectType } from "../../types/project.type.ts";
 
 export const ProjectsSection: React.FC = () => {
 	const ref = useRef(null);
@@ -14,6 +14,7 @@ export const ProjectsSection: React.FC = () => {
 
 	return (
 		<Box
+			component="section"
 			ref={ref}
 			position={"relative"}
 			py={{ xs: 6, md: 10 }}
