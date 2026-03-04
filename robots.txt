@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://micael-jerry.github.io/portfolio-micael-jerry/sitemap.xml
