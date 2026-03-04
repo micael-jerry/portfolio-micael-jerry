@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
 			}}
 		>
 			<Grid container alignItems={"center"} spacing={2}>
-				<Grid item xs={12} md={6}>
+				<Grid size={{ xs: 12, md: 6 }}>
 					<Typography variant="h6" sx={{ fontWeight: 700 }}>
 						{ME.firstname} Portfolio
 					</Typography>
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
 						© {new Date().getFullYear()} Developed by {ME.firstname}
 					</Typography>
 				</Grid>
-				<Grid item xs={12} md={6}>
+				<Grid size={{ xs: 12, md: 6 }}>
 					<Box display={"flex"} flexDirection={"column"} gap={1} alignItems={{ xs: "flex-start", md: "flex-end" }}>
 						<Box display={"flex"} alignItems={"center"} gap={1}>
 							<Typography component={"p"} sx={{ mx: 1 }}>

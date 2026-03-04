@@ -10,7 +10,7 @@ const skillVariants = {
 		opacity: 1,
 		y: 0,
 		scale: 1,
-		transition: { delay: i * 0.05, duration: 0.5, type: "spring", stiffness: 120 },
+		transition: { delay: i * 0.05, duration: 0.5, type: "spring" as const, stiffness: 120 },
 	}),
 };
 
@@ -145,10 +145,7 @@ export const SkillsSection: React.FC = () => {
 								>
 									{skills.map((skill, i) => (
 										<Grid
-											item
-											xs={12}
-											sm={6}
-											md={"auto"}
+											size={{ xs: 12, sm: 6, md: "auto" }}
 											key={skill.name}
 											sx={{ display: "flex", justifyContent: "center" }}
 										>

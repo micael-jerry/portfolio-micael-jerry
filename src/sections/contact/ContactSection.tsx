@@ -1,6 +1,7 @@
 import EmailIcon from "@mui/icons-material/Email";
 import { Box, Button, Card, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import React from "react";
 import { ME } from "../../../data/user/me.ts";
 import { IMAGES } from "../../assets";
 import { Footer } from "../../components/Footer/Footer";
@@ -26,7 +27,7 @@ export const ContactSection: React.FC = () => {
 			/>
 			<Box display={"flex"} alignItems={"center"} sx={{ position: "relative", zIndex: 1, minHeight: "60vh" }}>
 				<Grid container spacing={4} alignItems="center" justifyContent="center">
-					<Grid item xs={12} md={6}>
+					<Grid size={{ xs: 12, md: 6 }}>
 						<Box
 							component={motion.div}
 							initial={{ opacity: 0, x: -40 }}
@@ -95,7 +96,7 @@ export const ContactSection: React.FC = () => {
 							</Typography>
 						</Box>
 					</Grid>
-					<Grid item xs={12} md={6}>
+					<Grid size={{ xs: 12, md: 6 }}>
 						<Box
 							component={motion.div}
 							initial={{ opacity: 0, x: 40 }}

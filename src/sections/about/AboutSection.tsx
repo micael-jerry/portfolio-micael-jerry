@@ -75,8 +75,7 @@ export const AboutSection: React.FC = () => {
 				>
 					{!checkScreenWidth && (
 						<Grid
-							item
-							md={6}
+							size={{ md: 6 }}
 							component={motion.div}
 							variants={imageVariants}
 							sx={{
@@ -112,9 +111,7 @@ export const AboutSection: React.FC = () => {
 						</Grid>
 					)}
 					<Grid
-						item
-						xs={12}
-						md={6}
+						size={{ xs: 12, md: 6 }}
 						component={motion.div}
 						variants={textVariants}
 						sx={{
@@ -239,7 +236,7 @@ export const AboutSection: React.FC = () => {
 									{ label: "Skills", value: ALL_SKILLS.length },
 									{ label: "Experience", value: "1+ yr" },
 								].map((stat, idx) => (
-									<Grid item xs={4} key={idx}>
+									<Grid size={{ xs: 4 }} key={idx}>
 										<motion.div
 											variants={statsVariants}
 											whileHover={{ y: -8, boxShadow: `0 12px 32px 0 rgba(0,180,255,0.25)` }}

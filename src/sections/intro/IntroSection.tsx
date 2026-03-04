@@ -66,9 +66,7 @@ export const IntroSection: React.FC = () => {
 				}}
 			>
 				<Grid
-					item
-					xs={12}
-					md={6}
+					size={{ xs: 12, md: 6 }}
 					component={motion.div}
 					variants={textVariants}
 					initial="initial"
@@ -188,9 +186,7 @@ export const IntroSection: React.FC = () => {
 					)}
 				</Grid>
 				<Grid
-					item
-					xs={12}
-					md={6}
+					size={{ xs: 12, md: 6 }}
 					component={motion.div}
 					variants={imageVariants}
 					initial="initial"

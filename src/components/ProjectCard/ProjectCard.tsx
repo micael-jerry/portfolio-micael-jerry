@@ -16,18 +16,14 @@ const cardVariants = {
 		opacity: 1,
 		y: 0,
 		scale: 1,
-		transition: { delay: i * 0.08, duration: 0.6, type: "spring", stiffness: 120 },
+		transition: { delay: i * 0.08, duration: 0.6, type: "spring" as const, stiffness: 120 },
 	}),
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 	return (
 		<Grid
-			item
-			xs={12}
-			sm={12}
-			md={6}
-			lg={4}
+			size={{ xs: 12, sm: 12, md: 6, lg: 4 }}
 			key={project.title}
 			display="flex"
 			justifyContent="center"
