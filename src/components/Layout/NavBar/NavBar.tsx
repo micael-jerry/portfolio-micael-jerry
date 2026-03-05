@@ -1,8 +1,8 @@
 import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { ME } from "../../../../data/user/me";
 import { LOGO } from "../../../assets";
+import { ME } from "../../../data/user/me";
 import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId.type";
 import { COLOR_MAIN } from "../../../utils/color";

@@ -1,6 +1,6 @@
 import { Avatar, Card, CardContent, List, ListItem, ListItemAvatar, Typography } from "@mui/material";
 import React from "react";
-import { SkillType } from "../../../data/user/skills.ts";
+import { SkillType } from "../../data/user/skills.ts";
 
 export interface SkillCardProps {
 	title: string;

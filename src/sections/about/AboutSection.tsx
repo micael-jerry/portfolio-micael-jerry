@@ -1,8 +1,8 @@
 import { Box, Card, Grid, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
-import { ME } from "../../../data/user/me.ts";
 import { IMAGES } from "../../assets";
+import { ME } from "../../data/user/me.ts";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import "./AboutSection.css";

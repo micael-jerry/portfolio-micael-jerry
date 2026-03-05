@@ -2,7 +2,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import { ME } from "../../../../data/user/me.ts";
+import { ME } from "../../../data/user/me.ts";
 import { COLOR_WARNING } from "../../../utils/color.ts";
 
 export const ContactInfo: React.FC = () => {

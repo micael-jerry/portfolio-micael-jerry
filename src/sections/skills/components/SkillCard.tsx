@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
-import { SkillType } from "../../../../data/user/skills.ts";
+import { SkillType } from "../../../data/user/skills.ts";
 
 interface SkillCardProps {
 	skill: SkillType;

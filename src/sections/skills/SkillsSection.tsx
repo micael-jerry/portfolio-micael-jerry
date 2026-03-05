@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
-import { ALL_SKILLS, SKILL_CATEGORIES } from "../../../data/user/skills.ts";
+import { ALL_SKILLS, SKILL_CATEGORIES } from "../../data/user/skills.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import { SkillCategory } from "./components/SkillCategory.tsx";
 

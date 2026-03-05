@@ -2,7 +2,7 @@ import { Email, GitHub, LinkedIn, Phone } from "@mui/icons-material";
 import { Box, Grid, IconButton, Paper, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import { ME } from "../../../data/user/me.ts";
+import { ME } from "../../data/user/me.ts";
 
 export const Footer: React.FC = () => {
 	return (

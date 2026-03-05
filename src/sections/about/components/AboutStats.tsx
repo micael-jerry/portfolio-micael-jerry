@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
-import { PROJECTS } from "../../../../data/user/projects.ts";
-import { ALL_SKILLS } from "../../../../data/user/skills.ts";
+import { PROJECTS } from "../../../data/user/projects.ts";
+import { ALL_SKILLS } from "../../../data/user/skills.ts";
 import { COLOR_WARNING } from "../../../utils/color.ts";
 
 interface AboutStatsProps {
