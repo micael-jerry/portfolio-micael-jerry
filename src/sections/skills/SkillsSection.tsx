@@ -1,10 +1,11 @@
-import { Box, Grid, Typography } from "@mui/material";
-import { motion } from "framer-motion";
+import { Box, Typography } from "@mui/material";
+import { motion, Variants } from "framer-motion";
 import React from "react";
 import { ALL_SKILLS, SKILL_CATEGORIES } from "../../../data/user/skills.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
+import { SkillCategory } from "./components/SkillCategory.tsx";
 
-const skillVariants = {
+const skillVariants: Variants = {
 	initial: { opacity: 0, y: 30, scale: 0.95 },
 	animate: (i: number) => ({
 		opacity: 1,
@@ -86,137 +87,14 @@ export const SkillsSection: React.FC = () => {
 				{Object.entries(groupedSkills).map(([category, skills], categoryIndex) => {
 					const colors = categoryColors[category as keyof typeof categoryColors];
 					return (
-						<motion.div
+						<SkillCategory
 							key={category}
-							initial={{ opacity: 0, y: 50 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.7, delay: categoryIndex * 0.2 }}
-							viewport={{ once: true }}
-							style={{ marginBottom: 32 }}
-						>
-							<Box
-								sx={{
-									background: `linear-gradient(135deg, ${colors?.bg} 0%, rgba(30, 30, 50, 0.4) 100%)`,
-									backdropFilter: "blur(12px)",
-									borderRadius: 4,
-									px: { xs: 1, sm: 2, md: 6 },
-									py: { xs: 3, md: 5 },
-									boxShadow: `0 8px 32px 0 ${colors?.bg.replace("0.12", "0.15")}`,
-									border: `1px solid ${colors?.border}`,
-									position: "relative",
-									overflow: "hidden",
-								}}
-							>
-								{/* Background Accent */}
-								<motion.div
-									style={{
-										position: "absolute",
-										top: -50,
-										right: -50,
-										width: 150,
-										height: 150,
-										background: `radial-gradient(circle, ${colors?.accent}20 0%, transparent 70%)`,
-										zIndex: 0,
-									}}
-									animate={{ scale: [1, 1.2, 1] }}
-									transition={{ duration: 4, repeat: Infinity }}
-								/>
-
-								<Typography
-									variant="h4"
-									sx={{
-										fontWeight: 700,
-										fontSize: { xs: "1.6rem", md: "1.9rem" },
-										mb: 4,
-										color: colors?.accent,
-										textAlign: "center",
-										position: "relative",
-										zIndex: 1,
-										letterSpacing: 1,
-									}}
-								>
-									{category}
-								</Typography>
-								<Grid
-									container
-									spacing={{ xs: 2, sm: 3, md: 3 }}
-									justifyContent="center"
-									alignItems="center"
-									sx={{ position: "relative", zIndex: 1 }}
-								>
-									{skills.map((skill, i) => (
-										<Grid
-											size={{ xs: 12, sm: 6, md: "auto" }}
-											key={skill.name}
-											sx={{ display: "flex", justifyContent: "center" }}
-										>
-											<motion.div
-												custom={i}
-												initial="initial"
-												whileInView="animate"
-												variants={skillVariants}
-												viewport={{ once: true }}
-												whileHover={{
-													scale: 1.12,
-													boxShadow: `0 12px 40px 0 ${colors?.accent}40`,
-												}}
-												whileTap={{ scale: 0.95 }}
-											>
-												<Box
-													sx={{
-														p: 2,
-														borderRadius: 2,
-														background: `linear-gradient(135deg, ${colors?.bg} 0%, rgba(0,0,0,0.1) 100%)`,
-														border: `1.5px solid ${colors?.accent}40`,
-														boxShadow: `0 4px 16px 0 ${colors?.accent}20`,
-														transition: "all 0.3s ease",
-														display: "flex",
-														flexDirection: "column",
-														alignItems: "center",
-														gap: 1.5,
-														minWidth: 100,
-														cursor: "pointer",
-													}}
-												>
-													<Box
-														sx={{
-															width: 48,
-															height: 48,
-															display: "flex",
-															alignItems: "center",
-															justifyContent: "center",
-															background: `${colors?.accent}15`,
-															borderRadius: 1.5,
-														}}
-													>
-														<img
-															src={skill.logo}
-															alt={skill.name}
-															loading="lazy"
-															style={{
-																width: 32,
-																height: 32,
-																objectFit: "contain",
-															}}
-														/>
-													</Box>
-													<Typography
-														sx={{
-															fontWeight: 600,
-															fontSize: "0.95rem",
-															color: "#fff",
-															textAlign: "center",
-														}}
-													>
-														{skill.name}
-													</Typography>
-												</Box>
-											</motion.div>
-										</Grid>
-									))}
-								</Grid>
-							</Box>
-						</motion.div>
+							category={category}
+							skills={skills}
+							categoryIndex={categoryIndex}
+							colors={colors}
+							skillVariants={skillVariants}
+						/>
 					);
 				})}
 			</Box>

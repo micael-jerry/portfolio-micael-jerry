@@ -2,12 +2,12 @@ import { Box, Card, Grid, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
 import { ME } from "../../../data/user/me.ts";
-import { PROJECTS } from "../../../data/user/projects.ts";
-import { ALL_SKILLS } from "../../../data/user/skills.ts";
 import { IMAGES } from "../../assets";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import "./AboutSection.css";
+import { AboutQuote } from "./components/AboutQuote.tsx";
+import { AboutStats } from "./components/AboutStats.tsx";
 
 const textVariants: Variants = {
 	initial: { opacity: 0, y: 40 },
@@ -17,11 +17,6 @@ const textVariants: Variants = {
 const imageVariants: Variants = {
 	initial: { opacity: 0 },
 	animate: { opacity: 1, transition: { duration: 1.1, delay: 0.2 } },
-};
-
-const statsVariants: Variants = {
-	initial: { opacity: 0, scale: 0.8 },
-	animate: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
 };
 
 export const AboutSection: React.FC = () => {
@@ -232,101 +227,10 @@ export const AboutSection: React.FC = () => {
 							</Box>
 
 							{/* Stats Cards */}
-							<Grid container spacing={2}>
-								{[
-									{ label: "Projects", value: PROJECTS.length },
-									{ label: "Skills", value: ALL_SKILLS.length },
-									{ label: "Experience", value: "1+ yr" },
-								].map((stat) => (
-									<Grid size={{ xs: 4 }} key={stat.label}>
-										<motion.div
-											variants={statsVariants}
-											whileHover={{ y: -8, boxShadow: `0 12px 32px 0 rgba(0,180,255,0.25)` }}
-											transition={{ type: "spring", stiffness: 300 }}
-										>
-											<Box
-												sx={{
-													p: 2.5,
-													borderRadius: 3,
-													background: "linear-gradient(135deg, rgba(0,180,255,0.1) 0%, rgba(0,180,255,0.05) 100%)",
-													border: "1px solid rgba(0,180,255,0.2)",
-													textAlign: "center",
-													backdropFilter: "blur(8px)",
-													cursor: "pointer",
-													transition: "all 0.3s ease",
-												}}
-											>
-												<Typography
-													sx={{
-														fontSize: { xs: "1.8rem", md: "2.2rem" },
-														fontWeight: 700,
-														background: `linear-gradient(135deg, ${COLOR_WARNING.main} 0%, #00c9ff 100%)`,
-														backgroundClip: "text",
-														WebkitBackgroundClip: "text",
-														WebkitTextFillColor: "transparent",
-														mb: 0.5,
-													}}
-												>
-													{stat.value}
-												</Typography>
-												<Typography
-													sx={{
-														fontSize: "0.85rem",
-														color: "#9e9e9e",
-														fontWeight: 600,
-														letterSpacing: 0.5,
-													}}
-												>
-													{stat.label}
-												</Typography>
-											</Box>
-										</motion.div>
-									</Grid>
-								))}
-							</Grid>
+							<AboutStats />
 
 							{/* Quote Section */}
-							<Box
-								component={motion.div}
-								whileHover={{ scale: 1.02, boxShadow: `0 8px 32px 0 rgba(0,180,255,0.2)` }}
-								transition={{ type: "spring", stiffness: 300 }}
-								sx={{
-									p: 3,
-									borderRadius: 3,
-									background: "rgba(0,180,255,0.05)",
-									border: `2px solid ${COLOR_WARNING.main}`,
-									textAlign: "center",
-									backdropFilter: "blur(8px)",
-									position: "relative",
-									overflow: "hidden",
-								}}
-							>
-								<Box
-									sx={{
-										position: "absolute",
-										top: -2,
-										left: "10%",
-										fontSize: "3rem",
-										opacity: 0.1,
-										fontWeight: 700,
-									}}
-								>
-									"
-								</Box>
-								<Typography
-									sx={{
-										fontStyle: "italic",
-										color: COLOR_WARNING.main,
-										letterSpacing: 0.5,
-										fontWeight: 600,
-										fontSize: "1.05rem",
-										position: "relative",
-										zIndex: 1,
-									}}
-								>
-									Stay curious, keep learning, and never stop building.
-								</Typography>
-							</Box>
+							<AboutQuote />
 						</Box>
 					</Grid>
 				</Grid>

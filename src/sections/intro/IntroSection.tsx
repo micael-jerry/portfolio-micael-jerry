@@ -1,13 +1,9 @@
-import { Box, Button, Card, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { Variants, motion } from "framer-motion";
 import React from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { ME } from "../../../data/user/me.ts";
-import { IMAGES, LOGO } from "../../assets";
-import { useIsSmallScreen } from "../../hooks/useIsSmallScreen.ts";
-import { SectionIdEnum } from "../../types/sectionId/sectionId.type.ts";
-import { COLOR_WARNING } from "../../utils/color.ts";
 import "./IntroSection.css";
+import { IntroProfileImage } from "./components/IntroProfileImage.tsx";
+import { IntroText } from "./components/IntroText.tsx";
 
 const textVariants: Variants = {
 	initial: { opacity: 0, y: 40 },
@@ -28,8 +24,6 @@ const imageVariants: Variants = {
 };
 
 export const IntroSection: React.FC = () => {
-	const isSmall = useIsSmallScreen();
-
 	return (
 		<Box
 			component="section"
@@ -74,117 +68,7 @@ export const IntroSection: React.FC = () => {
 					whileInView="animate"
 					viewport={{ once: true }}
 				>
-					<Box component={motion.div} variants={textVariants}>
-						<Typography
-							component={motion.h6}
-							variant="h6"
-							variants={textVariants}
-							sx={{ color: "#b3e5fc", fontWeight: 400, mb: 1, letterSpacing: 1 }}
-						>
-							Hello 👋, my name is
-						</Typography>
-						<Typography
-							component={motion.h1}
-							variant="h2"
-							mb={1}
-							fontWeight={700}
-							color={COLOR_WARNING.dark}
-							variants={textVariants}
-							sx={{
-								fontSize: { xs: "2.2rem", md: "3.2rem" },
-								lineHeight: 1.1,
-								letterSpacing: 1,
-								textShadow: "0 2px 16px rgba(255,193,7,0.18)",
-							}}
-						>
-							{ME.firstname}
-						</Typography>
-						<Typography
-							component={motion.h2}
-							variant="h4"
-							mb={2}
-							fontWeight={500}
-							variants={textVariants}
-							sx={{
-								color: "#fff",
-								fontSize: { xs: "1.2rem", md: "2rem" },
-								lineHeight: 1.2,
-								mb: 2,
-							}}
-						>
-							Computer science student & Fullstack developer
-						</Typography>
-						<Typography
-							component={motion.h5}
-							variant="h6"
-							variants={textVariants}
-							sx={{
-								color: "#bdbdbd",
-								fontWeight: 400,
-								fontSize: { xs: "1rem", md: "1.2rem" },
-								mb: 3,
-							}}
-						>
-							I am passionate about technology and I love to learn new things.
-						</Typography>
-					</Box>
-					<Box
-						component={motion.div}
-						display="flex"
-						gap={2}
-						mt={3}
-						justifyContent={{ xs: "center", md: "flex-start" }}
-						variants={textVariants}
-					>
-						<AnchorLink href={`#${SectionIdEnum.ABOUT}`}>
-							<Button
-								component={motion.button}
-								variant="contained"
-								color="warning"
-								size="large"
-								variants={textVariants}
-								sx={{
-									borderRadius: 8,
-									boxShadow: "0 4px 24px 0 rgba(255,193,7,0.18)",
-									px: 4,
-									fontWeight: 600,
-									fontSize: "1.1rem",
-								}}
-							>
-								About
-							</Button>
-						</AnchorLink>
-						<AnchorLink href={`#${SectionIdEnum.CONTACT}`}>
-							<Button
-								component={motion.button}
-								variant="outlined"
-								color="warning"
-								size="large"
-								variants={textVariants}
-								sx={{
-									borderRadius: 8,
-									px: 4,
-									fontWeight: 600,
-									fontSize: "1.1rem",
-									borderWidth: 2,
-								}}
-							>
-								Contact
-							</Button>
-						</AnchorLink>
-					</Box>
-					{!isSmall && (
-						<Box component={motion.div} mt={4} variants={textVariants}>
-							<motion.img
-								alt="scroll"
-								src={LOGO.scroll}
-								id="scroll-img"
-								variants={textVariants}
-								animate="scrollButton"
-								style={{ margin: "0 auto" }}
-							/>
-						</Box>
-					)}
+					<IntroText textVariants={textVariants} />
 				</Grid>
 				<Grid
 					size={{ xs: 12, md: 6 }}
@@ -200,54 +84,7 @@ export const IntroSection: React.FC = () => {
 						mb: { xs: 4, md: 0 },
 					}}
 				>
-					<Box
-						sx={{
-							position: "relative",
-							width: { xs: 220, sm: 260, md: 320 },
-							height: { xs: 220, sm: 260, md: 320 },
-							mx: "auto",
-						}}
-					>
-						<Box
-							sx={{
-								position: "absolute",
-								inset: -18,
-								borderRadius: "50%",
-								background: "radial-gradient(circle, rgba(255,193,7,0.25) 0%, transparent 70%)",
-								filter: "blur(8px)",
-								animation: "haloPulse 3s ease-in-out infinite alternate",
-								zIndex: 1,
-							}}
-						/>
-						<Card
-							sx={{
-								borderRadius: "50%",
-								boxShadow: "0 8px 32px 0 rgba(0,0,0,0.25)",
-								backgroundColor: "rgba(30,30,30,0.7)",
-								overflow: "hidden",
-								width: "100%",
-								height: "100%",
-								zIndex: 2,
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center",
-							}}
-							elevation={6}
-						>
-							<img
-								alt="Micael Jerry Fidimalala - Software Engineer"
-								src={IMAGES.jerryImg}
-								id="jerry"
-								style={{
-									width: "100%",
-									height: "100%",
-									objectFit: "cover",
-									borderRadius: "50%",
-									border: "4px solid rgba(255,193,7,0.18)",
-								}}
-							/>
-						</Card>
-					</Box>
+					<IntroProfileImage />
 				</Grid>
 			</Grid>
 		</Box>
