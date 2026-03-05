@@ -6,17 +6,24 @@ import { IMAGES } from "../../assets";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import "./AboutSection.css";
+import { AboutEducation } from "./components/AboutEducation.tsx";
+import { AboutPassions } from "./components/AboutPassions.tsx";
 import { AboutQuote } from "./components/AboutQuote.tsx";
 import { AboutStats } from "./components/AboutStats.tsx";
 
-const textVariants: Variants = {
-	initial: { opacity: 0, y: 40 },
-	animate: { opacity: 1, y: 0, transition: { duration: 0.8, staggerChildren: 0.15 } },
+const containerVariants: Variants = {
+	initial: {},
+	animate: { transition: { staggerChildren: 0.15 } },
+};
+
+const itemVariants: Variants = {
+	initial: { opacity: 0, y: 30 },
+	animate: { opacity: 1, y: 0, transition: { duration: 0.8, type: "spring", stiffness: 100 } },
 };
 
 const imageVariants: Variants = {
-	initial: { opacity: 0 },
-	animate: { opacity: 1, transition: { duration: 1.1, delay: 0.2 } },
+	initial: { opacity: 0, scale: 0.9 },
+	animate: { opacity: 1, scale: 1, transition: { duration: 1.1, delay: 0.2 } },
 };
 
 export const AboutSection: React.FC = () => {
@@ -59,35 +66,33 @@ export const AboutSection: React.FC = () => {
 			>
 				<Grid
 					container
-					alignItems="center"
+					spacing={{ xs: 3, md: 4 }}
+					alignItems="stretch"
 					component={motion.div}
+					variants={containerVariants}
 					initial="initial"
 					whileInView="animate"
-					viewport={{ once: true }}
-					sx={{
-						width: "100%",
-						margin: 0,
-					}}
+					viewport={{ once: true, margin: "-100px" }}
+					sx={{ width: "100%", margin: 0 }}
 				>
+					{/* Left Column (Image) - visible only on larger screens */}
 					{!checkScreenWidth && (
 						<Grid
-							size={{ md: 6 }}
+							size={{ md: 5 }}
 							component={motion.div}
 							variants={imageVariants}
 							sx={{
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
-								width: "100%",
-								maxWidth: { xs: "100%" },
 							}}
 						>
 							<Card
 								sx={{
 									boxShadow: 0,
 									background: "transparent",
-									width: { xs: "90vw", sm: 320, md: 380 },
-									maxWidth: "100%",
+									width: "100%",
+									maxWidth: 420,
 									mx: "auto",
 								}}
 							>
@@ -98,7 +103,7 @@ export const AboutSection: React.FC = () => {
 									id="about-me-illustrator"
 									style={{
 										width: "100%",
-										height: "100%",
+										height: "auto",
 										objectFit: "contain",
 										background: "transparent",
 										borderRadius: 16,
@@ -107,131 +112,97 @@ export const AboutSection: React.FC = () => {
 							</Card>
 						</Grid>
 					)}
-					<Grid
-						size={{ xs: 12, md: 6 }}
-						component={motion.div}
-						variants={textVariants}
-						sx={{
-							width: "100%",
-							maxWidth: { xs: "100%", md: "45%" },
-						}}
-					>
-						<Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-							{/* Main Content Card */}
-							<Box
-								component={motion.div}
-								whileHover={{ scale: 1.015, boxShadow: "0 12px 40px 0 rgba(0,180,255,0.15)" }}
-								transition={{ type: "spring", stiffness: 200 }}
-								sx={{
-									p: { xs: 3, md: 4 },
-									borderRadius: 4,
-									background: "linear-gradient(135deg, rgba(20, 20, 30, 0.75) 0%, rgba(30, 30, 50, 0.65) 100%)",
-									backdropFilter: "blur(12px)",
-									boxShadow: "0 4px 24px 0 rgba(0,180,255,0.08)",
-									border: "1px solid rgba(0,180,255,0.1)",
-									position: "relative",
-									overflow: "hidden",
-								}}
-							>
-								{/* Animated Background Gradient */}
-								<motion.div
-									style={{
-										position: "absolute",
-										top: -100,
-										right: -100,
-										width: 200,
-										height: 200,
-										background: "radial-gradient(circle, rgba(0,180,255,0.1) 0%, transparent 70%)",
-										zIndex: 0,
+
+					{/* Right Column (Bento Grid) */}
+					<Grid size={{ xs: 12, md: 7 }}>
+						<Grid container spacing={{ xs: 2, md: 3 }} alignItems="stretch">
+							{/* Large Header Box (Who Am I) */}
+							<Grid size={{ xs: 12 }}>
+								<Box
+									component={motion.div}
+									variants={itemVariants}
+									whileHover={{ scale: 1.015, boxShadow: "0 12px 40px 0 rgba(0,180,255,0.15)" }}
+									transition={{ type: "spring", stiffness: 200 }}
+									sx={{
+										p: { xs: 3, md: 4 },
+										borderRadius: 4,
+										background: "linear-gradient(135deg, rgba(20, 20, 30, 0.75) 0%, rgba(30, 30, 50, 0.65) 100%)",
+										backdropFilter: "blur(12px)",
+										boxShadow: "0 4px 24px 0 rgba(0,180,255,0.08)",
+										border: "1px solid rgba(0,180,255,0.1)",
+										position: "relative",
+										overflow: "hidden",
 									}}
-									animate={{ scale: [1, 1.2, 1], rotate: [0, 360] }}
-									transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-								/>
-
-								<Box sx={{ position: "relative", zIndex: 1 }}>
-									<Typography
-										component={motion.h2}
-										variant="h2"
-										gutterBottom
-										whileHover={{ color: COLOR_WARNING.dark, x: 4 }}
-										transition={{ type: "spring", stiffness: 300 }}
-										sx={{
-											fontWeight: 800,
-											fontSize: { xs: "2.2rem", md: "2.8rem" },
-											mb: 1,
-											letterSpacing: 1.5,
-											background: `linear-gradient(135deg, ${COLOR_WARNING.main} 0%, #00c9ff 100%)`,
-											backgroundClip: "text",
-											WebkitBackgroundClip: "text",
-											WebkitTextFillColor: "transparent",
+								>
+									<motion.div
+										style={{
+											position: "absolute",
+											top: -100,
+											right: -100,
+											width: 200,
+											height: 200,
+											background: "radial-gradient(circle, rgba(0,180,255,0.1) 0%, transparent 70%)",
+											zIndex: 0,
 										}}
-									>
-										About Me
-									</Typography>
-									<Box
-										sx={{
-											height: 3,
-											width: 60,
-											background: `linear-gradient(90deg, ${COLOR_WARNING.main} 0%, transparent 100%)`,
-											borderRadius: 2,
-											mb: 3,
-										}}
+										animate={{ scale: [1, 1.2, 1], rotate: [0, 360] }}
+										transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
 									/>
-
-									<motion.div variants={textVariants}>
+									<Box sx={{ position: "relative", zIndex: 1 }}>
 										<Typography
-											variant="h6"
-											component="p"
+											component={motion.h2}
+											variant="h2"
 											gutterBottom
+											whileHover={{ color: COLOR_WARNING.dark, x: 4 }}
+											transition={{ type: "spring", stiffness: 300 }}
 											sx={{
-												mb: 2.5,
-												color: "#e0e0e0",
-												lineHeight: 1.7,
-												fontWeight: 500,
+												fontWeight: 800,
+												fontSize: { xs: "2.2rem", md: "2.8rem" },
+												mb: 1,
+												letterSpacing: 1.5,
+												background: `linear-gradient(135deg, ${COLOR_WARNING.main} 0%, #00c9ff 100%)`,
+												backgroundClip: "text",
+												WebkitBackgroundClip: "text",
+												WebkitTextFillColor: "transparent",
 											}}
 										>
-											Hey there! I'm{" "}
+											About Me
+										</Typography>
+										<Box
+											sx={{
+												height: 3,
+												width: 60,
+												background: `linear-gradient(90deg, ${COLOR_WARNING.main} 0%, transparent 100%)`,
+												borderRadius: 2,
+												mb: 2,
+											}}
+										/>
+										<Typography variant="h6" component="p" sx={{ color: "#e0e0e0", lineHeight: 1.7, fontWeight: 500 }}>
+											{"Hey there! I'm "}
 											<span style={{ fontWeight: 700, color: COLOR_WARNING.main }}>{`${ME.firstname} ${ME.name}`}</span>
-											, a passionate developer and computer science graduate from{" "}
-											<span style={{ color: COLOR_WARNING.main }}>HEI</span> currently pursuing advanced training at{" "}
-											<span style={{ color: COLOR_WARNING.main }}>42 Antananarivo</span>.
+											{
+												", a passionate software engineer blending design and logic to create elegant digital experiences."
+											}
 										</Typography>
-										<Typography
-											variant="h6"
-											component="p"
-											gutterBottom
-											sx={{
-												mb: 2.5,
-												color: "#d0d0d0",
-												lineHeight: 1.7,
-											}}
-										>
-											My passion lies in crafting elegant digital experiences through web development and exploring the
-											depths of computer science. I thrive on solving complex problems and turning creative visions into
-											innovative, real-world solutions.
-										</Typography>
-										<Typography
-											variant="h6"
-											component="p"
-											sx={{
-												color: "#c0c0c0",
-												lineHeight: 1.7,
-											}}
-										>
-											When I'm not coding, you'll find me diving into emerging technologies, conquering challenging
-											courses, and constantly pushing my skills to the next level. I'm a firm believer in lifelong
-											learning and staying ahead of industry trends.
-										</Typography>
-									</motion.div>
+									</Box>
 								</Box>
-							</Box>
+							</Grid>
 
-							{/* Stats Cards */}
-							<AboutStats />
+							{/* Education and Stats Row */}
+							<Grid size={{ xs: 12, sm: 8 }}>
+								<AboutEducation variants={itemVariants} />
+							</Grid>
+							<Grid size={{ xs: 12, sm: 4 }}>
+								<AboutStats variants={itemVariants} />
+							</Grid>
 
-							{/* Quote Section */}
-							<AboutQuote />
-						</Box>
+							{/* Passions and Quote Row */}
+							<Grid size={{ xs: 12, md: 7 }}>
+								<AboutPassions variants={itemVariants} />
+							</Grid>
+							<Grid size={{ xs: 12, md: 5 }}>
+								<AboutQuote variants={itemVariants} />
+							</Grid>
+						</Grid>
 					</Grid>
 				</Grid>
 			</Box>
