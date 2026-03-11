@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "intro": "Intro",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "My CV"
+  },
+  "intro": {
+    "greeting": "Hello 👋, my name is",
+    "role": "Computer science student & Fullstack developer",
+    "passion": "I am passionate about technology and I love to learn new things.",
+    "btn_about": "About",
+    "btn_contact": "Contact"
+  },
+  "about": {
+    "heading": "About Me",
+    "bio_prefix": "Hey there! I'm ",
+    "bio_suffix": ", a passionate software engineer blending design and logic to create elegant digital experiences.",
+    "education": {
+      "title": "Education",
+      "hei_school": "HEI",
+      "hei_degree": "Computer Science Graduate",
+      "hei_desc": "Built a strong foundation in software engineering principles, algorithms, and system design.",
+      "42_school": "42 Antananarivo",
+      "42_degree": "Advanced Software Engineering",
+      "42_desc": "Peer-to-peer learning environment focusing on practical, complex problem solving and modern stack mastery."
+    },
+    "passions": {
+      "title": "What Drives Me",
+      "subtitle": "My passion lies in bridging the gap between design and intricate logic.",
+      "coding_title": "Elegant Coding",
+      "coding_desc": "Crafting clean, scalable, and maintainable digital experiences.",
+      "solving_title": "Problem Solving",
+      "solving_desc": "Turning complex requirements into innovative, real-world solutions.",
+      "learning_title": "Lifelong Learning",
+      "learning_desc": "Constantly pushing skills, exploring emerging tech, and staying ahead."
+    },
+    "quote": "Stay <1>curious</1>, keep <3>learning</3>, and never stop <5>building</5>.",
+    "stats": {
+      "projects": "Projects",
+      "skills": "Skills",
+      "experience": "1+ yr",
+      "experience_label": "Experience"
+    }
+  },
+  "skills": {
+    "heading": "My Tech Stack",
+    "subtitle": "These are the technologies and tools I use most often, acquired through my studies, personal and professional projects.",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks & Libraries",
+      "databases": "Databases",
+      "tools": "Tools & Others"
+    }
+  },
+  "projects": {
+    "heading": "Projects",
+    "subtitle": "Here are a few projects I've worked on recently.",
+    "status_completed": "Completed",
+    "status_in_progress": "In Progress",
+    "btn_code": "Code",
+    "btn_live": "Live",
+    "portfolio_desc": "My portfolio that showcases my creative and technical skills in various professional fields. (build with react-ts)",
+    "valentin_desc": "A romantic and interactive digital invitation for a request for Valentine's Day.",
+    "solong_desc": "So Long is a small 2D game. The objective is to navigate a player through a map, collect all the collectibles, and then reach the exit.",
+    "cub3d_desc": "A 3D maze exploration game built from scratch using ray-casting and the MinilibX graphics library, inspired by the classic Wolfenstein 3D to explore the fundamentals of computer graphics and game design.",
+    "coucou_desc": "Coucou API powers the backend of the Coucou chat app, managing authentication, real-time messaging, and conversations. Built with NestJS for scalability and maintainability, it serves as the foundation for a full-featured messenger."
+  },
+  "contact": {
+    "heading": "Let's Connect",
+    "subtitle": "Have a project in mind or just want to say hi? I'd love to hear from you.",
+    "body": "Whether it's a job opportunity, a freelance project, or a technical discussion, my inbox is always open. Fill out the form and I'll get back to you as soon as possible.",
+    "email_label": "Email",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "🎉 Thanks! Your message has been sent. I'll get back to you soon.",
+      "error": "❌ Oops! Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Crafted with passion & code.",
+    "copyright": "All rights reserved.",
+    "built_with": "Built with React & TypeScript"
+  }
+}

@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../../../data/user/projects.ts";
 import { ALL_SKILLS } from "../../../data/user/skills.ts";
 import { COLOR_WARNING } from "../../../utils/color.ts";
@@ -10,10 +11,12 @@ interface AboutStatsProps {
 }
 
 export const AboutStats: React.FC<AboutStatsProps> = ({ variants }) => {
+	const { t } = useTranslation();
+
 	const stats = [
-		{ label: "Projects", value: PROJECTS.length },
-		{ label: "Skills", value: ALL_SKILLS.length },
-		{ label: "Experience", value: "1+ yr" },
+		{ label: t("about.stats.projects"), value: PROJECTS.length },
+		{ label: t("about.stats.skills"), value: ALL_SKILLS.length },
+		{ label: t("about.stats.experience_label"), value: t("about.stats.experience") },
 	];
 
 	return (

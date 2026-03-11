@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { motion, useScroll, useSpring } from "framer-motion";
 import React, { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import ProjectCard from "../../components/ProjectCard/ProjectCard.tsx";
 import { PROJECTS } from "../../data/user/projects.ts";
 import { ProjectType } from "../../types/project.type.ts";
@@ -9,6 +10,7 @@ import "./ProjectsSection.css";
 
 export const ProjectsSection: React.FC = () => {
 	const ref = useRef(null);
+	const { t } = useTranslation();
 	const { scrollYProgress } = useScroll({ target: ref, offset: ["end end", "start start"] });
 	const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
@@ -39,10 +41,10 @@ export const ProjectsSection: React.FC = () => {
 						letterSpacing: 1,
 					}}
 				>
-					Projects
+					{t("projects.heading")}
 				</Typography>
 				<Typography variant="h6" gutterBottom sx={{ color: "#bdbdbd", mb: 2 }}>
-					Here are a few projects I've worked on recently.
+					{t("projects.subtitle")}
 				</Typography>
 				<Box
 					component={motion.div}

@@ -3,6 +3,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { Box, Button, CircularProgress, Grid, TextField, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { COLOR_WARNING } from "../../../utils/color.ts";
 
 interface ContactFormState {
@@ -13,6 +14,7 @@ interface ContactFormState {
 }
 
 export const ContactForm: React.FC = () => {
+	const { t } = useTranslation();
 	const [formState, setFormState] = useState<ContactFormState>({
 		name: "",
 		email: "",
@@ -29,7 +31,7 @@ export const ContactForm: React.FC = () => {
 		});
 	};
 
-	const handleSubmit = async (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.BaseSyntheticEvent) => {
 		e.preventDefault();
 		setIsSubmitting(true);
 
@@ -96,7 +98,7 @@ export const ContactForm: React.FC = () => {
 					<Grid size={{ xs: 12, sm: 6 }}>
 						<TextField
 							fullWidth
-							label="Your Name"
+							label={t("contact.form.name")}
 							name="name"
 							value={formState.name}
 							onChange={handleChange}
@@ -109,7 +111,7 @@ export const ContactForm: React.FC = () => {
 					<Grid size={{ xs: 12, sm: 6 }}>
 						<TextField
 							fullWidth
-							label="Email Address"
+							label={t("contact.form.email")}
 							name="email"
 							type="email"
 							value={formState.email}
@@ -123,7 +125,7 @@ export const ContactForm: React.FC = () => {
 					<Grid size={{ xs: 12 }}>
 						<TextField
 							fullWidth
-							label="Subject"
+							label={t("contact.form.subject")}
 							name="subject"
 							value={formState.subject}
 							onChange={handleChange}
@@ -136,7 +138,7 @@ export const ContactForm: React.FC = () => {
 					<Grid size={{ xs: 12 }}>
 						<TextField
 							fullWidth
-							label="Message"
+							label={t("contact.form.message")}
 							name="message"
 							multiline
 							rows={4}
@@ -170,7 +172,7 @@ export const ContactForm: React.FC = () => {
 							width: { xs: "100%", sm: "auto" },
 						}}
 					>
-						{isSubmitting ? "Sending..." : "Send Message"}
+						{isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
 					</Button>
 
 					{isSubmitting && (
@@ -204,7 +206,25 @@ export const ContactForm: React.FC = () => {
 								gap: 1,
 							}}
 						>
-							🎉 Thanks! Your message has been sent. I'll get back to you soon.
+							{t("contact.form.success")}
+						</Typography>
+					</motion.div>
+				)}
+
+				{submitStatus === "error" && (
+					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
+						<Typography
+							sx={{
+								color: "#f44336",
+								bgcolor: "rgba(244, 67, 54, 0.1)",
+								p: 2,
+								borderRadius: 2,
+								border: "1px solid rgba(244, 67, 54, 0.3)",
+								mt: 1,
+								fontWeight: 500,
+							}}
+						>
+							{t("contact.form.error")}
 						</Typography>
 					</motion.div>
 				)}

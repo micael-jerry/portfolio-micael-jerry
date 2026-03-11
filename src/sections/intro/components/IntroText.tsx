@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { LOGO } from "../../../assets";
 import { ME } from "../../../data/user/me.ts";
@@ -14,6 +15,7 @@ interface IntroTextProps {
 
 export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 	const isSmall = useIsSmallScreen();
+	const { t } = useTranslation();
 
 	return (
 		<>
@@ -24,7 +26,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 					variants={textVariants}
 					sx={{ color: "#b3e5fc", fontWeight: 400, mb: 1, letterSpacing: 1 }}
 				>
-					Hello 👋, my name is
+					{t("intro.greeting")}
 				</Typography>
 				<Typography
 					component={motion.h1}
@@ -55,7 +57,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 						mb: 2,
 					}}
 				>
-					Computer science student & Fullstack developer
+					{t("intro.role")}
 				</Typography>
 				<Typography
 					component={motion.h5}
@@ -68,7 +70,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 						mb: 3,
 					}}
 				>
-					I am passionate about technology and I love to learn new things.
+					{t("intro.passion")}
 				</Typography>
 			</Box>
 			<Box
@@ -94,7 +96,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 							fontSize: "1.1rem",
 						}}
 					>
-						About
+						{t("intro.btn_about")}
 					</Button>
 				</AnchorLink>
 				<AnchorLink href={`#${SectionIdEnum.CONTACT}`}>
@@ -112,7 +114,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 							borderWidth: 2,
 						}}
 					>
-						Contact
+						{t("intro.btn_contact")}
 					</Button>
 				</AnchorLink>
 			</Box>

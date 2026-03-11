@@ -3,6 +3,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Grid, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ProjectStatusEnum, ProjectType } from "../../types/project.type";
 
 interface ProjectCardProps {
@@ -21,6 +22,8 @@ const cardVariants = {
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
+	const { t } = useTranslation();
+
 	return (
 		<Grid
 			size={{ xs: 12, sm: 12, md: 6, lg: 4 }}
@@ -76,7 +79,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 							boxShadow: `0 0 12px 0 ${project.status === ProjectStatusEnum.COMPLETED ? "rgba(76, 175, 80, 0.3)" : "rgba(255, 152, 0, 0.3)"}`,
 						}}
 					>
-						{project.status === ProjectStatusEnum.COMPLETED ? "Completed" : "In Progress"}
+						{project.status === ProjectStatusEnum.COMPLETED
+							? t("projects.status_completed")
+							: t("projects.status_in_progress")}
 					</Box>
 
 					{/* Image Container with Zoom effect on hover */}
@@ -131,7 +136,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 						</Typography>
 
 						<Typography variant="body2" sx={{ color: "#a0a0a0", mb: 3, lineHeight: 1.6, minHeight: 60 }}>
-							{project.description}
+							{project.descriptionKey ? t(project.descriptionKey) : project.description}
 						</Typography>
 
 						{project.technologies && (
@@ -196,7 +201,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 									},
 								}}
 							>
-								Code
+								{t("projects.btn_code")}
 							</Button>
 						)}
 						{project.demoLink && (
@@ -218,7 +223,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 									color: "#fff",
 								}}
 							>
-								Live
+								{t("projects.btn_live")}
 							</Button>
 						)}
 					</CardActions>

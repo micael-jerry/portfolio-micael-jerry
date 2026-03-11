@@ -2,6 +2,7 @@ import { Email, GitHub, LinkedIn, Phone } from "@mui/icons-material";
 import { Box, Divider, IconButton, Paper, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ME } from "../../data/user/me.ts";
 
 const socialLinks = [
@@ -25,6 +26,8 @@ const contactItems = [
 ];
 
 export const Footer: React.FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Paper
 			component="footer"
@@ -65,7 +68,7 @@ export const Footer: React.FC = () => {
 						{ME.firstname} Portfolio
 					</Typography>
 					<Typography variant="body2" sx={{ color: "rgba(255,255,255,0.45)", fontSize: "0.8rem" }}>
-						Crafted with passion &amp; code.
+						{t("footer.tagline")}
 					</Typography>
 				</Box>
 
@@ -119,10 +122,10 @@ export const Footer: React.FC = () => {
 				gap={1}
 			>
 				<Typography variant="body2" sx={{ color: "rgba(255,255,255,0.35)", fontSize: "0.78rem" }}>
-					© {new Date().getFullYear()} {ME.firstname}. All rights reserved.
+					© {new Date().getFullYear()} {ME.firstname}. {t("footer.copyright")}
 				</Typography>
 				<Typography variant="body2" sx={{ color: "rgba(255,255,255,0.25)", fontSize: "0.78rem" }}>
-					Built with React &amp; TypeScript
+					{t("footer.built_with")}
 				</Typography>
 			</Box>
 		</Paper>

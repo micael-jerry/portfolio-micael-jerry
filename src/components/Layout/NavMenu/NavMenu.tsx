@@ -2,20 +2,13 @@ import { Close, Description, Menu } from "@mui/icons-material";
 import { AppBar, Avatar, Box, Button, Divider, IconButton, Toolbar, Typography } from "@mui/material";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { LOGO } from "../../../assets/index.ts";
 import { ME } from "../../../data/user/me.ts";
 import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen.ts";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId.type.ts";
 import { NavButton } from "./NavButton.tsx";
 import "./NavMenu.css";
-
-const navigationItems = [
-	{ to: SectionIdEnum.INTRO, text: "Intro" },
-	{ to: SectionIdEnum.ABOUT, text: "About" },
-	{ to: SectionIdEnum.SKILLS, text: "Skills" },
-	{ to: SectionIdEnum.PROJECTS, text: "Projects" },
-	{ to: SectionIdEnum.CONTACT, text: "Contact" },
-];
 
 const mobileMenuVariants: Variants = {
 	open: {
@@ -42,6 +35,15 @@ const itemVariants: Variants = {
 export const NavMenu: React.FC = () => {
 	const [open, setOpen] = useState<boolean>(false);
 	const isSmall = useIsSmallScreen();
+	const { t } = useTranslation();
+
+	const navigationItems = [
+		{ to: SectionIdEnum.INTRO, text: t("nav.intro") },
+		{ to: SectionIdEnum.ABOUT, text: t("nav.about") },
+		{ to: SectionIdEnum.SKILLS, text: t("nav.skills") },
+		{ to: SectionIdEnum.PROJECTS, text: t("nav.projects") },
+		{ to: SectionIdEnum.CONTACT, text: t("nav.contact") },
+	];
 
 	const onOpenHandler = () => setOpen(true);
 	const onCloseHandler = () => setOpen(false);
@@ -136,7 +138,7 @@ export const NavMenu: React.FC = () => {
 								>
 									{navigationItems.map(({ to, text }, i) => (
 										<motion.div
-											key={text}
+											key={to}
 											custom={i}
 											variants={itemVariants}
 											initial="closed"
@@ -190,7 +192,7 @@ export const NavMenu: React.FC = () => {
 												transition: "all 0.2s",
 											}}
 										>
-											Mon CV
+											{t("nav.cv")}
 										</Button>
 									</motion.div>
 								</Box>
@@ -201,7 +203,7 @@ export const NavMenu: React.FC = () => {
 			) : (
 				<Box display="flex" gap={0.5} alignItems="center">
 					{navigationItems.map(({ to, text }) => (
-						<NavButton key={text} to={to} text={text} isSmall={false} isAnchorLink={false} onCloseHandler={() => {}} />
+						<NavButton key={to} to={to} text={text} isSmall={false} isAnchorLink={false} onCloseHandler={() => {}} />
 					))}
 					<Button
 						component={motion.a}
@@ -231,7 +233,7 @@ export const NavMenu: React.FC = () => {
 							transition: "all 0.2s",
 						}}
 					>
-						Mon CV
+						{t("nav.cv")}
 					</Button>
 				</Box>
 			)}

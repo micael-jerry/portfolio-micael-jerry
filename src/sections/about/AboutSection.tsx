@@ -1,6 +1,7 @@
 import { Box, Card, Grid, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { IMAGES } from "../../assets";
 import { ME } from "../../data/user/me.ts";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
@@ -28,6 +29,7 @@ const imageVariants: Variants = {
 
 export const AboutSection: React.FC = () => {
 	const checkScreenWidth = useScreenSizeChecker(899);
+	const { t } = useTranslation();
 
 	return (
 		<Box
@@ -165,7 +167,7 @@ export const AboutSection: React.FC = () => {
 												WebkitTextFillColor: "transparent",
 											}}
 										>
-											About Me
+											{t("about.heading")}
 										</Typography>
 										<Box
 											sx={{
@@ -177,11 +179,9 @@ export const AboutSection: React.FC = () => {
 											}}
 										/>
 										<Typography variant="h6" component="p" sx={{ color: "#e0e0e0", lineHeight: 1.7, fontWeight: 500 }}>
-											{"Hey there! I'm "}
+											{t("about.bio_prefix")}
 											<span style={{ fontWeight: 700, color: COLOR_WARNING.main }}>{`${ME.firstname} ${ME.name}`}</span>
-											{
-												", a passionate software engineer blending design and logic to create elegant digital experiences."
-											}
+											{t("about.bio_suffix")}
 										</Typography>
 									</Box>
 								</Box>

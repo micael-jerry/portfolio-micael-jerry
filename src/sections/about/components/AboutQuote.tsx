@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { Trans } from "react-i18next";
 import { COLOR_WARNING } from "../../../utils/color.ts";
 
 interface AboutQuoteProps {
@@ -55,9 +56,11 @@ export const AboutQuote: React.FC<AboutQuoteProps> = ({ variants }) => {
 					lineHeight: 1.6,
 				}}
 			>
-				Stay <span style={{ color: COLOR_WARNING.main, fontWeight: 700 }}>curious</span>, keep{" "}
-				<span style={{ color: "#00b4ff", fontWeight: 700 }}>learning</span>, and never stop{" "}
-				<span style={{ color: "#4caf50", fontWeight: 700 }}>building</span>.
+				<Trans i18nKey="about.quote">
+					Stay <span style={{ color: COLOR_WARNING.main, fontWeight: 700 }}>curious</span>, keep{" "}
+					<span style={{ color: "#00b4ff", fontWeight: 700 }}>learning</span>, and never stop{" "}
+					<span style={{ color: "#4caf50", fontWeight: 700 }}>building</span>.
+				</Trans>
 			</Typography>
 		</Box>
 	);

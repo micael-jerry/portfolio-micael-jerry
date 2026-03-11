@@ -3,6 +3,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { COLOR_WARNING } from "../../../utils/color.ts";
 
 interface AboutEducationProps {
@@ -10,6 +11,8 @@ interface AboutEducationProps {
 }
 
 export const AboutEducation: React.FC<AboutEducationProps> = ({ variants }) => {
+	const { t } = useTranslation();
+
 	return (
 		<Box
 			component={motion.div}
@@ -44,20 +47,20 @@ export const AboutEducation: React.FC<AboutEducationProps> = ({ variants }) => {
 					<SchoolIcon sx={{ color: "#00b4ff" }} />
 				</Box>
 				<Typography variant="h5" sx={{ fontWeight: 700, color: "#fff" }}>
-					Education
+					{t("about.education.title")}
 				</Typography>
 			</Box>
 
 			<Box sx={{ display: "flex", flexDirection: "column", gap: 3, flex: 1 }}>
 				<Box>
 					<Typography variant="h6" sx={{ color: COLOR_WARNING.main, fontWeight: 600, mb: 0.5 }}>
-						HEI
+						{t("about.education.hei_school")}
 					</Typography>
 					<Typography variant="body1" sx={{ color: "#e0e0e0", mb: 1 }}>
-						Computer Science Graduate
+						{t("about.education.hei_degree")}
 					</Typography>
 					<Typography variant="body2" sx={{ color: "#9e9e9e" }}>
-						Built a strong foundation in software engineering principles, algorithms, and system design.
+						{t("about.education.hei_desc")}
 					</Typography>
 				</Box>
 
@@ -65,13 +68,13 @@ export const AboutEducation: React.FC<AboutEducationProps> = ({ variants }) => {
 
 				<Box>
 					<Typography variant="h6" sx={{ color: COLOR_WARNING.main, fontWeight: 600, mb: 0.5 }}>
-						42 Antananarivo
+						{t("about.education.42_school")}
 					</Typography>
 					<Typography variant="body1" sx={{ color: "#e0e0e0", mb: 1 }}>
-						Advanced Software Engineering
+						{t("about.education.42_degree")}
 					</Typography>
 					<Typography variant="body2" sx={{ color: "#9e9e9e" }}>
-						Peer-to-peer learning environment focusing on practical, complex problem solving and modern stack mastery.
+						{t("about.education.42_desc")}
 					</Typography>
 				</Box>
 			</Box>

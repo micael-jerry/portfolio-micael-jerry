@@ -4,6 +4,7 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { COLOR_WARNING } from "../../../utils/color.ts";
 
 interface AboutPassionsProps {
@@ -11,21 +12,23 @@ interface AboutPassionsProps {
 }
 
 export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
+	const { t } = useTranslation();
+
 	const passions = [
 		{
 			icon: <CodeIcon sx={{ color: COLOR_WARNING.main, fontSize: 28 }} />,
-			title: "Elegant Coding",
-			description: "Crafting clean, scalable, and maintainable digital experiences.",
+			title: t("about.passions.coding_title"),
+			description: t("about.passions.coding_desc"),
 		},
 		{
 			icon: <LightbulbIcon sx={{ color: "#00b4ff", fontSize: 28 }} />,
-			title: "Problem Solving",
-			description: "Turning complex requirements into innovative, real-world solutions.",
+			title: t("about.passions.solving_title"),
+			description: t("about.passions.solving_desc"),
 		},
 		{
 			icon: <RocketLaunchIcon sx={{ color: "#4caf50", fontSize: 28 }} />,
-			title: "Lifelong Learning",
-			description: "Constantly pushing skills, exploring emerging tech, and staying ahead.",
+			title: t("about.passions.learning_title"),
+			description: t("about.passions.learning_desc"),
 		},
 	];
 
@@ -52,10 +55,10 @@ export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
 		>
 			<Box sx={{ mb: 3 }}>
 				<Typography variant="h5" sx={{ fontWeight: 700, color: "#fff", mb: 1 }}>
-					What Drives Me
+					{t("about.passions.title")}
 				</Typography>
 				<Typography variant="body2" sx={{ color: "#9e9e9e" }}>
-					My passion lies in bridging the gap between design and intricate logic.
+					{t("about.passions.subtitle")}
 				</Typography>
 			</Box>
 

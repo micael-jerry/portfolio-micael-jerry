@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "intro": "Intro",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "cv": "Mon CV"
+  },
+  "intro": {
+    "greeting": "Bonjour 👋, je m'appelle",
+    "role": "Étudiant en informatique & Développeur Fullstack",
+    "passion": "Je suis passionné par la technologie et j'adore apprendre de nouvelles choses.",
+    "btn_about": "À propos",
+    "btn_contact": "Contact"
+  },
+  "about": {
+    "heading": "À propos de moi",
+    "bio_prefix": "Salut ! Je suis ",
+    "bio_suffix": ", un ingénieur logiciel passionné qui mêle design et logique pour créer des expériences numériques élégantes.",
+    "education": {
+      "title": "Formation",
+      "hei_school": "HEI",
+      "hei_degree": "Diplôme en Informatique",
+      "hei_desc": "Solide formation en principes d'ingénierie logicielle, algorithmes et conception de systèmes.",
+      "42_school": "42 Antananarivo",
+      "42_degree": "Ingénierie Logicielle Avancée",
+      "42_desc": "Environnement d'apprentissage par les pairs axé sur la résolution de problèmes complexes et la maîtrise des technologies modernes."
+    },
+    "passions": {
+      "title": "Ce qui me motive",
+      "subtitle": "Ma passion est de combler le fossé entre le design et la logique complexe.",
+      "coding_title": "Code Élégant",
+      "coding_desc": "Créer des expériences numériques propres, évolutives et maintenables.",
+      "solving_title": "Résolution de problèmes",
+      "solving_desc": "Transformer des besoins complexes en solutions innovantes du monde réel.",
+      "learning_title": "Apprentissage continu",
+      "learning_desc": "Toujours chercher à améliorer ses compétences, explorer les nouvelles technologies et garder une longueur d'avance."
+    },
+    "quote": "Reste <1>curieux</1>, continue à <3>apprendre</3>, et ne cesse jamais de <5>construire</5>.",
+    "stats": {
+      "projects": "Projets",
+      "skills": "Compétences",
+      "experience": "1+ an",
+      "experience_label": "Expérience"
+    }
+  },
+  "skills": {
+    "heading": "Ma Stack Technique",
+    "subtitle": "Voici les technologies et outils que j'utilise le plus souvent, acquis lors de mes études, projets personnels et professionnels.",
+    "categories": {
+      "languages": "Langages",
+      "frameworks": "Frameworks & Bibliothèques",
+      "databases": "Bases de données",
+      "tools": "Outils & Autres"
+    }
+  },
+  "projects": {
+    "heading": "Projets",
+    "subtitle": "Voici quelques projets sur lesquels j'ai récemment travaillé.",
+    "status_completed": "Terminé",
+    "status_in_progress": "En cours",
+    "btn_code": "Code",
+    "btn_live": "Live",
+    "portfolio_desc": "Mon portfolio qui met en valeur mes compétences créatives et techniques dans divers domaines professionnels. (construit avec react-ts)",
+    "valentin_desc": "Une invitation numérique romantique et interactive pour une demande pour la Saint-Valentin.",
+    "solong_desc": "So Long est un petit jeu 2D. L'objectif est de naviguer un personnage dans une carte, collecter tous les objets, puis atteindre la sortie.",
+    "cub3d_desc": "Un jeu d'exploration de labyrinthe 3D construit de zéro avec le ray-casting et la bibliothèque MinilibX, inspiré du classique Wolfenstein 3D pour explorer les fondamentaux des graphismes et du game design.",
+    "coucou_desc": "L'API Coucou propulse le backend de l'app de chat Coucou, gérant l'authentification, la messagerie en temps réel et les conversations. Construite avec NestJS pour la scalabilité et la maintenabilité, elle constitue la base d'une messagerie complète."
+  },
+  "contact": {
+    "heading": "Restons en contact",
+    "subtitle": "Vous avez un projet en tête ou juste envie de dire bonjour ? Je serais ravi d'avoir de vos nouvelles.",
+    "body": "Que ce soit une opportunité d'emploi, un projet freelance ou une discussion technique, ma boîte mail est toujours ouverte. Remplissez le formulaire et je vous répondrai dès que possible.",
+    "email_label": "Email",
+    "form": {
+      "name": "Votre nom",
+      "email": "Adresse e-mail",
+      "subject": "Objet",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "🎉 Merci ! Votre message a été envoyé. Je vous répondrai bientôt.",
+      "error": "❌ Oups ! Une erreur s'est produite. Veuillez réessayer."
+    }
+  },
+  "footer": {
+    "tagline": "Créé avec passion & code.",
+    "copyright": "Tous droits réservés.",
+    "built_with": "Construit avec React & TypeScript"
+  }
+}

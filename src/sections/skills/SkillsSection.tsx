@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ALL_SKILLS, SKILL_CATEGORIES } from "../../data/user/skills.ts";
 import { COLOR_WARNING } from "../../utils/color.ts";
 import { SkillCategory } from "./components/SkillCategory.tsx";
@@ -32,6 +33,16 @@ const groupedSkills = ALL_SKILLS.reduce(
 );
 
 export const SkillsSection: React.FC = () => {
+	const { t } = useTranslation();
+
+	// Build category display name map
+	const categoryDisplayNames: Record<string, string> = {
+		[SKILL_CATEGORIES.languages]: t("skills.categories.languages"),
+		[SKILL_CATEGORIES.frameworks]: t("skills.categories.frameworks"),
+		[SKILL_CATEGORIES.databases]: t("skills.categories.databases"),
+		[SKILL_CATEGORIES.tools]: t("skills.categories.tools"),
+	};
+
 	return (
 		<Box
 			component="section"
@@ -64,7 +75,7 @@ export const SkillsSection: React.FC = () => {
 					textAlign: "center",
 				}}
 			>
-				My Tech Stack
+				{t("skills.heading")}
 			</Typography>
 			<Typography
 				component={motion.p}
@@ -80,16 +91,16 @@ export const SkillsSection: React.FC = () => {
 					textAlign: "center",
 				}}
 			>
-				These are the technologies and tools I use most often, acquired through my studies, personal and professional
-				projects.
+				{t("skills.subtitle")}
 			</Typography>
 			<Box sx={{ width: "100%", maxWidth: 1200 }}>
 				{Object.entries(groupedSkills).map(([category, skills], categoryIndex) => {
 					const colors = categoryColors[category as keyof typeof categoryColors];
+					const displayName = categoryDisplayNames[category] ?? category;
 					return (
 						<SkillCategory
 							key={category}
-							category={category}
+							category={displayName}
 							skills={skills}
 							categoryIndex={categoryIndex}
 							colors={colors}

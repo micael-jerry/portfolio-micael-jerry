@@ -2,10 +2,13 @@ import EmailIcon from "@mui/icons-material/Email";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { ME } from "../../../data/user/me.ts";
 import { COLOR_WARNING } from "../../../utils/color.ts";
 
 export const ContactInfo: React.FC = () => {
+	const { t } = useTranslation();
+
 	return (
 		<Box
 			component={motion.div}
@@ -30,7 +33,7 @@ export const ContactInfo: React.FC = () => {
 					WebkitTextFillColor: "transparent",
 				}}
 			>
-				Let's Connect
+				{t("contact.heading")}
 			</Typography>
 
 			<Box
@@ -44,11 +47,10 @@ export const ContactInfo: React.FC = () => {
 			/>
 
 			<Typography variant="h6" component="p" sx={{ color: "#e0e0e0", mb: 2, fontWeight: 500, lineHeight: 1.6 }}>
-				Have a project in mind or just want to say hi? I'd love to hear from you.
+				{t("contact.subtitle")}
 			</Typography>
 			<Typography variant="body1" component="p" sx={{ color: "#bdbdbd", mb: 5, lineHeight: 1.6 }}>
-				Whether it's a job opportunity, a freelance project, or a technical discussion, my inbox is always open. Fill
-				out the form and I'll get back to you as soon as possible.
+				{t("contact.body")}
 			</Typography>
 
 			<Box display="flex" flexDirection="column" gap={3}>
@@ -67,7 +69,7 @@ export const ContactInfo: React.FC = () => {
 					</Box>
 					<Box>
 						<Typography variant="body2" sx={{ color: "#9e9e9e", fontWeight: 600 }}>
-							Email
+							{t("contact.email_label")}
 						</Typography>
 						<Typography
 							component="a"

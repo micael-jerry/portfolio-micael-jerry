@@ -6,6 +6,7 @@ import { LOGO } from "../../../assets";
 import { ME } from "../../../data/user/me";
 import { useIsSmallScreen } from "../../../hooks/useIsSmallScreen";
 import { SectionIdEnum } from "../../../types/sectionId/sectionId.type";
+import { LanguageSwitcher } from "../../LanguageSwitcher/LanguageSwitcher";
 import { NavMenu } from "../NavMenu/NavMenu";
 
 export const NavBar: React.FC = () => {
@@ -68,7 +69,10 @@ export const NavBar: React.FC = () => {
 						</Box>
 					</AnchorLink>
 				</Box>
-				<NavMenu />
+				<Box display="flex" alignItems="center" gap={1}>
+					<LanguageSwitcher />
+					<NavMenu />
+				</Box>
 			</Toolbar>
 		</AppBar>
 	);
