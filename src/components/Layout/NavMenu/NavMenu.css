@@ -1,5 +1,5 @@
 .nav-menu-open {
-	background-color: #07002D;
+	background: linear-gradient(135deg, #07002D 60%, #0d0050 100%);
 	z-index: 999;
 	position: fixed;
 	top: 0;
