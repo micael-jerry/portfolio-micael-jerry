@@ -103,7 +103,7 @@ export const Projects42Section: React.FC = () => {
 				{/* Mobile helper badge */}
 				<Box className="mobile-swipe-hint">
 					<SwipeIcon fontSize="small" />
-					<Typography variant="caption">{t("projects_42.filter_all")} / Glisser pour explorer le graphe</Typography>
+					<Typography variant="caption">{t("projects_42.swipe_hint")}</Typography>
 				</Box>
 			</Box>
 
@@ -187,7 +187,7 @@ export const Projects42Section: React.FC = () => {
 								cx={cx}
 								cy={cy}
 								r={c * RADIUS_STEP + 12}
-								stroke="rgba(0, 180, 255, 0.08)"
+								stroke="rgba(0, 180, 255, 0.22)"
 								strokeWidth={1.5}
 								strokeDasharray="4 4"
 								fill="none"
@@ -332,7 +332,7 @@ export const Projects42Section: React.FC = () => {
 									fontSize: "0.75rem",
 								}}
 							>
-								Stack Technique
+								{t("projects_42.stack_technique")}
 							</Typography>
 							<Box display="flex" flexWrap="wrap" gap={1}>
 								{selectedProject.technologies.map((tech) => (
@@ -359,7 +359,7 @@ export const Projects42Section: React.FC = () => {
 								onClick={() => setSelectedProject(null)}
 								sx={{ color: "rgba(255,255,255,0.5)", fontWeight: 700, textTransform: "none", mr: "auto" }}
 							>
-								Fermer
+								{t("projects_42.btn_close")}
 							</Button>
 
 							{selectedProject.githubLink && (

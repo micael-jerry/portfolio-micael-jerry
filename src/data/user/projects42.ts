@@ -37,6 +37,7 @@ export const PROJECTS_42: Project42Type[] = [
 		description:
 			"Setting up a secure Debian virtual machine with strict password policies, SSH, UFW, sudo, and active monitoring scripts.",
 		descriptionKey: "projects_42.born2beroot_desc",
+		githubLink: "https://github.com/micael-jerry/Born2beRoot",
 		technologies: ["Debian", "VirtualBox", "LVM", "Shell Scripting", "SysAdmin"],
 		image: IMAGES.projectDefaultImg,
 	},
@@ -70,22 +71,12 @@ export const PROJECTS_42: Project42Type[] = [
 		image: IMAGES.soLongImg,
 	},
 	{
-		title: "pipex",
-		circle: 2,
-		description:
-			"Recoding the UNIX pipe mechanism to redirect standard input/output streams between consecutive commands.",
-		descriptionKey: "projects_42.pipex_desc",
-		githubLink: "https://github.com/micael-jerry/pipex",
-		technologies: ["C", "Processes", "Pipes", "Redirects"],
-		image: IMAGES.projectDefaultImg,
-	},
-	{
 		title: "minishell",
 		circle: 3,
 		description:
 			"A fully functional shell interpreter mimicking bash, with environment variables, history, paths, redirections, and pipes.",
 		descriptionKey: "projects_42.minishell_desc",
-		githubLink: "https://github.com/micael-jerry/minishell",
+		githubLink: "https://github.com/AshCript/minishell",
 		technologies: ["C", "Unix API", "Parser", "Process Control"],
 		image: IMAGES.projectDefaultImg,
 	},
@@ -115,7 +106,17 @@ export const PROJECTS_42: Project42Type[] = [
 		description:
 			"A modular, puzzle-based networking project to understand subnets, IP addressing, routing tables, and interface configurations.",
 		descriptionKey: "projects_42.netpractice_desc",
+		githubLink: "https://github.com/micael-jerry/net-practice",
 		technologies: ["Networking", "IP Addressing", "Subnetting", "Routing"],
+		image: IMAGES.projectDefaultImg,
+	},
+	{
+		title: "CPP Modules 00-04",
+		circle: 4,
+		description: "A series of C++ modules designed to learn Object-Oriented Programming (OOP) concepts in C++98.",
+		descriptionKey: "projects_42.cpp_00_04_desc",
+		githubLink: "https://github.com/micael-jerry/cpp-00-04",
+		technologies: ["C++", "OOP", "Templates", "Inheritance"],
 		image: IMAGES.projectDefaultImg,
 	},
 	{
@@ -139,22 +140,12 @@ export const PROJECTS_42: Project42Type[] = [
 		image: IMAGES.projectDefaultImg,
 	},
 	{
-		title: "Webserv",
+		title: "CPP Modules 05-09",
 		circle: 5,
-		description:
-			"An HTTP/1.1 server written in C++98, implementing non-blocking sockets, request parsing, CGI execution, and configuration files.",
-		descriptionKey: "projects_42.webserv_desc",
-		githubLink: "https://github.com/micael-jerry/webserv",
-		technologies: ["C++", "HTTP/1.1", "CGI", "Non-blocking Sockets"],
-		image: IMAGES.projectDefaultImg,
-	},
-	{
-		title: "ft_transcendence",
-		circle: 6,
-		description:
-			"The ultimate 42 common core web project featuring real-time multiplayer Pong, chat rooms, game lobbies, and user profiles.",
-		descriptionKey: "projects_42.transcendence_desc",
-		technologies: ["Next.js", "NestJS", "PostgreSQL", "WebSockets", "Docker"],
+		description: "Advanced C++ modules covering templates, STL containers, iterators, casting, and exception handling.",
+		descriptionKey: "projects_42.cpp_05_09_desc",
+		githubLink: "https://github.com/micael-jerry/cpp-05-09",
+		technologies: ["C++", "Templates", "STL", "Exception Handling"],
 		image: IMAGES.projectDefaultImg,
 	},
 ];

@@ -74,6 +74,9 @@
     "subtitle": "Projets du tronc commun représentant ma progression et ma maîtrise de la programmation système, des réseaux, des algorithmes et du devops.",
     "filter_all": "Tous les Cercles",
     "circle_badge": "Cercle {{num}}",
+    "stack_technique": "Stack Technique",
+    "btn_close": "Fermer",
+    "swipe_hint": "Glisser pour explorer le graphe",
     "libft_desc": "Ma première bibliothèque de fonctions standard en C, réécrite de zéro pour comprendre le fonctionnement interne de la libc.",
     "get_next_line_desc": "Une fonction qui lit une ligne à partir d'un descripteur de fichier, gérant plusieurs descripteurs et des variables statiques.",
     "ft_printf_desc": "Une implémentation personnalisée de la fonction libc printf, prenant en charge les formats standards.",
@@ -81,15 +84,14 @@
     "push_swap_desc": "Un projet d'algorithme de tri hautement optimisé utilisant deux piles et un ensemble d'instructions limité.",
     "minitalk_desc": "Une application de communication client-serveur utilisant les signaux UNIX (SIGUSR1 et SIGUSR2) pour le transfert de données binaires.",
     "solong_desc": "Un petit jeu 2D axé sur la gestion des fenêtres, la gestion des événements (clavier, souris) et le rendu de base avec MiniLibX.",
-    "pipex_desc": "Recréer le mécanisme de pipe UNIX pour rediriger les flux d'entrée/sortie standard entre des commandes consécutives.",
     "minishell_desc": "Un interpréteur de shell entièrement fonctionnel mimant bash, avec variables d'environnement, historique, chemins, redirections et pipes.",
     "philosophers_desc": "Une implémentation du problème des philosophes qui dînent, apprenant la synchronisation des threads, les mutexes et la prévention des verrous mortels.",
     "cub3d_desc": "Un moteur de jeu graphique 3D inspiré de Wolfenstein 3D, implémentant les principes du raycasting pour un rendu à la première personne.",
     "netpractice_desc": "Un projet réseau sous forme d'exercices pour comprendre les sous-réseaux, l'adressage IP, les tables de routage et le paramétrage d'interfaces.",
+    "cpp_00_04_desc": "Une série de modules C++ conçus pour apprendre les concepts de la programmation orientée objet (POO) en C++98.",
     "inception_desc": "Un projet DevOps configurant une infrastructure sécurisée multi-conteneurs avec Nginx, WordPress et MariaDB en utilisant Docker.",
     "ft_irc_desc": "Écriture d'un serveur IRC complet en C++98, gérant les sockets TCP, le multiplexage select()/poll() et le protocole IRC.",
-    "webserv_desc": "Un serveur HTTP/1.1 écrit en C++98, implémentant des sockets non-bloquants, le parsing de requêtes, l'exécution de CGI et des fichiers de configuration.",
-    "transcendence_desc": "Le projet ultime du tronc commun de 42 : une plateforme web proposant un jeu de Pong multijoueur en temps réel, un chat, des salons de jeux et des profils utilisateurs."
+    "cpp_05_09_desc": "Modules C++ avancés couvrant les templates, les conteneurs STL, les itérateurs, les casts et la gestion des exceptions."
   },
   "contact": {
     "heading": "Restons en contact",

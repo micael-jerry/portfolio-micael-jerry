@@ -16,7 +16,7 @@ export type ProjectType = {
 
 export type Project42Type = {
 	title: string;
-	circle: number;
+	circle: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 	description: string;
 	descriptionKey?: string;
 	image?: string;
