@@ -13,3 +13,14 @@ export type ProjectType = {
 	demoLink?: string;
 	technologies?: string[];
 };
+
+export type Project42Type = {
+	title: string;
+	circle: number;
+	description: string;
+	descriptionKey?: string;
+	image?: string;
+	githubLink?: string;
+	demoLink?: string;
+	technologies: string[];
+};

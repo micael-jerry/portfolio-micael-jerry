@@ -5,6 +5,7 @@ import { AboutSection } from "./sections/about/AboutSection";
 import { ContactSection } from "./sections/contact/ContactSection";
 import { IntroSection } from "./sections/intro/IntroSection";
 import { ProjectsSection } from "./sections/projects/ProjectsSection";
+import { Projects42Section } from "./sections/projects42/Projects42Section";
 import { SkillsSection } from "./sections/skills/SkillsSection";
 import { SectionIdEnum } from "./types/sectionId/sectionId.type";
 
@@ -24,6 +25,10 @@ const SECTIONS = [
 	{
 		sectionId: SectionIdEnum.PROJECTS,
 		component: <ProjectsSection />,
+	},
+	{
+		sectionId: SectionIdEnum.PROJECTS_42,
+		component: <Projects42Section />,
 	},
 	{
 		sectionId: SectionIdEnum.CONTACT,

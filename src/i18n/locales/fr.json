@@ -4,6 +4,7 @@
     "about": "À propos",
     "skills": "Compétences",
     "projects": "Projets",
+    "projects_42": "Projets 42",
     "contact": "Contact",
     "cv": "Mon CV"
   },
@@ -67,6 +68,28 @@
     "solong_desc": "So Long est un petit jeu 2D. L'objectif est de naviguer un personnage dans une carte, collecter tous les objets, puis atteindre la sortie.",
     "cub3d_desc": "Un jeu d'exploration de labyrinthe 3D construit de zéro avec le ray-casting et la bibliothèque MinilibX, inspiré du classique Wolfenstein 3D pour explorer les fondamentaux des graphismes et du game design.",
     "coucou_desc": "L'API Coucou propulse le backend de l'app de chat Coucou, gérant l'authentification, la messagerie en temps réel et les conversations. Construite avec NestJS pour la scalabilité et la maintenabilité, elle constitue la base d'une messagerie complète."
+  },
+  "projects_42": {
+    "heading": "Cursus 42",
+    "subtitle": "Projets du tronc commun représentant ma progression et ma maîtrise de la programmation système, des réseaux, des algorithmes et du devops.",
+    "filter_all": "Tous les Cercles",
+    "circle_badge": "Cercle {{num}}",
+    "libft_desc": "Ma première bibliothèque de fonctions standard en C, réécrite de zéro pour comprendre le fonctionnement interne de la libc.",
+    "get_next_line_desc": "Une fonction qui lit une ligne à partir d'un descripteur de fichier, gérant plusieurs descripteurs et des variables statiques.",
+    "ft_printf_desc": "Une implémentation personnalisée de la fonction libc printf, prenant en charge les formats standards.",
+    "born2beroot_desc": "Configuration d'une machine virtuelle Debian sécurisée avec des règles de mot de passe strictes, SSH, UFW, sudo et des scripts de surveillance active.",
+    "push_swap_desc": "Un projet d'algorithme de tri hautement optimisé utilisant deux piles et un ensemble d'instructions limité.",
+    "minitalk_desc": "Une application de communication client-serveur utilisant les signaux UNIX (SIGUSR1 et SIGUSR2) pour le transfert de données binaires.",
+    "solong_desc": "Un petit jeu 2D axé sur la gestion des fenêtres, la gestion des événements (clavier, souris) et le rendu de base avec MiniLibX.",
+    "pipex_desc": "Recréer le mécanisme de pipe UNIX pour rediriger les flux d'entrée/sortie standard entre des commandes consécutives.",
+    "minishell_desc": "Un interpréteur de shell entièrement fonctionnel mimant bash, avec variables d'environnement, historique, chemins, redirections et pipes.",
+    "philosophers_desc": "Une implémentation du problème des philosophes qui dînent, apprenant la synchronisation des threads, les mutexes et la prévention des verrous mortels.",
+    "cub3d_desc": "Un moteur de jeu graphique 3D inspiré de Wolfenstein 3D, implémentant les principes du raycasting pour un rendu à la première personne.",
+    "netpractice_desc": "Un projet réseau sous forme d'exercices pour comprendre les sous-réseaux, l'adressage IP, les tables de routage et le paramétrage d'interfaces.",
+    "inception_desc": "Un projet DevOps configurant une infrastructure sécurisée multi-conteneurs avec Nginx, WordPress et MariaDB en utilisant Docker.",
+    "ft_irc_desc": "Écriture d'un serveur IRC complet en C++98, gérant les sockets TCP, le multiplexage select()/poll() et le protocole IRC.",
+    "webserv_desc": "Un serveur HTTP/1.1 écrit en C++98, implémentant des sockets non-bloquants, le parsing de requêtes, l'exécution de CGI et des fichiers de configuration.",
+    "transcendence_desc": "Le projet ultime du tronc commun de 42 : une plateforme web proposant un jeu de Pong multijoueur en temps réel, un chat, des salons de jeux et des profils utilisateurs."
   },
   "contact": {
     "heading": "Restons en contact",

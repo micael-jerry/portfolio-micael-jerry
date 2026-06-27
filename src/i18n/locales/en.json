@@ -4,6 +4,7 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
+    "projects_42": "42 Projects",
     "contact": "Contact",
     "cv": "My CV"
   },
@@ -67,6 +68,28 @@
     "solong_desc": "So Long is a small 2D game. The objective is to navigate a player through a map, collect all the collectibles, and then reach the exit.",
     "cub3d_desc": "A 3D maze exploration game built from scratch using ray-casting and the MinilibX graphics library, inspired by the classic Wolfenstein 3D to explore the fundamentals of computer graphics and game design.",
     "coucou_desc": "Coucou API powers the backend of the Coucou chat app, managing authentication, real-time messaging, and conversations. Built with NestJS for scalability and maintainability, it serves as the foundation for a full-featured messenger."
+  },
+  "projects_42": {
+    "heading": "42 Cursus",
+    "subtitle": "Common Core projects representing my progression and mastery of system programing, networks, algorithms, and devops.",
+    "filter_all": "All Circles",
+    "circle_badge": "Circle {{num}}",
+    "libft_desc": "My first library of standard C functions, rewritten from scratch to understand the internals of libc.",
+    "get_next_line_desc": "A function that reads a line from a file descriptor, handling multiple file descriptors and static variables.",
+    "ft_printf_desc": "A custom implementation of the formatted output libc function printf, supporting standard formats.",
+    "born2beroot_desc": "Setting up a secure Debian virtual machine with strict password policies, SSH, UFW, sudo, and active monitoring scripts.",
+    "push_swap_desc": "A highly optimized sorting algorithm project using two stacks and a limited instruction set.",
+    "minitalk_desc": "A client-server communication application using UNIX signals (SIGUSR1 and SIGUSR2) for binary data transfer.",
+    "solong_desc": "A small 2D game focusing on window management, event handling (keyboard, mouse) and basic rendering with MiniLibX.",
+    "pipex_desc": "Recoding the UNIX pipe mechanism to redirect standard input/output streams between consecutive commands.",
+    "minishell_desc": "A fully functional shell interpreter mimicking bash, with environment variables, history, paths, redirections, and pipes.",
+    "philosophers_desc": "An implementation of the Dining Philosophers problem, learning thread synchronization, mutexes, and deadlock prevention.",
+    "cub3d_desc": "A 3D graphics game engine inspired by Wolfenstein 3D, implementing raycasting principles to render a first-person perspective.",
+    "netpractice_desc": "A modular, puzzle-based networking project to understand subnets, IP addressing, routing tables, and interface configurations.",
+    "inception_desc": "A DevOps project setting up a secure multi-container infrastructure with Nginx, WordPress, and MariaDB using Docker.",
+    "ft_irc_desc": "Writing an IRC server from scratch in C++98, handling TCP sockets, select()/poll() multiplexing, and IRC protocols.",
+    "webserv_desc": "An HTTP/1.1 server written in C++98, implementing non-blocking sockets, request parsing, CGI execution, and configuration files.",
+    "transcendence_desc": "The ultimate 42 common core web project featuring real-time multiplayer Pong, chat rooms, game lobbies, and user profiles."
   },
   "contact": {
     "heading": "Let's Connect",
