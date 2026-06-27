@@ -1,5 +1,5 @@
-import { IMAGES } from "../../assets/index.ts";
-import { Project42Type } from "../../types/project.type.ts";
+import { IMAGES } from "../../assets/index";
+import { Project42Type } from "../../types/project.type";
 
 export const PROJECTS_42: Project42Type[] = [
 	{
