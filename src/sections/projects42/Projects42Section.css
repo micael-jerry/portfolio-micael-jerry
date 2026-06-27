@@ -1,0 +1,99 @@
+/* Projects42Section.css */
+
+.holy-graph-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 10px;
+    position: relative;
+    border-radius: 16px;
+    background: rgba(10, 10, 18, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* On desktop, center the graph if space permits */
+@media (min-width: 900px) {
+    .holy-graph-scroll-container {
+        justify-content: center;
+        overflow-x: visible;
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+}
+
+/* Custom scrollbar for a premium look */
+.holy-graph-scroll-container::-webkit-scrollbar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 3px;
+}
+
+.holy-graph-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 167, 38, 0.3);
+    border-radius: 3px;
+}
+
+.holy-graph-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 167, 38, 0.5);
+}
+
+/* Glow effects for SVG nodes and connections */
+.svg-connection-line {
+    transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.svg-connection-line.active {
+    stroke: rgba(0, 180, 255, 0.5);
+    stroke-width: 3px;
+}
+
+.holy-graph-node-group {
+    cursor: pointer;
+}
+
+.holy-graph-node-circle {
+    transition: stroke 0.3s ease, fill 0.3s ease, filter 0.3s ease;
+}
+
+.holy-graph-node-group:hover .holy-graph-node-circle {
+    stroke: #ffa726;
+    fill: rgba(255, 167, 38, 0.15);
+    filter: drop-shadow(0px 0px 8px rgba(255, 167, 38, 0.6));
+}
+
+.holy-graph-node-text {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    fill: #ffffff;
+    pointer-events: none;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    transition: fill 0.3s ease;
+}
+
+.holy-graph-node-group:hover .holy-graph-node-text {
+    fill: #ffa726;
+}
+
+/* Mobile swipe hint banner */
+.mobile-swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: #ffa726;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@media (min-width: 900px) {
+    .mobile-swipe-hint {
+        display: none;
+    }
+}
