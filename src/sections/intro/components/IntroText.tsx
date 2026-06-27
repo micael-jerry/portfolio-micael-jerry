@@ -42,7 +42,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 						textShadow: "0 2px 16px rgba(255,193,7,0.18)",
 					}}
 				>
-					{ME.firstname}
+					{`${ME.firstname} ${ME.name}`}
 				</Typography>
 				<Typography
 					component={motion.h2}
