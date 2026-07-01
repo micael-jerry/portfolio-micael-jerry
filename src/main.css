@@ -8,6 +8,6 @@ body {
 
   color: white;
 
-  background: url('./assets/images/blue-gradient-bg.webp') no-repeat center center fixed;
+  background: radial-gradient(circle at 50% 50%, #0a0035 0%, #07002d 70%, #030018 100%) no-repeat center center fixed;
   background-size: cover;
 }

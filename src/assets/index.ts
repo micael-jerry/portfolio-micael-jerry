@@ -1,5 +1,4 @@
 export const IMAGES = {
-	blueGradientBg: new URL("./images/blue-gradient-bg.webp", import.meta.url).href,
 	jerryImg: new URL("./images/jerry.webp", import.meta.url).href,
 	contactImageIllustrator: new URL("./images/contact-removebg.webp", import.meta.url).href,
 	skillsIllustratorBg: new URL("./images/skills-illustrator.webp", import.meta.url).href,
