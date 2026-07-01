@@ -10,7 +10,7 @@ export const PROJECTS: ProjectType[] = [
 			"My portfolio that showcases my creative and technical skills in various professional fields. (build with react-ts)",
 		descriptionKey: "projects.portfolio_desc",
 		githubLink: "https://github.com/micael-jerry/portfolio-micael-jerry",
-		demoLink: "https://micael-jerry.github.io/portfolio-micael-jerry/",
+		demoLink: "https://micael-jerry.github.io/",
 		technologies: ["React", "Material-UI", "Vite"],
 	},
 	{
