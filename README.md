@@ -24,4 +24,4 @@
 
 ## Deploy on github pages
 
-> [link to portfolio](https://micael-jerry.github.io)
+> [link to portfolio](https://micael-jerry.vercel.app)
