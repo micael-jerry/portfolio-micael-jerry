@@ -8,6 +8,6 @@ body {
 
   color: white;
 
-  background: url('./assets/images/blue-gradient-bg.png') no-repeat center center fixed;
+  background: url('./assets/images/blue-gradient-bg.webp') no-repeat center center fixed;
   background-size: cover;
 }
