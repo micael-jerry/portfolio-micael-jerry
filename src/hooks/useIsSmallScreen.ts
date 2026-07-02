@@ -1,5 +1,4 @@
-import { useMediaQuery } from "@mui/material";
+import { useScreenSizeChecker } from "./useScreenSizeChecker";
 
-export const useIsSmallScreen = (): boolean => {
-	return useMediaQuery("(max-width:950px)");
-};
+/** Retourne true si l'écran est ≤ 950px (breakpoint mobile/tablette) */
+export const useIsSmallScreen = (): boolean => useScreenSizeChecker(950);

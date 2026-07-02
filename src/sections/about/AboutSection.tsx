@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import { IMAGES } from "../../assets";
 import { ME } from "../../data/user/me.ts";
 import { useScreenSizeChecker } from "../../hooks/useScreenSizeChecker.ts";
-import { COLOR_WARNING } from "../../utils/color.ts";
+import { COLOR_ACCENT, COLOR_WARNING } from "../../utils/color.ts";
+import { glassSx } from "../../utils/styles.ts";
 import "./AboutSection.css";
 import { AboutEducation } from "./components/AboutEducation.tsx";
 import { AboutPassions } from "./components/AboutPassions.tsx";
@@ -126,12 +127,10 @@ export const AboutSection: React.FC = () => {
 									whileHover={{ scale: 1.015, boxShadow: "0 12px 40px 0 rgba(0,180,255,0.15)" }}
 									transition={{ type: "spring", stiffness: 200 }}
 									sx={{
+										...glassSx,
 										p: { xs: 3, md: 4 },
-										borderRadius: 4,
-										background: "linear-gradient(135deg, rgba(20, 20, 30, 0.75) 0%, rgba(30, 30, 50, 0.65) 100%)",
-										backdropFilter: "blur(12px)",
-										boxShadow: "0 4px 24px 0 rgba(0,180,255,0.08)",
-										border: "1px solid rgba(0,180,255,0.1)",
+										boxShadow: `0 4px 24px 0 ${COLOR_ACCENT.bg}`,
+										border: `1px solid ${COLOR_ACCENT.bg}`,
 										position: "relative",
 										overflow: "hidden",
 									}}

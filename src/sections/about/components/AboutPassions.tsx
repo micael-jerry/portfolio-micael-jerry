@@ -5,7 +5,8 @@ import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { COLOR_WARNING } from "../../../utils/color.ts";
+import { COLOR_ACCENT, COLOR_SUCCESS, COLOR_WARNING } from "../../../utils/color.ts";
+import { glassSx } from "../../../utils/styles.ts";
 
 interface AboutPassionsProps {
 	variants?: Variants;
@@ -21,12 +22,12 @@ export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
 			description: t("about.passions.coding_desc"),
 		},
 		{
-			icon: <LightbulbIcon sx={{ color: "#00b4ff", fontSize: 28 }} />,
+			icon: <LightbulbIcon sx={{ color: COLOR_ACCENT.main, fontSize: 28 }} />,
 			title: t("about.passions.solving_title"),
 			description: t("about.passions.solving_desc"),
 		},
 		{
-			icon: <RocketLaunchIcon sx={{ color: "#4caf50", fontSize: 28 }} />,
+			icon: <RocketLaunchIcon sx={{ color: COLOR_SUCCESS.main, fontSize: 28 }} />,
 			title: t("about.passions.learning_title"),
 			description: t("about.passions.learning_desc"),
 		},
@@ -36,15 +37,13 @@ export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
 		<Box
 			component={motion.div}
 			variants={variants}
-			whileHover={{ scale: 1.02, boxShadow: "0 12px 40px 0 rgba(255,193,7,0.15)" }}
+			whileHover={{ scale: 1.02, boxShadow: `0 12px 40px 0 ${COLOR_WARNING.bgStrong}` }}
 			transition={{ type: "spring", stiffness: 200 }}
 			sx={{
+				...glassSx,
 				p: { xs: 3, md: 4 },
-				borderRadius: 4,
-				background: "linear-gradient(135deg, rgba(20, 20, 30, 0.75) 0%, rgba(30, 30, 50, 0.65) 100%)",
-				backdropFilter: "blur(12px)",
-				boxShadow: "0 4px 24px 0 rgba(255,193,7,0.08)",
-				border: "1px solid rgba(255,193,7,0.1)",
+				boxShadow: `0 4px 24px 0 ${COLOR_WARNING.bg}`,
+				border: `1px solid ${COLOR_WARNING.bg}`,
 				position: "relative",
 				overflow: "hidden",
 				height: "100%",
