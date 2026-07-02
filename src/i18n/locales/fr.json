@@ -106,7 +106,8 @@
       "send": "Envoyer le message",
       "sending": "Envoi en cours...",
       "success": "🎉 Merci ! Votre message a été envoyé. Je vous répondrai bientôt.",
-      "error": "❌ Oups ! Une erreur s'est produite. Veuillez réessayer."
+      "error": "❌ Oups ! Une erreur s'est produite. Veuillez réessayer.",
+      "email_invalid": "Adresse e-mail invalide."
     }
   },
   "footer": {

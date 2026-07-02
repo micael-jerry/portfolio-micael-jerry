@@ -8,11 +8,11 @@ export type LayoutProps = {
 	children: React.ReactNode;
 };
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-	const checkScreenWidth = useScreenSizeChecker(899);
+	const isSmallScreen = useScreenSizeChecker(899);
 
-	const otherProps: Partial<BoxProps> = checkScreenWidth
+	const otherProps: Partial<BoxProps> = isSmallScreen
 		? {
-				mt: 5,
+				sx: { mt: 5 },
 			}
 		: {};
 

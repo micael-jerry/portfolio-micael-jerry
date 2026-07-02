@@ -106,7 +106,8 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "🎉 Thanks! Your message has been sent. I'll get back to you soon.",
-      "error": "❌ Oops! Something went wrong. Please try again."
+      "error": "❌ Oops! Something went wrong. Please try again.",
+      "email_invalid": "Invalid email address."
     }
   },
   "footer": {
