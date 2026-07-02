@@ -9,11 +9,9 @@ export type SectionContainerProps = {
 
 export const SectionContainer: React.FC<SectionContainerProps> = ({ children, sectionId }) => {
 	return (
-		<section id={sectionId} key={sectionId}>
+		<section id={sectionId} key={sectionId} aria-label={sectionId}>
 			<Container maxWidth={"lg"}>
-				<Box minHeight={"100vh"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-					{children}
-				</Box>
+				<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", py: 4 }}>{children}</Box>
 			</Container>
 		</section>
 	);

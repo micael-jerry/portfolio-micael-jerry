@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ProjectStatusEnum, ProjectType } from "../../types/project.type";
+import { COLOR_SUCCESS, COLOR_WARNING, COLOR_ACCENT } from "../../utils/color.ts";
+import { cardSx } from "../../utils/styles.ts";
 
 interface ProjectCardProps {
 	project: ProjectType;
@@ -43,16 +45,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 			>
 				<Card
 					sx={{
+						...cardSx,
 						width: "100%",
 						maxWidth: 400,
 						minHeight: 440,
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "space-between",
-						borderRadius: 4,
-						background: "linear-gradient(135deg, rgba(30, 30, 40, 0.8) 0%, rgba(20, 20, 30, 0.6) 100%)",
-						backdropFilter: "blur(16px)",
-						border: "1px solid rgba(255, 255, 255, 0.08)",
 						boxShadow: "0 8px 32px 0 rgba(0,0,0,0.3)",
 						overflow: "hidden",
 						position: "relative",
@@ -66,17 +65,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 							top: 16,
 							right: 16,
 							zIndex: 10,
-							background:
-								project.status === ProjectStatusEnum.COMPLETED ? "rgba(76, 175, 80, 0.2)" : "rgba(255, 152, 0, 0.2)",
+							background: project.status === ProjectStatusEnum.COMPLETED ? COLOR_SUCCESS.bg : COLOR_WARNING.bg,
 							backdropFilter: "blur(8px)",
-							border: `1px solid ${project.status === ProjectStatusEnum.COMPLETED ? "rgba(76, 175, 80, 0.5)" : "rgba(255, 152, 0, 0.5)"}`,
-							color: project.status === ProjectStatusEnum.COMPLETED ? "#4caf50" : "#ff9800",
+							border: `1px solid ${project.status === ProjectStatusEnum.COMPLETED ? COLOR_SUCCESS.border : COLOR_WARNING.border}`,
+							color: project.status === ProjectStatusEnum.COMPLETED ? COLOR_SUCCESS.main : COLOR_WARNING.main,
 							padding: "4px 12px",
 							borderRadius: 20,
 							fontSize: "0.75rem",
 							fontWeight: 700,
 							letterSpacing: 0.5,
-							boxShadow: `0 0 12px 0 ${project.status === ProjectStatusEnum.COMPLETED ? "rgba(76, 175, 80, 0.3)" : "rgba(255, 152, 0, 0.3)"}`,
+							boxShadow: `0 0 12px 0 ${project.status === ProjectStatusEnum.COMPLETED ? COLOR_SUCCESS.bg : COLOR_WARNING.bg}`,
 						}}
 					>
 						{project.status === ProjectStatusEnum.COMPLETED
@@ -150,9 +148,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, i }) => {
 											sx={{
 												fontSize: "0.75rem",
 												fontWeight: 500,
-												background: "rgba(0, 180, 255, 0.1)",
-												border: "1px solid rgba(0, 180, 255, 0.2)",
-												color: "#00b4ff",
+												background: COLOR_ACCENT.bg,
+												border: `1px solid ${COLOR_ACCENT.border}`,
+												color: COLOR_ACCENT.main,
 												borderRadius: 1.5,
 											}}
 										/>

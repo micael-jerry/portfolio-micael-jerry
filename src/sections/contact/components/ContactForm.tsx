@@ -2,9 +2,9 @@ import emailjs from "@emailjs/browser";
 import SendIcon from "@mui/icons-material/Send";
 import { Box, Button, CircularProgress, Grid, TextField, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { COLOR_WARNING } from "../../../utils/color.ts";
+import { COLOR_ERROR, COLOR_SUCCESS, COLOR_WARNING } from "../../../utils/color.ts";
 
 interface ContactFormState {
 	name: string;
@@ -12,6 +12,12 @@ interface ContactFormState {
 	subject: string;
 	message: string;
 }
+
+interface FormErrors {
+	email?: string;
+}
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const ContactForm: React.FC = () => {
 	const { t } = useTranslation();
@@ -21,18 +27,47 @@ export const ContactForm: React.FC = () => {
 		subject: "",
 		message: "",
 	});
+	const [formErrors, setFormErrors] = useState<FormErrors>({});
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+	const resetTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
+	// Cleanup du timer au démontage pour éviter les memory leaks
+	useEffect(() => {
+		return () => {
+			clearTimeout(resetTimerRef.current);
+		};
+	}, []);
+
+	const validate = (): boolean => {
+		const errors: FormErrors = {};
+		if (!EMAIL_REGEX.test(formState.email)) {
+			errors.email = t("contact.form.email_invalid");
+		}
+		setFormErrors(errors);
+		return Object.keys(errors).length === 0;
+	};
+
+	// Updater function pour éviter la stale closure sur l'ancien state
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		setFormState({
-			...formState,
-			[e.target.name]: e.target.value,
-		});
+		const { name, value } = e.target;
+		setFormState((prev) => ({ ...prev, [name]: value }));
+		// Effacer l'erreur de validation si l'utilisateur corrige le champ
+		if (formErrors[name as keyof FormErrors]) {
+			setFormErrors((prev) => ({ ...prev, [name]: undefined }));
+		}
+	};
+
+	const scheduleReset = () => {
+		clearTimeout(resetTimerRef.current);
+		resetTimerRef.current = setTimeout(() => {
+			setSubmitStatus("idle");
+		}, 5000);
 	};
 
 	const handleSubmit = async (e: React.BaseSyntheticEvent) => {
 		e.preventDefault();
+		if (!validate()) return;
 		setIsSubmitting(true);
 
 		try {
@@ -50,15 +85,11 @@ export const ContactForm: React.FC = () => {
 
 			setSubmitStatus("success");
 			setFormState({ name: "", email: "", subject: "", message: "" });
-			setTimeout(() => {
-				setSubmitStatus("idle");
-			}, 5000);
+			scheduleReset();
 		} catch (error) {
 			console.error("Failed to send email:", error);
 			setSubmitStatus("error");
-			setTimeout(() => {
-				setSubmitStatus("idle");
-			}, 5000);
+			scheduleReset();
 		} finally {
 			setIsSubmitting(false);
 		}
@@ -120,6 +151,8 @@ export const ContactForm: React.FC = () => {
 							variant="filled"
 							className="glass-input"
 							slotProps={{ input: { disableUnderline: true } }}
+							error={!!formErrors.email}
+							helperText={formErrors.email}
 						/>
 					</Grid>
 					<Grid size={{ xs: 12 }}>
@@ -194,11 +227,11 @@ export const ContactForm: React.FC = () => {
 					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
 						<Typography
 							sx={{
-								color: "#4caf50",
-								bgcolor: "rgba(76, 175, 80, 0.1)",
+								color: COLOR_SUCCESS.main,
+								backgroundColor: COLOR_SUCCESS.bg,
 								p: 2,
 								borderRadius: 2,
-								border: "1px solid rgba(76, 175, 80, 0.3)",
+								border: `1px solid ${COLOR_SUCCESS.border}`,
 								mt: 1,
 								fontWeight: 500,
 								display: "flex",
@@ -215,11 +248,11 @@ export const ContactForm: React.FC = () => {
 					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
 						<Typography
 							sx={{
-								color: "#f44336",
-								bgcolor: "rgba(244, 67, 54, 0.1)",
+								color: COLOR_ERROR.main,
+								backgroundColor: COLOR_ERROR.bg,
 								p: 2,
 								borderRadius: 2,
-								border: "1px solid rgba(244, 67, 54, 0.3)",
+								border: `1px solid ${COLOR_ERROR.border}`,
 								mt: 1,
 								fontWeight: 500,
 							}}
