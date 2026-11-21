@@ -53,11 +53,7 @@ export const EXPERIENCES: ExperienceType[] = [
 		domainKey: "experience.frontend.domain",
 		locationKey: "experience.frontend.location",
 		descriptionKey: "experience.frontend.desc",
-		highlightsKeys: [
-			"experience.frontend.h1",
-			"experience.frontend.h2",
-			"experience.frontend.h3",
-		],
+		highlightsKeys: ["experience.frontend.h1", "experience.frontend.h2", "experience.frontend.h3"],
 		technologies: ["Angular 19", "Angular 16", "TypeScript", "UX", "Migration"],
 	},
 	{
@@ -69,11 +65,7 @@ export const EXPERIENCES: ExperienceType[] = [
 		domainKey: "experience.fullstack.domain",
 		locationKey: "experience.fullstack.location",
 		descriptionKey: "experience.fullstack.desc",
-		highlightsKeys: [
-			"experience.fullstack.h1",
-			"experience.fullstack.h2",
-			"experience.fullstack.h3",
-		],
+		highlightsKeys: ["experience.fullstack.h1", "experience.fullstack.h2", "experience.fullstack.h3"],
 		technologies: ["NestJS", "GraphQL", "Next.js", "TypeScript", "TDD"],
 	},
 ];
