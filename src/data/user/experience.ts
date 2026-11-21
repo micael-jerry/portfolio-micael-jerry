@@ -14,7 +14,7 @@ export interface ExperienceType {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Professional work experience only (companies, jobs, internships).
-// Add new entries freely — the UI renders them automatically.
+// Most recent first. Add new entries freely — the UI renders them automatically.
 // ─────────────────────────────────────────────────────────────────────────────
 export const EXPERIENCES: ExperienceType[] = [
 	{
@@ -35,15 +35,30 @@ export const EXPERIENCES: ExperienceType[] = [
 		],
 		technologies: [
 			"ServiceNow",
-			"ITSM",
-			"ESM",
 			"Flow Designer",
 			"Business Rules",
 			"Script Includes",
 			"Client Scripts",
-			"REST APIs",
 			"Service Catalog",
+			"REST APIs",
+			"JavaScript",
 		],
+	},
+	{
+		id: "frontend-dev",
+		roleKey: "experience.frontend.role",
+		entityKey: "experience.frontend.entity",
+		periodKey: "experience.frontend.period",
+		badgeKey: "experience.frontend.badge",
+		domainKey: "experience.frontend.domain",
+		locationKey: "experience.frontend.location",
+		descriptionKey: "experience.frontend.desc",
+		highlightsKeys: [
+			"experience.frontend.h1",
+			"experience.frontend.h2",
+			"experience.frontend.h3",
+		],
+		technologies: ["Angular 19", "Angular 16", "TypeScript", "UX", "Migration"],
 	},
 	{
 		id: "fullstack-dev",
@@ -58,18 +73,7 @@ export const EXPERIENCES: ExperienceType[] = [
 			"experience.fullstack.h1",
 			"experience.fullstack.h2",
 			"experience.fullstack.h3",
-			"experience.fullstack.h4",
 		],
-		technologies: [
-			"React",
-			"Next.js",
-			"TypeScript",
-			"NestJS",
-			"Node.js",
-			"PostgreSQL",
-			"MongoDB",
-			"Docker",
-			"REST & GraphQL",
-		],
+		technologies: ["NestJS", "GraphQL", "Next.js", "TypeScript", "TDD"],
 	},
 ];

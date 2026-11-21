@@ -12,115 +12,113 @@
   },
   "intro": {
     "greeting": "Hello 👋, my name is",
-    "role": "Software Engineer & ESM Developer (ServiceNow) / Fullstack",
-    "passion": "Passionate about software architecture, enterprise platforms and crafting high-performance digital experiences.",
+    "role": "ServiceNow Application Developer & Fullstack Developer",
+    "passion": "I automate business processes and build web applications, and I keep learning through my work and my studies at 42.",
     "btn_about": "About",
     "btn_contact": "Contact"
   },
   "about": {
     "heading": "About Me",
     "bio_prefix": "Hey there! I'm ",
-    "bio_suffix": ", a software engineer combining expertise in modern web development, systems programming, and enterprise platforms (ServiceNow).",
+    "bio_suffix": ", a ServiceNow application developer and fullstack developer based in Antananarivo. I work at Pulse and I'm studying at 42 Antananarivo, which keeps me learning through both real projects and school ones.",
     "education": {
       "title": "Education",
       "hei_school": "HEI Madagascar",
-      "hei_degree": "Computer Science Graduate",
-      "hei_desc": "Built a strong foundation in software engineering principles, algorithms, and system design.",
+      "hei_degree": "Bachelor's Degree in Computer Science",
+      "hei_desc": "Specialized in Software Ecosystems: software development, information systems design and software engineering.",
       "42_school": "42 Antananarivo",
-      "42_degree": "Advanced Software Engineering",
-      "42_desc": "Peer-to-peer learning environment focusing on practical, complex problem solving and modern stack mastery."
+      "42_degree": "Computer Science (ongoing)",
+      "42_desc": "Peer-to-peer learning with no teachers, built around intensive projects, autonomy and curiosity."
     },
     "passions": {
       "title": "What Drives Me",
-      "subtitle": "Solving intricate technical challenges and building lasting solutions.",
+      "subtitle": "Turning repetitive business tasks into reliable, automated workflows.",
       "coding_title": "Architecture & Clean Code",
-      "coding_desc": "Designing reliable, modular, and easy-to-maintain systems.",
+      "coding_desc": "Writing modular code that other developers can read and maintain.",
       "solving_title": "Automation & Efficiency",
-      "solving_desc": "Streamlining and automating critical business workflows.",
-      "learning_title": "Continuous Growth",
-      "learning_desc": "Constantly pushing technical skills and staying on the cutting edge."
+      "solving_desc": "Removing manual steps so users can focus on their actual work.",
+      "learning_title": "Continuous Learning",
+      "learning_desc": "Picking up new tools through work, side projects and the 42 curriculum."
     },
     "quote": "Stay <1>curious</1>, keep <3>learning</3>, and never stop <5>building</5>.",
     "stats": {
       "projects": "Projects",
       "skills": "Skills",
-      "experience": "1+ yr",
+      "experience": "1+ yrs",
       "experience_label": "Experience"
     }
   },
   "experience": {
     "heading": "Professional Experience",
-    "subtitle": "My positions in companies: ServiceNow ESM/ITSM development and fullstack software engineering.",
+    "subtitle": "ServiceNow development, front-end work on a large Angular application, and a fullstack internship.",
     "current_badge": "Current Role",
     "key_achievements": "Key Responsibilities & Impact",
     "servicenow": {
-      "role": "ESM Developer (ServiceNow)",
-      "entity": "Enterprise Service Management",
-      "period": "2024 - Present",
-      "badge": "ServiceNow ESM & ITSM",
+      "role": "ServiceNow Application Developer",
+      "entity": "Pulse",
+      "period": "Apr. 2026 - Present",
+      "badge": "ServiceNow",
       "domain": "Enterprise Platform",
       "location": "Antananarivo, Madagascar",
-      "desc": "Designing, developing and automating mission-critical business processes on the ServiceNow platform, focusing on ITSM, custom workflows and service integrations.",
-      "h1": "Automating complex business workflows using Flow Designer and server-side Business Rules.",
-      "h2": "Developing modular, reusable Script Includes and responsive client-side scripts (Client Scripts, UI Policies).",
-      "h3": "Designing and implementing secure REST/JSON API integrations with third-party systems.",
-      "h4": "Configuring Service Catalog items and tailoring the Service Portal for seamless end-user experiences."
+      "desc": "I build and evolve business applications on the ServiceNow platform. The goal is to automate internal processes so users spend less time on manual steps.",
+      "h1": "Developing and evolving business solutions on the ServiceNow platform.",
+      "h2": "Automating business processes with Flow Designer, Business Rules and reusable Script Includes.",
+      "h3": "Writing Client Scripts and configuring Service Catalog items to improve the end-user experience.",
+      "h4": "Building REST integrations and testing changes on a development instance before they are promoted."
+    },
+    "frontend": {
+      "role": "Front-end Developer",
+      "entity": "Capsule IO Finance Technology",
+      "period": "Nov. 2025 - Apr. 2026",
+      "badge": "Angular",
+      "domain": "Frontend Engineering",
+      "location": "Antananarivo, Madagascar",
+      "desc": "I worked on an Angular 19 web application used to manage several Malagasy companies, with a focus on a modular codebase and a smooth user experience.",
+      "h1": "Developed and optimized the Angular 19 application: modular architecture and reusable components.",
+      "h2": "Improved performance and applied UX best practices across the interface.",
+      "h3": "Migrated existing Angular 16 applications to version 19."
     },
     "fullstack": {
-      "role": "Software Engineer & Fullstack Developer",
-      "entity": "Web Applications & Scalable APIs",
-      "period": "2023 - Present",
-      "badge": "Web & Architecture",
+      "role": "Fullstack Developer Intern",
+      "entity": "Bubble-Go Madagascar",
+      "period": "Aug. 2024 - Dec. 2024",
+      "badge": "Fullstack Web",
       "domain": "Fullstack Engineering",
       "location": "Antananarivo, Madagascar",
-      "desc": "Delivering end-to-end modern web applications combining reactive, accessible user interfaces with robust, scalable backend architectures.",
-      "h1": "Building high-performance user interfaces with React 19, Next.js, and TypeScript.",
-      "h2": "Architecting modular, secure APIs with NestJS, Node.js, and Spring Boot (Clean Architecture).",
-      "h3": "Designing and optimizing relational (PostgreSQL) and document-based (MongoDB) databases.",
-      "h4": "Containerizing services with Docker and establishing continuous integration workflows."
-    },
-    "academic": {
-      "role": "Systems Programming & Algorithms Student",
-      "entity": "42 Antananarivo & HEI Madagascar",
-      "period": "2022 - Present",
-      "badge": "Excellence Track",
-      "domain": "Systems & Algorithms",
-      "location": "Antananarivo, Madagascar",
-      "desc": "Intensive peer-to-peer training focused on low-level systems programming without external libraries, algorithmic rigor, and deep Unix internals.",
-      "h1": "Low-level C/C++ development: manual memory management, signal handling, and POSIX system calls.",
-      "h2": "Developing a custom command shell (Minishell) and a 3D raycasting graphics engine (Cub3D).",
-      "h3": "Advanced concurrent programming (Threads, Mutexes, deadlock prevention) with Philosophers.",
-      "h4": "Deploying secure, multi-service containerized infrastructure with Inception (Docker)."
+      "desc": "An internship that covered the whole development cycle, from design to production, on a GraphQL API and its web interface.",
+      "h1": "Designed a GraphQL API with NestJS, using a test-driven development (TDD) approach.",
+      "h2": "Built a fast web interface with Next.js.",
+      "h3": "Worked on every stage of the cycle: design, development and release to production."
     }
   },
   "education": {
     "heading": "Education & Certifications",
-    "subtitle": "My academic background and professional certifications.",
+    "subtitle": "My academic background and certifications.",
     "ongoing_badge": "Ongoing",
     "42": {
       "institution": "42 Antananarivo",
-      "degree": "Software Engineering — Common Core",
-      "desc": "Intensive peer-to-peer curriculum with no teachers: learning through practice and collaboration on systems programming, networking, algorithms, and DevOps projects in C/C++, without external libraries.",
-      "period": "2022 — Ongoing",
+      "degree": "Computer Science",
+      "desc": "Peer-to-peer curriculum with no teachers. I learned programming fundamentals through intensive projects, in a collaborative environment that rewards autonomy and curiosity.",
+      "period": "03/2024 — Ongoing",
       "location": "Antananarivo, Madagascar",
-      "h1": "Mastery of low-level systems programming in C and C++ without third-party libraries.",
-      "h2": "Advanced projects: Unix shell interpreter, 3D raycasting engine, IRC server, Docker infrastructure.",
-      "h3": "Concurrent programming: POSIX threads, mutex synchronization, and deadlock prevention."
+      "h1": "Solid programming foundations built through intensive projects, mostly in C and C++.",
+      "h2": "Rigorous algorithmic thinking and problem solving: push_swap, Minishell, Cub3D, ft_irc, Inception.",
+      "h3": "Collaborative learning that develops autonomy and curiosity."
     },
     "hei": {
-      "institution": "HEI Madagascar",
-      "degree": "Computer Science Engineering Degree",
-      "desc": "Engineering degree in computer science covering software engineering fundamentals, advanced algorithms, system design, and databases.",
-      "period": "2021 — 2024",
+      "institution": "HEI Madagascar (Haute École d'Informatique)",
+      "degree": "Bachelor's Degree in Computer Science, Software Ecosystems",
+      "desc": "Three-year degree specialized in Software Ecosystems, covering software development, information systems design and software engineering.",
+      "period": "10/2021 — 09/2024",
       "location": "Antananarivo, Madagascar",
-      "h1": "Strong foundation in algorithms, data structures, and complexity analysis.",
-      "h2": "Object-oriented design, design patterns, and software architecture.",
-      "h3": "Relational database modeling and distributed system design."
+      "h1": "Hands-on projects in software development, information systems design and software engineering.",
+      "h2": "Deeper knowledge of cloud, cybersecurity, artificial intelligence and software engineering.",
+      "h3": "Training in teamwork, project management and entrepreneurship."
     }
   },
   "skills": {
     "heading": "Technical Capabilities",
-    "subtitle": "Structured engineering domains built to meet the concrete demands of modern enterprises and ambitious tech teams.",
+    "subtitle": "What I work with day to day.",
     "stack_label": "Core Stack & Tools",
     "filters": {
       "all": "All Capabilities"
@@ -128,60 +126,60 @@
     "domains": {
       "servicenow": {
         "title": "ServiceNow & Enterprise Platform",
-        "badge": "ServiceNow ESM",
-        "desc": "Business process automation, custom workflow delivery, and IT Service Management (ITSM) governance on ServiceNow.",
+        "badge": "ServiceNow",
+        "desc": "Business process automation and custom workflow development on the ServiceNow platform.",
         "c1_title": "Flow Designer & Automation",
-        "c1_desc": "Creating automated workflows, event triggers, and multi-level approvals.",
-        "c2_title": "Advanced Scripting (JavaScript)",
-        "c2_desc": "Server-side Business Rules, object-oriented Script Includes, Client Scripts, and UI Policies.",
+        "c1_desc": "Automated workflows, event triggers and approvals.",
+        "c2_title": "Scripting (JavaScript)",
+        "c2_desc": "Business Rules, Script Includes, Client Scripts and UI Policies.",
         "c3_title": "ITSM & Service Catalog",
-        "c3_desc": "Managing Incidents, Changes, Service Requests, and self-service portals.",
+        "c3_desc": "Incidents, changes, service requests and catalog items.",
         "c4_title": "Integrations & REST APIs",
-        "c4_desc": "Secure bidirectional data exchange via REST/JSON APIs and webhooks."
+        "c4_desc": "Data exchange with external systems through REST/JSON APIs."
       },
       "fullstack": {
-        "title": "Web Architecture & Scalable APIs",
+        "title": "Web Development & APIs",
         "badge": "Fullstack Web",
-        "desc": "End-to-end modern web applications built on solid architecture principles and Clean Code.",
-        "c1_title": "Modern & Responsive Frontend",
-        "c1_desc": "Fluid interfaces with React 19, Next.js, strict TypeScript, and elegant Material Design.",
-        "c2_title": "Modular APIs & Clean Architecture",
-        "c2_desc": "Scalable layered architectures with NestJS, Node.js, Express, and Spring Boot.",
+        "desc": "Web applications from the interface to the API, built with maintainable architecture.",
+        "c1_title": "Frontend",
+        "c1_desc": "Angular 19, Next.js and TypeScript, including an Angular 16 to 19 migration.",
+        "c2_title": "Backend & APIs",
+        "c2_desc": "NestJS, Node.js, Express and Spring Boot, with REST and GraphQL APIs.",
         "c3_title": "Quality & Reliability",
-        "c3_desc": "Data validation, centralized error handling, and adherence to SOLID principles."
+        "c3_desc": "Test-driven development, data validation and SOLID principles."
       },
       "systems": {
         "title": "Systems, Concurrency & Algorithms",
         "badge": "42 Systems",
-        "desc": "Deep understanding of operating systems, memory layout, and data structures (School 42).",
+        "desc": "Low-level programming and algorithms, learned at 42.",
         "c1_title": "Systems Programming in C/C++",
-        "c1_desc": "Strict memory management (zero leaks), file descriptors, POSIX signals, and Makefiles.",
+        "c1_desc": "Manual memory management, file descriptors, POSIX signals and Makefiles.",
         "c2_title": "Multithreading & Concurrency",
-        "c2_desc": "Thread synchronization, mutexes, and deadlock prevention.",
+        "c2_desc": "Thread synchronization, mutexes and deadlock prevention.",
         "c3_title": "Networking & Sockets",
-        "c3_desc": "Building custom TCP servers and I/O multiplexing (poll/select)."
+        "c3_desc": "TCP servers and I/O multiplexing with poll and select."
       },
       "data_devops": {
         "title": "Databases, DevOps & Tooling",
         "badge": "Data & DevOps",
-        "desc": "Data persistence, containerized environments, and professional agile workflows.",
-        "c1_title": "SQL & NoSQL Modeling",
-        "c1_desc": "Relational schematics with PostgreSQL and document-based data with MongoDB.",
-        "c2_title": "Docker Containerization",
-        "c2_desc": "Multi-stage Dockerfiles, multi-container Docker Compose, and reproducible deployments.",
-        "c3_title": "Version Control & Agile Methods",
-        "c3_desc": "Rigorous Git Flow, GitHub Actions CI/CD automation, and Jira project tracking with Scrum."
+        "desc": "Data storage, containers and everyday team tooling.",
+        "c1_title": "SQL & NoSQL",
+        "c1_desc": "Relational modeling with PostgreSQL and document data with MongoDB.",
+        "c2_title": "Docker",
+        "c2_desc": "Dockerfiles and multi-container setups with Docker Compose, on Linux.",
+        "c3_title": "Version Control & Collaboration",
+        "c3_desc": "Git, GitHub, GitLab, GitHub Actions CI/CD and Trello for task tracking."
       }
     }
   },
   "projects": {
     "heading": "Featured Projects",
-    "subtitle": "A curated selection of projects demonstrating engineering depth and practical delivery.",
+    "subtitle": "A selection of projects showing what I build outside of work.",
     "status_completed": "Completed",
     "status_in_progress": "In Progress",
     "btn_code": "Code",
     "btn_live": "Live",
-    "portfolio_desc": "My portfolio showcasing creative and technical software engineering capabilities across multiple domains.",
+    "portfolio_desc": "My portfolio, built with React and TypeScript to showcase my projects and experience.",
     "valentin_desc": "A romantic and interactive digital invitation crafted for a Valentine's Day proposal.",
     "solong_desc": "A 2D tile-based game navigating a character, collecting items, and finding the exit with clean event handling.",
     "cub3d_desc": "A 3D maze exploration game built from scratch using raycasting and MinilibX, exploring computer graphics fundamentals.",
@@ -189,7 +187,7 @@
   },
   "projects_42": {
     "heading": "42 Common Core",
-    "subtitle": "Key projects representing mastery in systems programming, networks, algorithms, and DevOps.",
+    "subtitle": "Key projects from the common core, covering systems programming, networks, algorithms, and DevOps.",
     "filter_all": "All Circles",
     "circle_0": "Circle 0 — Libft (foundation)",
     "circle_badge": "Circle {{num}}",
@@ -214,8 +212,8 @@
   },
   "contact": {
     "heading": "Let's Connect",
-    "subtitle": "Have a project in mind or an exciting role? I'd love to hear from you.",
-    "body": "Whether it's an opportunity in ServiceNow development, a fullstack engineering role, or a technical discussion, my inbox is always open.",
+    "subtitle": "Have a project in mind or an open position? I'd be glad to talk.",
+    "body": "Whether it's a ServiceNow role, a frontend or fullstack project, or just a technical discussion, feel free to write to me.",
     "email_label": "Email",
     "form": {
       "name": "Your Name",
@@ -224,13 +222,13 @@
       "message": "Message",
       "send": "Send Message",
       "sending": "Sending...",
-      "success": "🎉 Thank you! Your message has been sent. I will get back to you soon.",
-      "error": "❌ Oops! Something went wrong. Please try again.",
+      "success": "Thank you! Your message has been sent. I will get back to you soon.",
+      "error": "Oops! Something went wrong. Please try again.",
       "email_invalid": "Invalid email address."
     }
   },
   "footer": {
-    "tagline": "Software Engineer & ESM Developer (ServiceNow) / Fullstack.",
+    "tagline": "ServiceNow Application Developer & Fullstack Developer.",
     "copyright": "All rights reserved.",
     "built_with": "Built with React & TypeScript"
   }

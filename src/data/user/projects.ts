@@ -22,15 +22,4 @@ export const PROJECTS: ProjectType[] = [
 		demoLink: "https://www.valentin-invitation.quest",
 		technologies: ["NextJS", "Tailwind CSS", "PostgresSQL"],
 	},
-	{
-		title: "Coucou App Api",
-		status: ProjectStatusEnum.IN_PROGRESS,
-		image: IMAGES.coucouAppImg,
-		description:
-			"Coucou API powers the backend of the Coucou chat app, managing authentication, real-time messaging, and conversations. Built with NestJS for scalability and maintainability, it serves as the foundation for a full-featured messenger.",
-		descriptionKey: "projects.coucou_desc",
-		githubLink: "https://github.com/micael-jerry/coucou-api",
-		demoLink: "https://sour-georgena-micael-jerry-3c76162d.koyeb.app/api#/",
-		technologies: ["NestJS", "PostgreSQL", "Resend", "Docker"],
-	},
 ];

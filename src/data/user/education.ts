@@ -45,6 +45,6 @@ export const EDUCATION: EducationType[] = [
 		periodKey: "education.hei.period",
 		locationKey: "education.hei.location",
 		highlightsKeys: ["education.hei.h1", "education.hei.h2", "education.hei.h3"],
-		tags: ["Software Engineering", "Algorithms", "System Design", "Object-Oriented Programming", "Databases"],
+		tags: ["Software Engineering", "Information Systems", "Cloud", "Cybersecurity", "AI", "Project Management"],
 	},
 ];

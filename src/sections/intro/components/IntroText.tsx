@@ -99,7 +99,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 				alignItems="center"
 				variants={textVariants}
 			>
-				<AnchorLink href={`#${SectionIdEnum.PROJECTS}`} offset={isSmall ? "60px" : "68px"}>
+				<AnchorLink href={`#${SectionIdEnum.EXPERIENCE}`} offset={isSmall ? "60px" : "68px"}>
 					<Button
 						component={motion.button}
 						variant="contained"
@@ -116,7 +116,7 @@ export const IntroText: React.FC<IntroTextProps> = ({ textVariants }) => {
 							fontSize: "1rem",
 						}}
 					>
-						{t("nav.projects")}
+						{t("nav.experience")}
 					</Button>
 				</AnchorLink>
 				<AnchorLink href={`#${SectionIdEnum.CONTACT}`} offset={isSmall ? "60px" : "68px"}>
