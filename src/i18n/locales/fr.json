@@ -2,6 +2,7 @@
   "nav": {
     "intro": "Intro",
     "about": "À propos",
+    "experience": "Expérience",
     "skills": "Compétences",
     "projects": "Projets",
     "projects_42": "Projets 42",
@@ -10,18 +11,18 @@
   },
   "intro": {
     "greeting": "Bonjour 👋, je m'appelle",
-    "role": "Étudiant en informatique & Développeur Fullstack",
-    "passion": "Je suis passionné par la technologie et j'adore apprendre de nouvelles choses.",
+    "role": "Ingénieur Logiciel & Développeur ESM (ServiceNow) / Fullstack",
+    "passion": "Passionné par l'architecture logicielle, les plateformes d'entreprise et le développement d'expériences numériques performantes.",
     "btn_about": "À propos",
     "btn_contact": "Contact"
   },
   "about": {
     "heading": "À propos de moi",
     "bio_prefix": "Salut ! Je suis ",
-    "bio_suffix": ", un ingénieur logiciel passionné qui mêle design et logique pour créer des expériences numériques élégantes.",
+    "bio_suffix": ", un ingénieur logiciel passionné combinant expertise en développement web moderne, programmation système et plateformes d'entreprise (ServiceNow).",
     "education": {
       "title": "Formation",
-      "hei_school": "HEI",
+      "hei_school": "HEI Madagascar",
       "hei_degree": "Diplôme en Informatique",
       "hei_desc": "Solide formation en principes d'ingénierie logicielle, algorithmes et conception de systèmes.",
       "42_school": "42 Antananarivo",
@@ -30,13 +31,13 @@
     },
     "passions": {
       "title": "Ce qui me motive",
-      "subtitle": "Ma passion est de combler le fossé entre le design et la logique complexe.",
-      "coding_title": "Code Élégant",
-      "coding_desc": "Créer des expériences numériques propres, évolutives et maintenables.",
-      "solving_title": "Résolution de problèmes",
-      "solving_desc": "Transformer des besoins complexes en solutions innovantes du monde réel.",
-      "learning_title": "Apprentissage continu",
-      "learning_desc": "Toujours chercher à améliorer ses compétences, explorer les nouvelles technologies et garder une longueur d'avance."
+      "subtitle": "Résoudre des défis techniques complexes et créer des solutions pérennes.",
+      "coding_title": "Architecture & Clean Code",
+      "coding_desc": "Créer des systèmes fiables, modulaires et faciles à maintenir.",
+      "solving_title": "Automatisation & Efficacité",
+      "solving_desc": "Simplifier et automatiser les processus métiers critiques.",
+      "learning_title": "Veille & Progression",
+      "learning_desc": "Approfondir continuellement mes compétences techniques et explorer les innovations de l'écosystème."
     },
     "quote": "Reste <1>curieux</1>, continue à <3>apprendre</3>, et ne cesse jamais de <5>construire</5>.",
     "stats": {
@@ -46,19 +47,110 @@
       "experience_label": "Expérience"
     }
   },
+  "experience": {
+    "heading": "Parcours & Expériences",
+    "subtitle": "Un profil polyvalent et rigoureux alliant expertise sur la plateforme ServiceNow, développement fullstack moderne et ingénierie système.",
+    "current_badge": "Poste Actuel",
+    "key_achievements": "Réalisations & Responsabilités Clés",
+    "servicenow": {
+      "role": "Développeur ESM / ServiceNow",
+      "entity": "Enterprise Service Management",
+      "period": "2024 - Présent",
+      "badge": "ServiceNow ESM & ITSM",
+      "domain": "Plateforme Entreprise",
+      "location": "Antananarivo, Madagascar",
+      "desc": "Conception, développement et automatisation de processus métiers critiques sur la plateforme ServiceNow, axés sur l'ITSM, la personnalisation des workflows et l'intégration de services.",
+      "h1": "Automatisation de workflows métiers complexes avec Flow Designer et Business Rules serveur.",
+      "h2": "Développement de modules modulaires réutilisables en Script Includes et interfaces dynamiques en Client Scripts.",
+      "h3": "Conception et implémentation d'intégrations sécurisées via des APIs REST/JSON avec des systèmes externes.",
+      "h4": "Configuration de formulaires, Catalog Items et adaptation du Service Portal pour une expérience utilisateur optimale."
+    },
+    "fullstack": {
+      "role": "Ingénieur Logiciel & Développeur Fullstack",
+      "entity": "Applications Web & APIs Scalables",
+      "period": "2023 - Présent",
+      "badge": "Web & Architecture",
+      "domain": "Fullstack Engineering",
+      "location": "Antananarivo, Madagascar",
+      "desc": "Développement d'applications web complètes combinant des interfaces réactives, accessibles et performantes avec des architectures backend robustes et scalables.",
+      "h1": "Conception d'interfaces réactives et modernes avec React 19, Next.js et TypeScript.",
+      "h2": "Architecture d'APIs modulaires et sécurisées avec NestJS, Node.js et Spring Boot (Clean Architecture).",
+      "h3": "Modélisation et optimisation de bases de données relationnelles (PostgreSQL) et documents (MongoDB).",
+      "h4": "Conteneurisation avec Docker et mise en place de flux d'intégration continue."
+    },
+    "academic": {
+      "role": "Étudiant en Programmation Système & Algorithmes",
+      "entity": "42 Antananarivo & HEI Madagascar",
+      "period": "2022 - Présent",
+      "badge": "Cursus d'Excellence",
+      "domain": "Systèmes & Algorithmes",
+      "location": "Antananarivo, Madagascar",
+      "desc": "Formation intensive par les pairs axée sur la programmation bas-niveau sans bibliothèques externes, la rigueur algorithmique et la compréhension profonde des systèmes Unix.",
+      "h1": "Développement système en C/C++ : gestion fine de la mémoire, gestion des signaux et appels système POSIX.",
+      "h2": "Conception d'un interpréteur de commandes (Minishell) et d'un moteur graphique 3D par raycasting (Cub3D).",
+      "h3": "Programmation concurrente avancée (Threads, Mutexes, exclusion mutuelle et synchronisation) avec Philosophers.",
+      "h4": "Mise en place d'une infrastructure conteneurisée sécurisée multi-services avec Inception (Docker)."
+    }
+  },
   "skills": {
-    "heading": "Ma Stack Technique",
-    "subtitle": "Voici les technologies et outils que j'utilise le plus souvent, acquis lors de mes études, projets personnels et professionnels.",
-    "categories": {
-      "languages": "Langages",
-      "frameworks": "Frameworks & Bibliothèques",
-      "databases": "Bases de données",
-      "tools": "Outils & Autres"
+    "heading": "Pôles de Compétences",
+    "subtitle": "Une vision par domaines d'expertise pour répondre aux exigences concrètes des entreprises et des projets techniques ambitieux.",
+    "stack_label": "Technologies & Outils clés",
+    "filters": {
+      "all": "Tous les pôles"
+    },
+    "domains": {
+      "servicenow": {
+        "title": "ServiceNow & Plateforme Entreprise",
+        "badge": "ServiceNow ESM",
+        "desc": "Automatisation de processus métiers, personnalisation de workflows et gouvernance des services informatiques (ITSM) sur ServiceNow.",
+        "c1_title": "Flow Designer & Automatisation",
+        "c1_desc": "Conception de flux automatisés, gestion des déclencheurs et approbations multi-niveaux.",
+        "c2_title": "Scripting Avancé (JavaScript)",
+        "c2_desc": "Business Rules serveur, Script Includes orientés objet, Client Scripts et UI Policies côté client.",
+        "c3_title": "ITSM & Service Catalog",
+        "c3_desc": "Gestion des Incidents, Changements, Demandes de services et portails utilisateurs.",
+        "c4_title": "Intégrations & APIs REST",
+        "c4_desc": "Échanges bidirectionnels de données sécurisés via REST/JSON et webhooks."
+      },
+      "fullstack": {
+        "title": "Architecture Web & APIs Scalables",
+        "badge": "Fullstack Web",
+        "desc": "Développement d'applications web modernes de bout en bout, performantes, modulaires et faciles à maintenir.",
+        "c1_title": "Frontend Moderne & Réactif",
+        "c1_desc": "Interfaces fluides avec React 19, Next.js, typage strict TypeScript et design Material élégant.",
+        "c2_title": "APIs Modulaires & Clean Architecture",
+        "c2_desc": "Architecture en couches scalables avec NestJS, Node.js, Express et Spring Boot.",
+        "c3_title": "Qualité & Robustesse",
+        "c3_desc": "Validation des données, gestion centralisée des erreurs et respect des principes SOLID."
+      },
+      "systems": {
+        "title": "Systèmes, Concurrence & Algorithmes",
+        "badge": "Systèmes 42",
+        "desc": "Compréhension approfondie du fonctionnement de l'OS, de la mémoire et des structures de données (école 42).",
+        "c1_title": "Programmation Système en C/C++",
+        "c1_desc": "Gestion stricte de la mémoire (zéro fuite), descripteurs de fichiers, signaux POSIX et Makefiles.",
+        "c2_title": "Multithreading & Concurrence",
+        "c2_desc": "Synchronisation de threads, mutexes et prévention des deadlocks (verrous mortels).",
+        "c3_title": "Réseaux & Sockets",
+        "c3_desc": "Création de serveurs TCP et multiplexage d'entrées/sorties (poll/select)."
+      },
+      "data_devops": {
+        "title": "Bases de Données, DevOps & Outils",
+        "badge": "Data & DevOps",
+        "desc": "Persistance des données, conteneurisation des environnements et collaboration professionnelle agile.",
+        "c1_title": "Modélisation SQL & NoSQL",
+        "c1_desc": "Schématisation relationnelle avec PostgreSQL et bases orientées documents avec MongoDB.",
+        "c2_title": "Conteneurisation Docker",
+        "c2_desc": "Création d'images optimisées, Docker Compose multi-conteneurs et reproductibilité des déploiements.",
+        "c3_title": "Versionnement & Méthodes Agiles",
+        "c3_desc": "Git Flow rigoureux, intégration continue GitHub Actions, suivi de projet Jira et méthode Scrum."
+      }
     }
   },
   "projects": {
-    "heading": "Projets",
-    "subtitle": "Voici quelques projets sur lesquels j'ai récemment travaillé.",
+    "heading": "Projets Réalisés",
+    "subtitle": "Une sélection de projets illustrant mes capacités d'ingénierie et de développement.",
     "status_completed": "Terminé",
     "status_in_progress": "En cours",
     "btn_code": "Code",
@@ -95,8 +187,8 @@
   },
   "contact": {
     "heading": "Restons en contact",
-    "subtitle": "Vous avez un projet en tête ou juste envie de dire bonjour ? Je serais ravi d'avoir de vos nouvelles.",
-    "body": "Que ce soit une opportunité d'emploi, un projet freelance ou une discussion technique, ma boîte mail est toujours ouverte. Remplissez le formulaire et je vous répondrai dès que possible.",
+    "subtitle": "Vous avez un projet en tête ou une opportunité professionnelle ? Échangeons avec plaisir.",
+    "body": "Que ce soit pour un rôle de développeur ServiceNow, un projet fullstack innovant ou une collaboration technique, ma boîte mail est toujours ouverte.",
     "email_label": "Email",
     "form": {
       "name": "Votre nom",
@@ -105,13 +197,13 @@
       "message": "Message",
       "send": "Envoyer le message",
       "sending": "Envoi en cours...",
-      "success": "🎉 Merci ! Votre message a été envoyé. Je vous répondrai bientôt.",
+      "success": "🎉 Merci ! Votre message a été envoyé. Je vous répondrai très rapidement.",
       "error": "❌ Oups ! Une erreur s'est produite. Veuillez réessayer.",
       "email_invalid": "Adresse e-mail invalide."
     }
   },
   "footer": {
-    "tagline": "Créé avec passion & code.",
+    "tagline": "Ingénieur Logiciel & Développeur ServiceNow ESM / Fullstack.",
     "copyright": "Tous droits réservés.",
     "built_with": "Construit avec React & TypeScript"
   }

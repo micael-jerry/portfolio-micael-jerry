@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout/Layout";
 import { SectionContainer } from "./components/SectionContainer/SectionContainer";
 import { AboutSection } from "./sections/about/AboutSection";
 import { ContactSection } from "./sections/contact/ContactSection";
+import { ExperienceSection } from "./sections/experience/ExperienceSection";
 import { IntroSection } from "./sections/intro/IntroSection";
 import { ProjectsSection } from "./sections/projects/ProjectsSection";
 import { Projects42Section } from "./sections/projects42/Projects42Section";
@@ -18,6 +19,10 @@ const SECTIONS = [
 	{
 		sectionId: SectionIdEnum.ABOUT,
 		component: <AboutSection />,
+	},
+	{
+		sectionId: SectionIdEnum.EXPERIENCE,
+		component: <ExperienceSection />,
 	},
 	{
 		sectionId: SectionIdEnum.SKILLS,

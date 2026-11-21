@@ -40,6 +40,7 @@ export const NavMenu: React.FC = () => {
 	const navigationItems = [
 		{ to: SectionIdEnum.INTRO, text: t("nav.intro") },
 		{ to: SectionIdEnum.ABOUT, text: t("nav.about") },
+		{ to: SectionIdEnum.EXPERIENCE, text: t("nav.experience") },
 		{ to: SectionIdEnum.SKILLS, text: t("nav.skills") },
 		{ to: SectionIdEnum.PROJECTS, text: t("nav.projects") },
 		{ to: SectionIdEnum.PROJECTS_42, text: t("nav.projects_42") },
