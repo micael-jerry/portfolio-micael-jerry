@@ -14,12 +14,12 @@ const mobileMenuVariants: Variants = {
 	open: {
 		x: 0,
 		opacity: 1,
-		transition: { type: "spring", stiffness: 300, damping: 30 },
+		transition: { type: "spring", stiffness: 320, damping: 32 },
 	},
 	closed: {
 		x: "100%",
 		opacity: 0,
-		transition: { type: "spring", stiffness: 400, damping: 40 },
+		transition: { type: "spring", stiffness: 380, damping: 38 },
 	},
 };
 
@@ -27,9 +27,9 @@ const itemVariants: Variants = {
 	open: (i: number) => ({
 		x: 0,
 		opacity: 1,
-		transition: { delay: 0.05 * i, type: "spring", stiffness: 300, damping: 24 },
+		transition: { delay: 0.04 * i, type: "spring", stiffness: 300, damping: 24 },
 	}),
-	closed: { x: 40, opacity: 0 },
+	closed: { x: 30, opacity: 0 },
 };
 
 export const NavMenu: React.FC = () => {
@@ -55,18 +55,21 @@ export const NavMenu: React.FC = () => {
 				<>
 					<IconButton
 						onClick={onOpenHandler}
+						aria-label="Open menu"
 						sx={{
-							border: "1.5px solid rgba(255,167,38,0.4)",
-							borderRadius: 2,
-							p: 0.7,
+							borderRadius: 9999,
+							p: 0.8,
+							border: "1px solid",
+							borderColor: "divider",
+							color: "text.primary",
+							bgcolor: "transparent",
 							"&:hover": {
-								background: "rgba(255,167,38,0.12)",
-								borderColor: "#ffa726",
+								bgcolor: "action.hover",
 							},
-							transition: "all 0.2s",
+							transition: "all 0.2s ease",
 						}}
 					>
-						<Menu sx={{ color: "#ffa726", fontSize: 26 }} />
+						<Menu sx={{ fontSize: 22 }} />
 					</IconButton>
 
 					<AnimatePresence>
@@ -85,44 +88,46 @@ export const NavMenu: React.FC = () => {
 									elevation={0}
 									sx={{
 										background: "transparent",
-										borderBottom: "1px solid rgba(255,255,255,0.08)",
+										borderBottom: "1px solid",
+										borderColor: "divider",
 									}}
 								>
-									<Toolbar>
-										<Avatar
-											src={LOGO.logoApp}
-											alt="Logo"
-											sx={{
-												mr: 1.5,
-												width: 34,
-												height: 34,
-												border: "2px solid rgba(255,167,38,0.5)",
-											}}
-										/>
-										<Typography
-											variant="h6"
-											sx={{
-												flexGrow: 1,
-												fontWeight: 700,
-												letterSpacing: "0.06em",
-												background: "linear-gradient(90deg, #fff 60%, #ffa726 100%)",
-												WebkitBackgroundClip: "text",
-												WebkitTextFillColor: "transparent",
-												backgroundClip: "text",
-											}}
-										>
-											{ME.firstname}
-										</Typography>
+									<Toolbar sx={{ justifyContent: "space-between" }}>
+										<Box display="flex" alignItems="center" gap={1.2}>
+											<Avatar
+												src={LOGO.logoApp}
+												alt="Logo"
+												sx={{
+													width: 32,
+													height: 32,
+													border: "1px solid",
+													borderColor: "divider",
+												}}
+											/>
+											<Typography
+												variant="subtitle1"
+												sx={{
+													fontWeight: 700,
+													color: "text.primary",
+													letterSpacing: "-0.01em",
+												}}
+											>
+												{ME.firstname}
+											</Typography>
+										</Box>
 										<IconButton
 											onClick={onCloseHandler}
+											aria-label="Close menu"
 											sx={{
-												border: "1.5px solid rgba(255,167,38,0.4)",
-												borderRadius: 2,
-												p: 0.6,
-												"&:hover": { background: "rgba(255,167,38,0.12)" },
+												borderRadius: 9999,
+												p: 0.8,
+												border: "1px solid",
+												borderColor: "divider",
+												color: "text.primary",
+												"&:hover": { bgcolor: "action.hover" },
 											}}
 										>
-											<Close sx={{ color: "#ffa726", fontSize: 22 }} />
+											<Close sx={{ fontSize: 20 }} />
 										</IconButton>
 									</Toolbar>
 								</AppBar>
@@ -133,9 +138,9 @@ export const NavMenu: React.FC = () => {
 									flexDirection="column"
 									alignItems="center"
 									justifyContent="center"
-									gap={0.5}
-									py={4}
-									sx={{ flex: 1 }}
+									gap={1}
+									py={5}
+									sx={{ flex: 1, px: 3 }}
 								>
 									{navigationItems.map(({ to, text }, i) => (
 										<motion.div
@@ -144,7 +149,7 @@ export const NavMenu: React.FC = () => {
 											variants={itemVariants}
 											initial="closed"
 											animate="open"
-											style={{ width: "80%" }}
+											style={{ width: "100%", maxWidth: 300 }}
 										>
 											<NavButton
 												to={to}
@@ -161,14 +166,9 @@ export const NavMenu: React.FC = () => {
 										variants={itemVariants}
 										initial="closed"
 										animate="open"
-										style={{ width: "80%" }}
+										style={{ width: "100%", maxWidth: 300 }}
 									>
-										<Divider
-											sx={{
-												my: 2,
-												borderColor: "rgba(255,255,255,0.1)",
-											}}
-										/>
+										<Divider sx={{ my: 2 }} />
 										<Button
 											fullWidth
 											variant="outlined"
@@ -178,19 +178,17 @@ export const NavMenu: React.FC = () => {
 											onClick={onCloseHandler}
 											sx={{
 												fontWeight: 700,
-												borderRadius: 2.5,
+												borderRadius: 9999,
 												py: 1.2,
-												fontSize: "1rem",
-												borderWidth: 2,
-												letterSpacing: "0.06em",
-												borderColor: "#ffa726",
-												color: "#ffa726",
+												fontSize: "0.95rem",
+												borderColor: "text.primary",
+												color: "text.primary",
 												"&:hover": {
-													background: "rgba(255,167,38,0.12)",
-													borderColor: "#ffca5a",
-													color: "#ffca5a",
+													bgcolor: "text.primary",
+													color: "background.paper",
+													borderColor: "text.primary",
 												},
-												transition: "all 0.2s",
+												transition: "all 0.2s ease",
 											}}
 										>
 											{t("nav.cv")}
@@ -211,27 +209,24 @@ export const NavMenu: React.FC = () => {
 						href={ME.link.cv}
 						target="_blank"
 						variant="outlined"
-						startIcon={<Description />}
-						whileHover={{ scale: 1.04 }}
-						whileTap={{ scale: 0.97 }}
+						size="small"
+						startIcon={<Description sx={{ fontSize: 18 }} />}
+						whileHover={{ scale: 1.02 }}
+						whileTap={{ scale: 0.98 }}
 						sx={{
 							ml: 1,
-							fontWeight: 700,
-							borderRadius: 2.5,
-							px: 2.5,
-							py: 0.75,
-							fontSize: "0.9rem",
-							borderWidth: 2,
-							letterSpacing: "0.06em",
-							borderColor: "#ffa726",
-							color: "#ffa726",
+							fontWeight: 600,
+							borderRadius: 9999,
+							px: 2,
+							py: 0.7,
+							fontSize: "0.85rem",
+							borderColor: "divider",
+							color: "text.primary",
 							"&:hover": {
-								background: "rgba(255,167,38,0.12)",
-								borderColor: "#ffca5a",
-								color: "#ffca5a",
-								borderWidth: 2,
+								borderColor: "text.primary",
+								bgcolor: "action.hover",
 							},
-							transition: "all 0.2s",
+							transition: "all 0.2s ease",
 						}}
 					>
 						{t("nav.cv")}

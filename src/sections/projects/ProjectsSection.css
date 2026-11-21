@@ -1,13 +1,9 @@
 .progress {
 	position: sticky;
-	top: 0;
-	left: 0;
+	top: 60px;
+	z-index: 10;
 }
 
 .progress-bar {
-	height: 6;
-	border-radius: 3;
-	margin: 0 auto;
-	margin-bottom: 4;
-	background: linear-gradient(90deg, #ffc107 0%, #1976d2 100%);
+	transform-origin: 0%;
 }

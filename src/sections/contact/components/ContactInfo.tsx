@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ME } from "../../../data/user/me.ts";
-import { COLOR_WARNING } from "../../../utils/color.ts";
 
 export const ContactInfo: React.FC = () => {
 	const { t } = useTranslation();
@@ -12,73 +11,75 @@ export const ContactInfo: React.FC = () => {
 	return (
 		<Box
 			component={motion.div}
-			initial={{ opacity: 0, x: -40 }}
+			initial={{ opacity: 0, x: -30 }}
 			whileInView={{ opacity: 1, x: 0 }}
-			transition={{ duration: 0.7 }}
+			transition={{ duration: 0.6 }}
 			viewport={{ once: true }}
 		>
 			<Typography
-				component={motion.h2}
+				component="h2"
 				variant="h2"
-				gutterBottom
-				whileHover={{ color: COLOR_WARNING.dark }}
 				sx={{
 					fontWeight: 800,
-					fontSize: { xs: "2.2rem", md: "2.8rem" },
+					fontSize: { xs: "2rem", md: "2.5rem" },
 					mb: 2,
-					letterSpacing: 1,
-					background: `linear-gradient(135deg, ${COLOR_WARNING.main} 0%, #00c9ff 100%)`,
-					backgroundClip: "text",
-					WebkitBackgroundClip: "text",
-					WebkitTextFillColor: "transparent",
+					letterSpacing: "-0.025em",
+					color: "text.primary",
 				}}
 			>
 				{t("contact.heading")}
 			</Typography>
 
-			<Box
-				sx={{
-					height: 3,
-					width: 60,
-					background: `linear-gradient(90deg, ${COLOR_WARNING.main} 0%, transparent 100%)`,
-					borderRadius: 2,
-					mb: 4,
-				}}
-			/>
-
-			<Typography variant="h6" component="p" sx={{ color: "#e0e0e0", mb: 2, fontWeight: 500, lineHeight: 1.6 }}>
+			<Typography
+				variant="h6"
+				component="p"
+				sx={{ color: "text.primary", mb: 1.5, fontWeight: 600, fontSize: "1.1rem" }}
+			>
 				{t("contact.subtitle")}
 			</Typography>
-			<Typography variant="body1" component="p" sx={{ color: "#bdbdbd", mb: 5, lineHeight: 1.6 }}>
+			<Typography variant="body1" component="p" sx={{ color: "text.secondary", mb: 4, lineHeight: 1.6 }}>
 				{t("contact.body")}
 			</Typography>
 
-			<Box display="flex" flexDirection="column" gap={3}>
-				<Box display="flex" alignItems="center" gap={2}>
+			<Box display="flex" flexDirection="column" gap={2}>
+				<Box
+					sx={{
+						display: "flex",
+						alignItems: "center",
+						gap: 2,
+						p: 2,
+						borderRadius: 3,
+						bgcolor: "background.paper",
+						border: "1px solid",
+						borderColor: "divider",
+						width: "fit-content",
+					}}
+				>
 					<Box
 						sx={{
-							p: 1.5,
-							borderRadius: 2,
-							background: "rgba(255,193,7,0.1)",
-							border: `1px solid rgba(255,193,7,0.2)`,
+							p: 1.2,
+							borderRadius: 2.5,
+							bgcolor: "action.hover",
+							color: "text.primary",
 							display: "flex",
 							alignItems: "center",
 						}}
 					>
-						<EmailIcon sx={{ color: COLOR_WARNING.main }} />
+						<EmailIcon sx={{ fontSize: 22 }} />
 					</Box>
 					<Box>
-						<Typography variant="body2" sx={{ color: "#9e9e9e", fontWeight: 600 }}>
+						<Typography variant="caption" sx={{ color: "text.secondary", fontWeight: 600, display: "block" }}>
 							{t("contact.email_label")}
 						</Typography>
 						<Typography
 							component="a"
 							href={`mailto:${ME.email.personal}`}
 							sx={{
-								color: "#fff",
+								color: "text.primary",
 								textDecoration: "none",
-								fontWeight: 500,
-								"&:hover": { color: COLOR_WARNING.main },
+								fontWeight: 600,
+								fontSize: "0.95rem",
+								"&:hover": { textDecoration: "underline" },
 							}}
 						>
 							{ME.email.personal}

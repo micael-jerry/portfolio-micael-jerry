@@ -4,14 +4,15 @@
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 20px 10px;
+    padding: 24px 12px;
     position: relative;
-    border-radius: 16px;
-    background: rgba(10, 10, 18, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 }
 
 /* On desktop, center the graph if space permits */
@@ -19,36 +20,23 @@
     .holy-graph-scroll-container {
         justify-content: center;
         overflow-x: visible;
-        background: transparent;
-        border: none;
-        padding: 0;
+        padding: 16px;
     }
 }
 
-/* Custom scrollbar for a premium look */
+/* Custom scrollbar */
 .holy-graph-scroll-container::-webkit-scrollbar {
     height: 6px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 3px;
+    background: transparent;
 }
 
 .holy-graph-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 167, 38, 0.3);
-    border-radius: 3px;
+    background: rgba(100, 116, 139, 0.25);
+    border-radius: 9999px;
 }
 
 .holy-graph-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 167, 38, 0.5);
-}
-
-/* Glow effects for SVG nodes and connections */
-.svg-connection-line {
-    transition: stroke 0.3s ease, stroke-width 0.3s ease;
-}
-
-.svg-connection-line.active {
-    stroke: rgba(0, 180, 255, 0.5);
-    stroke-width: 3px;
+    background: rgba(100, 116, 139, 0.45);
 }
 
 .holy-graph-node-group {
@@ -56,28 +44,15 @@
 }
 
 .holy-graph-node-circle {
-    transition: stroke 0.3s ease, fill 0.3s ease, filter 0.3s ease;
-}
-
-.holy-graph-node-group:hover .holy-graph-node-circle {
-    stroke: #ffa726;
-    fill: rgba(255, 167, 38, 0.15);
-    filter: drop-shadow(0px 0px 8px rgba(255, 167, 38, 0.6));
+    transition: stroke 0.2s ease, fill 0.2s ease;
 }
 
 .holy-graph-node-text {
-    font-family: 'Outfit', 'Inter', sans-serif;
+    font-family: var(--font-sans);
     font-size: 10px;
-    font-weight: 700;
-    fill: #ffffff;
     pointer-events: none;
     text-anchor: middle;
     dominant-baseline: middle;
-    transition: fill 0.3s ease;
-}
-
-.holy-graph-node-group:hover .holy-graph-node-text {
-    fill: #ffa726;
 }
 
 /* Mobile swipe hint banner */
@@ -87,9 +62,9 @@
     justify-content: center;
     gap: 8px;
     margin-bottom: 16px;
-    color: #ffa726;
+    color: var(--text-secondary);
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 @media (min-width: 900px) {

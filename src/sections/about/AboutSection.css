@@ -14,15 +14,6 @@
 		transform: translateY(0px);
 	}
 	50% {
-		transform: translateY(-15px);
-	}
-}
-
-@keyframes shimmer {
-	0% {
-		background-position: -1000px 0;
-	}
-	100% {
-		background-position: 1000px 0;
+		transform: translateY(-8px);
 	}
 }

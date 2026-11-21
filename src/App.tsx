@@ -7,6 +7,7 @@ import { IntroSection } from "./sections/intro/IntroSection";
 import { ProjectsSection } from "./sections/projects/ProjectsSection";
 import { Projects42Section } from "./sections/projects42/Projects42Section";
 import { SkillsSection } from "./sections/skills/SkillsSection";
+import { ThemeProvider } from "./theme/ThemeContext";
 import { SectionIdEnum } from "./types/sectionId/sectionId.type";
 
 const SECTIONS = [
@@ -38,13 +39,15 @@ const SECTIONS = [
 
 const App: React.FC = () => {
 	return (
-		<Layout>
-			{SECTIONS.map(({ sectionId, component }) => (
-				<SectionContainer sectionId={sectionId} key={sectionId}>
-					{component}
-				</SectionContainer>
-			))}
-		</Layout>
+		<ThemeProvider>
+			<Layout>
+				{SECTIONS.map(({ sectionId, component }) => (
+					<SectionContainer sectionId={sectionId} key={sectionId}>
+						{component}
+					</SectionContainer>
+				))}
+			</Layout>
+		</ThemeProvider>
 	);
 };
 

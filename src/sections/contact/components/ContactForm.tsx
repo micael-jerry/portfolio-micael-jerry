@@ -4,7 +4,8 @@ import { Box, Button, CircularProgress, Grid, TextField, Typography } from "@mui
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { COLOR_ERROR, COLOR_SUCCESS, COLOR_WARNING } from "../../../utils/color.ts";
+import { COLOR_ERROR, COLOR_SUCCESS } from "../../../utils/color.ts";
+import { cardSx } from "../../../utils/styles.ts";
 
 interface ContactFormState {
 	name: string;
@@ -32,7 +33,6 @@ export const ContactForm: React.FC = () => {
 	const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 	const resetTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
-	// Cleanup du timer au démontage pour éviter les memory leaks
 	useEffect(() => {
 		return () => {
 			clearTimeout(resetTimerRef.current);
@@ -48,11 +48,9 @@ export const ContactForm: React.FC = () => {
 		return Object.keys(errors).length === 0;
 	};
 
-	// Updater function pour éviter la stale closure sur l'ancien state
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target;
 		setFormState((prev) => ({ ...prev, [name]: value }));
-		// Effacer l'erreur de validation si l'utilisateur corrige le champ
 		if (formErrors[name as keyof FormErrors]) {
 			setFormErrors((prev) => ({ ...prev, [name]: undefined }));
 		}
@@ -98,9 +96,9 @@ export const ContactForm: React.FC = () => {
 	return (
 		<Box
 			component={motion.div}
-			initial={{ opacity: 0, x: 40 }}
+			initial={{ opacity: 0, x: 30 }}
 			whileInView={{ opacity: 1, x: 0 }}
-			transition={{ duration: 0.7 }}
+			transition={{ duration: 0.6 }}
 			viewport={{ once: true }}
 			sx={{
 				display: "flex",
@@ -112,20 +110,16 @@ export const ContactForm: React.FC = () => {
 				component="form"
 				onSubmit={handleSubmit}
 				sx={{
+					...cardSx,
 					width: "100%",
 					maxWidth: 600,
-					p: { xs: 3, md: 5 },
-					borderRadius: 4,
-					background: "linear-gradient(135deg, rgba(30,30,40,0.8) 0%, rgba(20,20,30,0.6) 100%)",
-					backdropFilter: "blur(16px)",
-					border: "1px solid rgba(255,255,255,0.08)",
-					boxShadow: "0 8px 32px 0 rgba(0,0,0,0.2)",
+					p: { xs: 3, md: 4.5 },
 					display: "flex",
 					flexDirection: "column",
-					gap: 3,
+					gap: 2.5,
 				}}
 			>
-				<Grid container spacing={3}>
+				<Grid container spacing={2.5}>
 					<Grid size={{ xs: 12, sm: 6 }}>
 						<TextField
 							fullWidth
@@ -185,42 +179,29 @@ export const ContactForm: React.FC = () => {
 					</Grid>
 				</Grid>
 
-				<Box sx={{ mt: 1, position: "relative" }}>
+				<Box sx={{ mt: 1, display: "flex", alignItems: "center", gap: 2 }}>
 					<Button
 						type="submit"
 						variant="contained"
-						color="warning"
+						color="primary"
 						size="large"
 						disabled={isSubmitting}
-						endIcon={isSubmitting ? null : <SendIcon />}
+						endIcon={isSubmitting ? null : <SendIcon sx={{ fontSize: 18 }} />}
 						component={motion.button}
 						whileHover={{ scale: 1.02 }}
 						whileTap={{ scale: 0.98 }}
 						sx={{
 							fontWeight: 700,
-							py: 1.5,
+							py: 1.3,
 							px: 4,
-							borderRadius: 2,
-							boxShadow: "0 4px 20px 0 rgba(255,193,7,0.2)",
+							borderRadius: 9999,
 							width: { xs: "100%", sm: "auto" },
 						}}
 					>
 						{isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
 					</Button>
 
-					{isSubmitting && (
-						<CircularProgress
-							size={24}
-							sx={{
-								color: COLOR_WARNING.main,
-								position: "absolute",
-								top: "50%",
-								left: { xs: "50%", sm: 110 },
-								marginTop: "-12px",
-								marginLeft: "-12px",
-							}}
-						/>
-					)}
+					{isSubmitting && <CircularProgress size={22} sx={{ color: "text.primary" }} />}
 				</Box>
 
 				{submitStatus === "success" && (
@@ -230,13 +211,11 @@ export const ContactForm: React.FC = () => {
 								color: COLOR_SUCCESS.main,
 								backgroundColor: COLOR_SUCCESS.bg,
 								p: 2,
-								borderRadius: 2,
+								borderRadius: 3,
 								border: `1px solid ${COLOR_SUCCESS.border}`,
 								mt: 1,
-								fontWeight: 500,
-								display: "flex",
-								alignItems: "center",
-								gap: 1,
+								fontWeight: 600,
+								fontSize: "0.9rem",
 							}}
 						>
 							{t("contact.form.success")}
@@ -251,10 +230,11 @@ export const ContactForm: React.FC = () => {
 								color: COLOR_ERROR.main,
 								backgroundColor: COLOR_ERROR.bg,
 								p: 2,
-								borderRadius: 2,
+								borderRadius: 3,
 								border: `1px solid ${COLOR_ERROR.border}`,
 								mt: 1,
-								fontWeight: 500,
+								fontWeight: 600,
+								fontSize: "0.9rem",
 							}}
 						>
 							{t("contact.form.error")}

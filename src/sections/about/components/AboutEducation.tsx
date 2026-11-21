@@ -1,10 +1,9 @@
-import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import SchoolIcon from "@mui/icons-material/School";
 import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { COLOR_WARNING } from "../../../utils/color.ts";
+import { cardSx } from "../../../utils/styles.ts";
 
 interface AboutEducationProps {
 	variants?: Variants;
@@ -17,70 +16,60 @@ export const AboutEducation: React.FC<AboutEducationProps> = ({ variants }) => {
 		<Box
 			component={motion.div}
 			variants={variants}
-			whileHover={{ scale: 1.02, boxShadow: "0 12px 40px 0 rgba(0,180,255,0.15)" }}
-			transition={{ type: "spring", stiffness: 200 }}
 			sx={{
+				...cardSx,
 				p: { xs: 3, md: 4 },
-				borderRadius: 4,
-				background: "linear-gradient(135deg, rgba(20, 20, 30, 0.75) 0%, rgba(30, 30, 50, 0.65) 100%)",
-				backdropFilter: "blur(12px)",
-				boxShadow: "0 4px 24px 0 rgba(0,180,255,0.08)",
-				border: "1px solid rgba(0,180,255,0.1)",
-				position: "relative",
-				overflow: "hidden",
 				height: "100%",
 				display: "flex",
 				flexDirection: "column",
 			}}
 		>
-			<Box sx={{ mb: 3, display: "flex", alignItems: "center", gap: 2 }}>
+			<Box sx={{ mb: 3, display: "flex", alignItems: "center", gap: 1.5 }}>
 				<Box
 					sx={{
-						p: 1.5,
-						borderRadius: 2,
-						background: "rgba(0,180,255,0.1)",
-						border: `1px solid rgba(0,180,255,0.2)`,
+						p: 1.2,
+						borderRadius: 3,
+						bgcolor: "action.hover",
+						border: "1px solid",
+						borderColor: "divider",
 						display: "flex",
 						alignItems: "center",
+						color: "text.primary",
 					}}
 				>
-					<SchoolIcon sx={{ color: "#00b4ff" }} />
+					<SchoolIcon sx={{ fontSize: 22 }} />
 				</Box>
-				<Typography variant="h5" sx={{ fontWeight: 700, color: "#fff" }}>
+				<Typography variant="h5" sx={{ fontWeight: 700, color: "text.primary", fontSize: "1.25rem" }}>
 					{t("about.education.title")}
 				</Typography>
 			</Box>
 
-			<Box sx={{ display: "flex", flexDirection: "column", gap: 3, flex: 1 }}>
+			<Box sx={{ display: "flex", flexDirection: "column", gap: 2.5, flex: 1 }}>
 				<Box>
-					<Typography variant="h6" sx={{ color: COLOR_WARNING.main, fontWeight: 600, mb: 0.5 }}>
+					<Typography variant="subtitle1" sx={{ color: "text.primary", fontWeight: 700, mb: 0.3 }}>
 						{t("about.education.hei_school")}
 					</Typography>
-					<Typography variant="body1" sx={{ color: "#e0e0e0", mb: 1 }}>
+					<Typography variant="body2" sx={{ color: "text.secondary", fontWeight: 600, mb: 0.6 }}>
 						{t("about.education.hei_degree")}
 					</Typography>
-					<Typography variant="body2" sx={{ color: "#9e9e9e" }}>
+					<Typography variant="body2" sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.5 }}>
 						{t("about.education.hei_desc")}
 					</Typography>
 				</Box>
 
-				<Box sx={{ height: 1, width: "100%", background: "rgba(255,255,255,0.1)" }} />
+				<Box sx={{ height: 1, width: "100%", bgcolor: "divider" }} />
 
 				<Box>
-					<Typography variant="h6" sx={{ color: COLOR_WARNING.main, fontWeight: 600, mb: 0.5 }}>
+					<Typography variant="subtitle1" sx={{ color: "text.primary", fontWeight: 700, mb: 0.3 }}>
 						{t("about.education.42_school")}
 					</Typography>
-					<Typography variant="body1" sx={{ color: "#e0e0e0", mb: 1 }}>
+					<Typography variant="body2" sx={{ color: "text.secondary", fontWeight: 600, mb: 0.6 }}>
 						{t("about.education.42_degree")}
 					</Typography>
-					<Typography variant="body2" sx={{ color: "#9e9e9e" }}>
+					<Typography variant="body2" sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.5 }}>
 						{t("about.education.42_desc")}
 					</Typography>
 				</Box>
-			</Box>
-
-			<Box sx={{ position: "absolute", bottom: -20, right: -20, opacity: 0.05, transform: "rotate(-15deg)" }}>
-				<AutoStoriesIcon sx={{ fontSize: 180 }} />
 			</Box>
 		</Box>
 	);

@@ -13,49 +13,34 @@ interface NavButtonProps {
 
 export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAnchorLink, onCloseHandler }) => {
 	const desktopSx: ButtonProps["sx"] = {
-		color: "rgba(255,255,255,0.85)",
-		fontWeight: 500,
-		fontSize: "0.88rem",
-		letterSpacing: "0.05em",
-		px: 1.5,
-		py: 0.75,
-		borderRadius: 2,
-		position: "relative",
-		"&::after": {
-			content: '""',
-			position: "absolute",
-			bottom: 4,
-			left: "50%",
-			transform: "translateX(-50%)",
-			width: 0,
-			height: "2px",
-			background: "#ffa726",
-			borderRadius: 1,
-			transition: "width 0.25s ease",
-		},
+		color: "text.secondary",
+		fontWeight: 600,
+		fontSize: "0.9rem",
+		px: 1.8,
+		py: 0.7,
+		borderRadius: 9999,
+		textTransform: "none",
+		transition: "all 0.2s ease",
 		"&:hover": {
-			background: "rgba(255,255,255,0.06)",
-			color: "#fff",
-			"&::after": {
-				width: "60%",
-			},
+			color: "text.primary",
+			bgcolor: "action.hover",
 		},
 	};
 
 	const mobileSx: ButtonProps["sx"] = {
-		color: "rgba(255,255,255,0.9)",
-		fontWeight: 600,
-		fontSize: "1.4rem",
-		letterSpacing: "0.04em",
-		py: 1.2,
-		borderRadius: 2,
+		color: "text.primary",
+		fontWeight: 700,
+		fontSize: "1.25rem",
+		py: 1.4,
+		px: 3,
+		borderRadius: 3,
 		width: "100%",
 		justifyContent: "center",
+		textTransform: "none",
 		"&:hover": {
-			background: "rgba(255,167,38,0.1)",
-			color: "#ffa726",
+			bgcolor: "action.hover",
 		},
-		transition: "all 0.2s",
+		transition: "all 0.2s ease",
 	};
 
 	const commonProps = {
@@ -63,7 +48,7 @@ export const NavButton: React.FC<NavButtonProps> = ({ to, text, isSmall, isAncho
 		size: "medium" as const,
 		variant: "text" as const,
 		fullWidth: isSmall,
-		whileTap: { scale: 0.96 },
+		whileTap: { scale: 0.97 },
 		sx: isSmall ? mobileSx : desktopSx,
 		onClick: isSmall ? onCloseHandler : undefined,
 	};

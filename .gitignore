@@ -27,3 +27,7 @@ package-lock.json
 *.sw?
 
 .env
+
+# Agent & CLI skills
+.agents
+skills-lock.json
