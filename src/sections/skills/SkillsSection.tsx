@@ -1,77 +1,53 @@
-import { Box, Typography } from "@mui/material";
-import { motion, Variants } from "framer-motion";
-import React from "react";
+import CloudQueueIcon from "@mui/icons-material/CloudQueue";
+import CodeIcon from "@mui/icons-material/Code";
+import StorageIcon from "@mui/icons-material/Storage";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import { Box, Chip, Grid, Typography, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ALL_SKILLS, SKILL_CATEGORIES } from "../../data/user/skills.ts";
-import { COLOR_WARNING } from "../../utils/color.ts";
-import { SkillCategory } from "./components/SkillCategory.tsx";
+import { SKILL_DOMAINS, SkillDomain } from "../../data/user/skills.ts";
+import { cardSx } from "../../utils/styles.ts";
 
-const skillVariants: Variants = {
-	initial: { opacity: 0, y: 30, scale: 0.95 },
-	animate: (i: number) => ({
-		opacity: 1,
-		y: 0,
-		scale: 1,
-		transition: { delay: i * 0.05, duration: 0.5, type: "spring" as const, stiffness: 120 },
-	}),
+const domainIcons: Record<SkillDomain["iconType"], React.ReactNode> = {
+	servicenow: <CloudQueueIcon sx={{ fontSize: 24 }} />,
+	fullstack: <CodeIcon sx={{ fontSize: 24 }} />,
+	systems: <TerminalIcon sx={{ fontSize: 24 }} />,
+	data_devops: <StorageIcon sx={{ fontSize: 24 }} />,
 };
-
-const categoryColors = {
-	[SKILL_CATEGORIES.languages]: { bg: "rgba(0, 180, 255, 0.12)", border: "rgba(0, 180, 255, 0.3)", accent: "#00b4ff" },
-	[SKILL_CATEGORIES.frameworks]: { bg: "rgba(76, 175, 80, 0.12)", border: "rgba(76, 175, 80, 0.3)", accent: "#4caf50" },
-	[SKILL_CATEGORIES.databases]: { bg: "rgba(255, 152, 0, 0.12)", border: "rgba(255, 152, 0, 0.3)", accent: "#ff9800" },
-	[SKILL_CATEGORIES.tools]: { bg: "rgba(156, 39, 176, 0.12)", border: "rgba(156, 39, 176, 0.3)", accent: "#9c27b0" },
-};
-
-const groupedSkills = ALL_SKILLS.reduce(
-	(acc, skill) => {
-		if (!acc[skill.category]) acc[skill.category] = [];
-		acc[skill.category].push(skill);
-		return acc;
-	},
-	{} as Record<string, typeof ALL_SKILLS>,
-);
 
 export const SkillsSection: React.FC = () => {
 	const { t } = useTranslation();
+	const theme = useTheme();
+	const [activeDomain, setActiveDomain] = useState<string>("all");
 
-	// Build category display name map
-	const categoryDisplayNames: Record<string, string> = {
-		[SKILL_CATEGORIES.languages]: t("skills.categories.languages"),
-		[SKILL_CATEGORIES.frameworks]: t("skills.categories.frameworks"),
-		[SKILL_CATEGORIES.databases]: t("skills.categories.databases"),
-		[SKILL_CATEGORIES.tools]: t("skills.categories.tools"),
-	};
+	const filteredDomains = activeDomain === "all" ? SKILL_DOMAINS : SKILL_DOMAINS.filter((d) => d.id === activeDomain);
 
 	return (
 		<Box
 			component="section"
 			width="100%"
-			py={{ xs: 6, md: 10 }}
-			px={{ xs: 0, md: 0 }}
+			py={{ xs: 6, md: 8 }}
 			sx={{
-				background: "rgba(20, 20, 30, 0.10)",
-				borderRadius: 4,
-				minHeight: { xs: "80vh", md: "90vh" },
 				display: "flex",
 				flexDirection: "column",
 				alignItems: "center",
-				justifyContent: "center",
 			}}
 		>
+			{/* Section Header */}
 			<Typography
 				component={motion.h2}
 				variant="h2"
-				initial={{ opacity: 0, y: -30 }}
+				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.7 }}
+				transition={{ duration: 0.6 }}
 				viewport={{ once: true }}
 				sx={{
-					fontWeight: 700,
-					fontSize: { xs: "2.2rem", md: "2.8rem" },
-					mb: 2,
-					letterSpacing: 1,
-					color: COLOR_WARNING.dark,
+					fontWeight: 800,
+					fontSize: { xs: "2rem", md: "2.5rem" },
+					mb: 1.5,
+					letterSpacing: "-0.025em",
+					color: "text.primary",
 					textAlign: "center",
 				}}
 			>
@@ -79,36 +55,223 @@ export const SkillsSection: React.FC = () => {
 			</Typography>
 			<Typography
 				component={motion.p}
-				initial={{ opacity: 0, y: 20 }}
+				initial={{ opacity: 0, y: 15 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.7, delay: 0.2 }}
+				transition={{ duration: 0.6, delay: 0.1 }}
 				viewport={{ once: true }}
 				sx={{
-					color: "#bdbdbd",
-					fontSize: { xs: "1.08rem", md: "1.18rem" },
+					color: "text.secondary",
+					fontSize: { xs: "1rem", md: "1.1rem" },
 					mb: 4,
-					maxWidth: 700,
+					maxWidth: 720,
 					textAlign: "center",
+					lineHeight: 1.6,
 				}}
 			>
 				{t("skills.subtitle")}
 			</Typography>
-			<Box sx={{ width: "100%", maxWidth: 1200 }}>
-				{Object.entries(groupedSkills).map(([category, skills], categoryIndex) => {
-					const colors = categoryColors[category as keyof typeof categoryColors];
-					const displayName = categoryDisplayNames[category] ?? category;
+
+			{/* Filter Tabs */}
+			<Box display="flex" flexWrap="wrap" justifyContent="center" gap={1} mb={5}>
+				<Chip
+					label={t("skills.filters.all")}
+					onClick={() => setActiveDomain("all")}
+					variant={activeDomain === "all" ? "filled" : "outlined"}
+					color={activeDomain === "all" ? "primary" : "default"}
+					sx={{
+						borderRadius: 9999,
+						fontWeight: 600,
+						px: 1,
+						cursor: "pointer",
+					}}
+				/>
+				{SKILL_DOMAINS.map((domain) => (
+					<Chip
+						key={domain.id}
+						label={t(domain.badgeKey)}
+						onClick={() => setActiveDomain(domain.id)}
+						variant={activeDomain === domain.id ? "filled" : "outlined"}
+						color={activeDomain === domain.id ? "primary" : "default"}
+						sx={{
+							borderRadius: 9999,
+							fontWeight: 600,
+							px: 1,
+							cursor: "pointer",
+						}}
+					/>
+				))}
+			</Box>
+
+			{/* Domain Competency Cards */}
+			<Grid container spacing={{ xs: 3, md: 3.5 }} sx={{ width: "100%", maxWidth: 1200 }}>
+				{filteredDomains.map((domain, index) => {
+					const isServiceNow = domain.id === "servicenow";
+
 					return (
-						<SkillCategory
-							key={category}
-							category={displayName}
-							skills={skills}
-							categoryIndex={categoryIndex}
-							colors={colors}
-							skillVariants={skillVariants}
-						/>
+						<Grid size={{ xs: 12, md: 6 }} key={domain.id} sx={{ display: "flex" }}>
+							<Box
+								component={motion.div}
+								initial={{ opacity: 0, y: 24 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ duration: 0.5, delay: index * 0.08 }}
+								whileHover={{ y: -4 }}
+								sx={{
+									...cardSx,
+									p: { xs: 3, md: 4 },
+									width: "100%",
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									position: "relative",
+									overflow: "hidden",
+									border: isServiceNow
+										? `1.5px solid ${theme.palette.mode === "light" ? "rgba(37, 99, 235, 0.4)" : "rgba(59, 130, 246, 0.4)"}`
+										: undefined,
+								}}
+							>
+								{/* Top Header of Card */}
+								<Box mb={2.5}>
+									<Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+										<Box
+											sx={{
+												p: 1.2,
+												borderRadius: 3,
+												bgcolor: isServiceNow
+													? theme.palette.mode === "light"
+														? "rgba(37, 99, 235, 0.1)"
+														: "rgba(59, 130, 246, 0.15)"
+													: "action.hover",
+												color: isServiceNow ? "primary.main" : "text.primary",
+												display: "flex",
+												alignItems: "center",
+												justifyContent: "center",
+											}}
+										>
+											{domainIcons[domain.iconType]}
+										</Box>
+										<Chip
+											label={t(domain.badgeKey)}
+											size="small"
+											sx={{
+												borderRadius: 9999,
+												fontWeight: 700,
+												fontSize: "0.72rem",
+												bgcolor: isServiceNow
+													? theme.palette.mode === "light"
+														? "rgba(37, 99, 235, 0.08)"
+														: "rgba(59, 130, 246, 0.15)"
+													: "action.hover",
+												color: isServiceNow ? "primary.main" : "text.secondary",
+												border: "1px solid",
+												borderColor: "divider",
+											}}
+										/>
+									</Box>
+
+									<Typography
+										variant="h5"
+										sx={{
+											fontWeight: 800,
+											fontSize: { xs: "1.25rem", md: "1.4rem" },
+											color: "text.primary",
+											letterSpacing: "-0.015em",
+											mb: 1,
+										}}
+									>
+										{t(domain.titleKey)}
+									</Typography>
+									<Typography
+										variant="body2"
+										sx={{
+											color: "text.secondary",
+											lineHeight: 1.6,
+											fontSize: "0.92rem",
+										}}
+									>
+										{t(domain.descriptionKey)}
+									</Typography>
+								</Box>
+
+								{/* Competencies List */}
+								<Box
+									sx={{
+										display: "flex",
+										flexDirection: "column",
+										gap: 1.8,
+										my: 2.5,
+										p: 2,
+										borderRadius: 3,
+										bgcolor: "action.hover",
+									}}
+								>
+									{domain.competencies.map((comp) => (
+										<Box key={comp.titleKey}>
+											<Typography
+												variant="subtitle2"
+												sx={{
+													fontWeight: 700,
+													color: "text.primary",
+													fontSize: "0.88rem",
+													mb: 0.3,
+												}}
+											>
+												{t(comp.titleKey)}
+											</Typography>
+											<Typography
+												variant="body2"
+												sx={{
+													color: "text.secondary",
+													fontSize: "0.82rem",
+													lineHeight: 1.5,
+												}}
+											>
+												{t(comp.descKey)}
+											</Typography>
+										</Box>
+									))}
+								</Box>
+
+								{/* Technology Pills */}
+								<Box mt="auto">
+									<Typography
+										variant="caption"
+										sx={{
+											color: "text.secondary",
+											fontWeight: 700,
+											textTransform: "uppercase",
+											letterSpacing: "0.06em",
+											display: "block",
+											mb: 1.2,
+											fontSize: "0.72rem",
+										}}
+									>
+										{t("skills.stack_label")}
+									</Typography>
+									<Box display="flex" flexWrap="wrap" gap={0.8}>
+										{domain.technologies.map((tech) => (
+											<Chip
+												key={tech}
+												label={tech}
+												size="small"
+												sx={{
+													borderRadius: 9999,
+													fontWeight: 600,
+													fontSize: "0.75rem",
+													bgcolor: "background.paper",
+													border: "1px solid",
+													borderColor: "divider",
+													color: "text.primary",
+												}}
+											/>
+										))}
+									</Box>
+								</Box>
+							</Box>
+						</Grid>
 					);
 				})}
-			</Box>
+			</Grid>
 		</Box>
 	);
 };

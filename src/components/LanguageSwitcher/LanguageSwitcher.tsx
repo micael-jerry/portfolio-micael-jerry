@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -11,30 +11,31 @@ export const LanguageSwitcher: React.FC = () => {
 	};
 
 	return (
-		<Box
-			component={Button}
+		<Button
 			onClick={toggle}
 			aria-label="Toggle language"
+			size="small"
+			variant="text"
 			sx={{
 				minWidth: 0,
-				px: 1.5,
+				px: 1.4,
 				py: 0.5,
-				borderRadius: 2,
+				borderRadius: 9999,
 				fontWeight: 700,
-				fontSize: "0.82rem",
-				letterSpacing: "0.06em",
-				color: "rgba(255,255,255,0.75)",
-				border: "1.5px solid rgba(255,167,38,0.35)",
-				background: "transparent",
-				transition: "all 0.2s",
+				fontSize: "0.8rem",
+				letterSpacing: "0.04em",
+				color: "text.primary",
+				border: "1px solid",
+				borderColor: "divider",
+				bgcolor: "transparent",
+				transition: "all 0.2s ease",
 				"&:hover": {
-					background: "rgba(255,167,38,0.10)",
-					borderColor: "#ffa726",
-					color: "#ffa726",
+					bgcolor: "action.hover",
+					borderColor: "text.secondary",
 				},
 			}}
 		>
 			{isEn ? "FR" : "EN"}
-		</Box>
+		</Button>
 	);
 };

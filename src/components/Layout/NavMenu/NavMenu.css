@@ -1,9 +1,13 @@
 .nav-menu-open {
-	background: linear-gradient(135deg, #07002D 60%, #0d0050 100%);
-	z-index: 999;
+	background: var(--surface);
+	z-index: 1300;
 	position: fixed;
 	top: 0;
 	left: 0;
+	right: 0;
 	bottom: 0;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	backdrop-filter: blur(20px);
 }

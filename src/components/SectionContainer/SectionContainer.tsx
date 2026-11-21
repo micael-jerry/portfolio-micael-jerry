@@ -10,8 +10,10 @@ export type SectionContainerProps = {
 export const SectionContainer: React.FC<SectionContainerProps> = ({ children, sectionId }) => {
 	return (
 		<section id={sectionId} key={sectionId} aria-label={sectionId}>
-			<Container maxWidth={"lg"}>
-				<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", py: 4 }}>{children}</Box>
+			<Container maxWidth="lg">
+				<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", py: { xs: 4, md: 6 } }}>
+					{children}
+				</Box>
 			</Container>
 		</section>
 	);

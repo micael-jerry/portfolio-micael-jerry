@@ -1,25 +1,34 @@
 import type { SxProps, Theme } from "@mui/material";
 
-/** Style glassmorphism standard utilisé dans tous les panneaux et cards */
-export const glassSx: SxProps<Theme> = {
-	background: "linear-gradient(135deg, rgba(20, 20, 30, 0.75) 0%, rgba(30, 30, 50, 0.65) 100%)",
-	backdropFilter: "blur(12px)",
-	border: "1px solid rgba(255, 255, 255, 0.08)",
-	borderRadius: 4,
-};
-
-/** Variante card plus sombre */
-export const cardSx: SxProps<Theme> = {
-	background: "linear-gradient(135deg, rgba(30, 30, 40, 0.8) 0%, rgba(20, 20, 30, 0.6) 100%)",
+/** Style surface moderne Material (frosted / tonal) */
+export const glassSx: SxProps<Theme> = (theme) => ({
+	background: theme.palette.mode === "light" ? "rgba(255, 255, 255, 0.82)" : "rgba(23, 26, 35, 0.82)",
 	backdropFilter: "blur(16px)",
-	border: "1px solid rgba(255, 255, 255, 0.08)",
-	borderRadius: 4,
-};
+	border: `1px solid ${theme.palette.divider}`,
+	borderRadius: 4, // 16px
+	boxShadow:
+		theme.palette.mode === "light"
+			? "0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 8px 16px -4px rgba(0, 0, 0, 0.03)"
+			: "0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 8px 16px -4px rgba(0, 0, 0, 0.2)",
+});
 
-/** Variante modal/dialog très opaque */
-export const modalSx: SxProps<Theme> = {
-	background: "linear-gradient(135deg, rgba(20, 24, 40, 0.96) 0%, rgba(10, 12, 22, 0.96) 100%)",
-	backdropFilter: "blur(20px)",
-	border: "1.5px solid rgba(255, 167, 38, 0.35)",
-	borderRadius: 5,
-};
+/** Style card moderne Material élevé */
+export const cardSx: SxProps<Theme> = (theme) => ({
+	background: theme.palette.background.paper,
+	border: `1px solid ${theme.palette.divider}`,
+	borderRadius: 4, // 16px
+	boxShadow:
+		theme.palette.mode === "light"
+			? "0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 10px 24px -4px rgba(0, 0, 0, 0.04)"
+			: "0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 10px 24px -4px rgba(0, 0, 0, 0.25)",
+	transition: "transform 0.25s ease, box-shadow 0.25s ease",
+});
+
+/** Style modal / dialog Material 3 */
+export const modalSx: SxProps<Theme> = (theme) => ({
+	background: theme.palette.background.paper,
+	border: `1px solid ${theme.palette.divider}`,
+	borderRadius: 5, // 20px
+	boxShadow:
+		theme.palette.mode === "light" ? "0 20px 40px -8px rgba(0, 0, 0, 0.12)" : "0 20px 40px -8px rgba(0, 0, 0, 0.6)",
+});

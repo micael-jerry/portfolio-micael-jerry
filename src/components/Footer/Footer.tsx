@@ -7,15 +7,13 @@ import { ME } from "../../data/user/me.ts";
 
 const socialLinks = [
 	{
-		icon: <LinkedIn />,
+		icon: <LinkedIn fontSize="small" />,
 		href: ME.link.linkedIn,
-		color: "#0a66c2",
 		label: "LinkedIn",
 	},
 	{
-		icon: <GitHub />,
+		icon: <GitHub fontSize="small" />,
 		href: ME.link.github,
-		color: "#e0e0e0",
 		label: "GitHub",
 	},
 ];
@@ -34,13 +32,13 @@ export const Footer: React.FC = () => {
 			elevation={0}
 			sx={{
 				mt: 8,
-				py: 4,
-				px: { xs: 3, md: 8 },
-				background: "rgba(7, 0, 45, 0.75)",
-				backdropFilter: "blur(16px)",
-				borderTop: "1px solid rgba(255,255,255,0.08)",
+				pt: 6,
+				pb: 4,
+				px: { xs: 2, md: 6 },
+				bgcolor: "transparent",
+				borderTop: "1px solid",
+				borderColor: "divider",
 				borderRadius: 0,
-				color: "white",
 			}}
 		>
 			{/* Top row */}
@@ -56,18 +54,15 @@ export const Footer: React.FC = () => {
 					<Typography
 						variant="h6"
 						sx={{
-							fontWeight: 800,
-							letterSpacing: "0.06em",
-							background: "linear-gradient(90deg, #fff 50%, #ffa726 100%)",
-							WebkitBackgroundClip: "text",
-							WebkitTextFillColor: "transparent",
-							backgroundClip: "text",
+							fontWeight: 700,
+							letterSpacing: "-0.01em",
+							color: "text.primary",
 							mb: 0.5,
 						}}
 					>
-						{ME.firstname} Portfolio
+						{ME.firstname} {ME.name}
 					</Typography>
-					<Typography variant="body2" sx={{ color: "rgba(255,255,255,0.45)", fontSize: "0.8rem" }}>
+					<Typography variant="body2" sx={{ color: "text.secondary", fontSize: "0.85rem" }}>
 						{t("footer.tagline")}
 					</Typography>
 				</Box>
@@ -75,8 +70,8 @@ export const Footer: React.FC = () => {
 				{/* Contact info */}
 				<Box display="flex" flexDirection="column" gap={0.8}>
 					{contactItems.map(({ icon, value }) => (
-						<Box key={value} display="flex" alignItems="center" gap={1} sx={{ color: "rgba(255,255,255,0.7)" }}>
-							<Box sx={{ color: "#ffa726", display: "flex" }}>{icon}</Box>
+						<Box key={value} display="flex" alignItems="center" gap={1} sx={{ color: "text.secondary" }}>
+							<Box sx={{ color: "text.primary", display: "flex", opacity: 0.7 }}>{icon}</Box>
 							<Typography variant="body2" sx={{ fontSize: "0.88rem" }}>
 								{value}
 							</Typography>
@@ -86,22 +81,23 @@ export const Footer: React.FC = () => {
 
 				{/* Social links */}
 				<Box display="flex" gap={1}>
-					{socialLinks.map(({ icon, href, color, label }) => (
-						<Box key={label} component={motion.div} whileHover={{ scale: 1.15, y: -3 }} whileTap={{ scale: 0.95 }}>
+					{socialLinks.map(({ icon, href, label }) => (
+						<Box key={label} component={motion.div} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
 							<IconButton
 								href={href}
 								target="_blank"
 								aria-label={label}
 								sx={{
-									color,
-									border: "1.5px solid rgba(255,255,255,0.12)",
-									borderRadius: 2,
+									color: "text.primary",
+									border: "1px solid",
+									borderColor: "divider",
+									borderRadius: 9999,
 									p: 1,
 									"&:hover": {
-										background: "rgba(255,255,255,0.08)",
-										borderColor: "rgba(255,255,255,0.3)",
+										bgcolor: "action.hover",
+										borderColor: "text.primary",
 									},
-									transition: "all 0.2s",
+									transition: "all 0.2s ease",
 								}}
 							>
 								{icon}
@@ -111,7 +107,7 @@ export const Footer: React.FC = () => {
 				</Box>
 			</Box>
 
-			<Divider sx={{ my: 3, borderColor: "rgba(255,255,255,0.07)" }} />
+			<Divider sx={{ my: 4 }} />
 
 			{/* Bottom row */}
 			<Box
@@ -121,10 +117,10 @@ export const Footer: React.FC = () => {
 				justifyContent="space-between"
 				gap={1}
 			>
-				<Typography variant="body2" sx={{ color: "rgba(255,255,255,0.35)", fontSize: "0.78rem" }}>
-					© {new Date().getFullYear()} {ME.firstname}. {t("footer.copyright")}
+				<Typography variant="body2" sx={{ color: "text.secondary", fontSize: "0.8rem" }}>
+					© {new Date().getFullYear()} {ME.firstname} {ME.name}. {t("footer.copyright")}
 				</Typography>
-				<Typography variant="body2" sx={{ color: "rgba(255,255,255,0.25)", fontSize: "0.78rem" }}>
+				<Typography variant="body2" sx={{ color: "text.secondary", opacity: 0.7, fontSize: "0.8rem" }}>
 					{t("footer.built_with")}
 				</Typography>
 			</Box>

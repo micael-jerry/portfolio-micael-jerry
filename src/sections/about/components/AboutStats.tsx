@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../../../data/user/projects.ts";
 import { ALL_SKILLS } from "../../../data/user/skills.ts";
-import { COLOR_WARNING } from "../../../utils/color.ts";
+import { cardSx } from "../../../utils/styles.ts";
 
 interface AboutStatsProps {
 	variants?: Variants;
@@ -35,16 +35,12 @@ export const AboutStats: React.FC<AboutStatsProps> = ({ variants }) => {
 				<Box
 					key={stat.label}
 					component={motion.div}
-					whileHover={{ scale: 1.05, boxShadow: `0 12px 32px 0 rgba(0,180,255,0.25)` }}
-					transition={{ type: "spring", stiffness: 300 }}
+					whileHover={{ y: -4 }}
+					transition={{ duration: 0.2 }}
 					sx={{
+						...cardSx,
 						p: 2.5,
-						borderRadius: 4,
-						background: "linear-gradient(135deg, rgba(0,180,255,0.1) 0%, rgba(0,180,255,0.05) 100%)",
-						border: "1px solid rgba(0,180,255,0.2)",
 						textAlign: "center",
-						backdropFilter: "blur(8px)",
-						cursor: "pointer",
 						flex: 1,
 						display: "flex",
 						flexDirection: "column",
@@ -53,12 +49,11 @@ export const AboutStats: React.FC<AboutStatsProps> = ({ variants }) => {
 				>
 					<Typography
 						sx={{
-							fontSize: { xs: "2rem", md: "2.4rem" },
+							fontSize: { xs: "2rem", md: "2.3rem" },
 							fontWeight: 800,
-							background: `linear-gradient(135deg, ${COLOR_WARNING.main} 0%, #00c9ff 100%)`,
-							backgroundClip: "text",
-							WebkitBackgroundClip: "text",
-							WebkitTextFillColor: "transparent",
+							color: "text.primary",
+							letterSpacing: "-0.03em",
+							lineHeight: 1.1,
 							mb: 0.5,
 						}}
 					>
@@ -66,10 +61,10 @@ export const AboutStats: React.FC<AboutStatsProps> = ({ variants }) => {
 					</Typography>
 					<Typography
 						sx={{
-							fontSize: "0.9rem",
-							color: "#9e9e9e",
+							fontSize: "0.82rem",
+							color: "text.secondary",
 							fontWeight: 600,
-							letterSpacing: 0.5,
+							letterSpacing: "0.02em",
 						}}
 					>
 						{stat.label}

@@ -5,8 +5,7 @@ import { Box, Typography } from "@mui/material";
 import { motion, Variants } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { COLOR_ACCENT, COLOR_SUCCESS, COLOR_WARNING } from "../../../utils/color.ts";
-import { glassSx } from "../../../utils/styles.ts";
+import { cardSx } from "../../../utils/styles.ts";
 
 interface AboutPassionsProps {
 	variants?: Variants;
@@ -17,17 +16,17 @@ export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
 
 	const passions = [
 		{
-			icon: <CodeIcon sx={{ color: COLOR_WARNING.main, fontSize: 28 }} />,
+			icon: <CodeIcon sx={{ fontSize: 22 }} />,
 			title: t("about.passions.coding_title"),
 			description: t("about.passions.coding_desc"),
 		},
 		{
-			icon: <LightbulbIcon sx={{ color: COLOR_ACCENT.main, fontSize: 28 }} />,
+			icon: <LightbulbIcon sx={{ fontSize: 22 }} />,
 			title: t("about.passions.solving_title"),
 			description: t("about.passions.solving_desc"),
 		},
 		{
-			icon: <RocketLaunchIcon sx={{ color: COLOR_SUCCESS.main, fontSize: 28 }} />,
+			icon: <RocketLaunchIcon sx={{ fontSize: 22 }} />,
 			title: t("about.passions.learning_title"),
 			description: t("about.passions.learning_desc"),
 		},
@@ -37,15 +36,9 @@ export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
 		<Box
 			component={motion.div}
 			variants={variants}
-			whileHover={{ scale: 1.02, boxShadow: `0 12px 40px 0 ${COLOR_WARNING.bgStrong}` }}
-			transition={{ type: "spring", stiffness: 200 }}
 			sx={{
-				...glassSx,
+				...cardSx,
 				p: { xs: 3, md: 4 },
-				boxShadow: `0 4px 24px 0 ${COLOR_WARNING.bg}`,
-				border: `1px solid ${COLOR_WARNING.bg}`,
-				position: "relative",
-				overflow: "hidden",
 				height: "100%",
 				display: "flex",
 				flexDirection: "column",
@@ -53,23 +46,25 @@ export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
 			}}
 		>
 			<Box sx={{ mb: 3 }}>
-				<Typography variant="h5" sx={{ fontWeight: 700, color: "#fff", mb: 1 }}>
+				<Typography variant="h5" sx={{ fontWeight: 700, color: "text.primary", mb: 0.5, fontSize: "1.25rem" }}>
 					{t("about.passions.title")}
 				</Typography>
-				<Typography variant="body2" sx={{ color: "#9e9e9e" }}>
+				<Typography variant="body2" sx={{ color: "text.secondary" }}>
 					{t("about.passions.subtitle")}
 				</Typography>
 			</Box>
 
-			<Box display="flex" flexDirection="column" gap={3}>
+			<Box display="flex" flexDirection="column" gap={2.5}>
 				{passions.map((passion) => (
 					<Box key={passion.title} display="flex" gap={2} alignItems="flex-start">
 						<Box
 							sx={{
-								p: 1.5,
-								borderRadius: 2,
-								background: "rgba(255,255,255,0.03)",
-								border: "1px solid rgba(255,255,255,0.08)",
+								p: 1.2,
+								borderRadius: 3,
+								bgcolor: "action.hover",
+								border: "1px solid",
+								borderColor: "divider",
+								color: "text.primary",
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "center",
@@ -78,10 +73,10 @@ export const AboutPassions: React.FC<AboutPassionsProps> = ({ variants }) => {
 							{passion.icon}
 						</Box>
 						<Box>
-							<Typography variant="body1" sx={{ color: "#e0e0e0", fontWeight: 600, mb: 0.5 }}>
+							<Typography variant="body1" sx={{ color: "text.primary", fontWeight: 700, mb: 0.3 }}>
 								{passion.title}
 							</Typography>
-							<Typography variant="body2" sx={{ color: "#9e9e9e", lineHeight: 1.5 }}>
+							<Typography variant="body2" sx={{ color: "text.secondary", lineHeight: 1.5, fontSize: "0.85rem" }}>
 								{passion.description}
 							</Typography>
 						</Box>

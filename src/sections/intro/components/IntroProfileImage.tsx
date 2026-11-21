@@ -12,31 +12,28 @@ export const IntroProfileImage: React.FC = () => {
 				mx: "auto",
 			}}
 		>
-			<Box
-				sx={{
-					position: "absolute",
-					inset: -18,
-					borderRadius: "50%",
-					background: "radial-gradient(circle, rgba(255,193,7,0.25) 0%, transparent 70%)",
-					filter: "blur(8px)",
-					animation: "haloPulse 3s ease-in-out infinite alternate",
-					zIndex: 1,
-				}}
-			/>
 			<Card
 				sx={{
 					borderRadius: "50%",
-					boxShadow: "0 8px 32px 0 rgba(0,0,0,0.25)",
-					backgroundColor: "rgba(30,30,30,0.7)",
+					bgcolor: "background.paper",
+					border: "3px solid",
+					borderColor: "divider",
+					boxShadow: (theme) =>
+						theme.palette.mode === "light"
+							? "0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)"
+							: "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
 					overflow: "hidden",
 					width: "100%",
 					height: "100%",
-					zIndex: 2,
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
+					transition: "transform 0.3s ease, box-shadow 0.3s ease",
+					"&:hover": {
+						transform: "scale(1.02)",
+					},
 				}}
-				elevation={6}
+				elevation={0}
 			>
 				<img
 					alt="Micael Jerry Fidimalala - Software Engineer"
@@ -46,8 +43,6 @@ export const IntroProfileImage: React.FC = () => {
 						width: "100%",
 						height: "100%",
 						objectFit: "cover",
-						borderRadius: "50%",
-						border: "4px solid rgba(255,193,7,0.18)",
 					}}
 				/>
 			</Card>

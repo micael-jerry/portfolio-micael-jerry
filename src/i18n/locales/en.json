@@ -2,7 +2,9 @@
   "nav": {
     "intro": "Intro",
     "about": "About",
+    "experience": "Experience",
     "skills": "Skills",
+    "education": "Education",
     "projects": "Projects",
     "projects_42": "42 Projects",
     "contact": "Contact",
@@ -10,93 +12,208 @@
   },
   "intro": {
     "greeting": "Hello 👋, my name is",
-    "role": "Computer science student & Fullstack developer",
-    "passion": "I am passionate about technology and I love to learn new things.",
+    "role": "ServiceNow Application Developer & Fullstack Developer",
+    "passion": "I automate business processes and build web applications, and I keep learning through my work and my studies at 42.",
     "btn_about": "About",
     "btn_contact": "Contact"
   },
   "about": {
     "heading": "About Me",
     "bio_prefix": "Hey there! I'm ",
-    "bio_suffix": ", a passionate software engineer blending design and logic to create elegant digital experiences.",
+    "bio_suffix": ", a ServiceNow application developer and fullstack developer based in Antananarivo. I work at Pulse and I'm studying at 42 Antananarivo, which keeps me learning through both real projects and school ones.",
     "education": {
       "title": "Education",
-      "hei_school": "HEI",
-      "hei_degree": "Computer Science Graduate",
-      "hei_desc": "Built a strong foundation in software engineering principles, algorithms, and system design.",
+      "hei_school": "HEI Madagascar",
+      "hei_degree": "Bachelor's Degree in Computer Science",
+      "hei_desc": "Specialized in Software Ecosystems: software development, information systems design and software engineering.",
       "42_school": "42 Antananarivo",
-      "42_degree": "Advanced Software Engineering",
-      "42_desc": "Peer-to-peer learning environment focusing on practical, complex problem solving and modern stack mastery."
+      "42_degree": "Computer Science (ongoing)",
+      "42_desc": "Peer-to-peer learning with no teachers, built around intensive projects, autonomy and curiosity."
     },
     "passions": {
       "title": "What Drives Me",
-      "subtitle": "My passion lies in bridging the gap between design and intricate logic.",
-      "coding_title": "Elegant Coding",
-      "coding_desc": "Crafting clean, scalable, and maintainable digital experiences.",
-      "solving_title": "Problem Solving",
-      "solving_desc": "Turning complex requirements into innovative, real-world solutions.",
-      "learning_title": "Lifelong Learning",
-      "learning_desc": "Constantly pushing skills, exploring emerging tech, and staying ahead."
+      "subtitle": "Turning repetitive business tasks into reliable, automated workflows.",
+      "coding_title": "Architecture & Clean Code",
+      "coding_desc": "Writing modular code that other developers can read and maintain.",
+      "solving_title": "Automation & Efficiency",
+      "solving_desc": "Removing manual steps so users can focus on their actual work.",
+      "learning_title": "Continuous Learning",
+      "learning_desc": "Picking up new tools through work, side projects and the 42 curriculum."
     },
     "quote": "Stay <1>curious</1>, keep <3>learning</3>, and never stop <5>building</5>.",
     "stats": {
       "projects": "Projects",
       "skills": "Skills",
-      "experience": "1+ yr",
+      "experience": "1+ yrs",
       "experience_label": "Experience"
     }
   },
+  "experience": {
+    "heading": "Professional Experience",
+    "subtitle": "ServiceNow development, front-end work on a large Angular application, and a fullstack internship.",
+    "current_badge": "Current Role",
+    "key_achievements": "Key Responsibilities & Impact",
+    "servicenow": {
+      "role": "ServiceNow Application Developer",
+      "entity": "Pulse",
+      "period": "Apr. 2026 - Present",
+      "badge": "ServiceNow",
+      "domain": "Enterprise Platform",
+      "location": "Antananarivo, Madagascar",
+      "desc": "I build and evolve business applications on the ServiceNow platform. The goal is to automate internal processes so users spend less time on manual steps.",
+      "h1": "Developing and evolving business solutions on the ServiceNow platform.",
+      "h2": "Automating business processes with Flow Designer, Business Rules and reusable Script Includes.",
+      "h3": "Writing Client Scripts and configuring Service Catalog items to improve the end-user experience.",
+      "h4": "Building REST integrations and testing changes on a development instance before they are promoted."
+    },
+    "frontend": {
+      "role": "Front-end Developer",
+      "entity": "Capsule IO Finance Technology",
+      "period": "Nov. 2025 - Apr. 2026",
+      "badge": "Angular",
+      "domain": "Frontend Engineering",
+      "location": "Antananarivo, Madagascar",
+      "desc": "I worked on an Angular 19 web application used to manage several Malagasy companies, with a focus on a modular codebase and a smooth user experience.",
+      "h1": "Developed and optimized the Angular 19 application: modular architecture and reusable components.",
+      "h2": "Improved performance and applied UX best practices across the interface.",
+      "h3": "Migrated existing Angular 16 applications to version 19."
+    },
+    "fullstack": {
+      "role": "Fullstack Developer Intern",
+      "entity": "Bubble-Go Madagascar",
+      "period": "Aug. 2024 - Dec. 2024",
+      "badge": "Fullstack Web",
+      "domain": "Fullstack Engineering",
+      "location": "Antananarivo, Madagascar",
+      "desc": "An internship that covered the whole development cycle, from design to production, on a GraphQL API and its web interface.",
+      "h1": "Designed a GraphQL API with NestJS, using a test-driven development (TDD) approach.",
+      "h2": "Built a fast web interface with Next.js.",
+      "h3": "Worked on every stage of the cycle: design, development and release to production."
+    }
+  },
+  "education": {
+    "heading": "Education & Certifications",
+    "subtitle": "My academic background and certifications.",
+    "ongoing_badge": "Ongoing",
+    "42": {
+      "institution": "42 Antananarivo",
+      "degree": "Computer Science",
+      "desc": "Peer-to-peer curriculum with no teachers. I learned programming fundamentals through intensive projects, in a collaborative environment that rewards autonomy and curiosity.",
+      "period": "03/2024 — Ongoing",
+      "location": "Antananarivo, Madagascar",
+      "h1": "Solid programming foundations built through intensive projects, mostly in C and C++.",
+      "h2": "Rigorous algorithmic thinking and problem solving: push_swap, Minishell, Cub3D, ft_irc, Inception.",
+      "h3": "Collaborative learning that develops autonomy and curiosity."
+    },
+    "hei": {
+      "institution": "HEI Madagascar (Haute École d'Informatique)",
+      "degree": "Bachelor's Degree in Computer Science, Software Ecosystems",
+      "desc": "Three-year degree specialized in Software Ecosystems, covering software development, information systems design and software engineering.",
+      "period": "10/2021 — 09/2024",
+      "location": "Antananarivo, Madagascar",
+      "h1": "Hands-on projects in software development, information systems design and software engineering.",
+      "h2": "Deeper knowledge of cloud, cybersecurity, artificial intelligence and software engineering.",
+      "h3": "Training in teamwork, project management and entrepreneurship."
+    }
+  },
   "skills": {
-    "heading": "My Tech Stack",
-    "subtitle": "These are the technologies and tools I use most often, acquired through my studies, personal and professional projects.",
-    "categories": {
-      "languages": "Languages",
-      "frameworks": "Frameworks & Libraries",
-      "databases": "Databases",
-      "tools": "Tools & Others"
+    "heading": "Technical Capabilities",
+    "subtitle": "What I work with day to day.",
+    "stack_label": "Core Stack & Tools",
+    "filters": {
+      "all": "All Capabilities"
+    },
+    "domains": {
+      "servicenow": {
+        "title": "ServiceNow & Enterprise Platform",
+        "badge": "ServiceNow",
+        "desc": "Business process automation and custom workflow development on the ServiceNow platform.",
+        "c1_title": "Flow Designer & Automation",
+        "c1_desc": "Automated workflows, event triggers and approvals.",
+        "c2_title": "Scripting (JavaScript)",
+        "c2_desc": "Business Rules, Script Includes, Client Scripts and UI Policies.",
+        "c3_title": "ITSM & Service Catalog",
+        "c3_desc": "Incidents, changes, service requests and catalog items.",
+        "c4_title": "Integrations & REST APIs",
+        "c4_desc": "Data exchange with external systems through REST/JSON APIs."
+      },
+      "fullstack": {
+        "title": "Web Development & APIs",
+        "badge": "Fullstack Web",
+        "desc": "Web applications from the interface to the API, built with maintainable architecture.",
+        "c1_title": "Frontend",
+        "c1_desc": "Angular 19, Next.js and TypeScript, including an Angular 16 to 19 migration.",
+        "c2_title": "Backend & APIs",
+        "c2_desc": "NestJS, Node.js, Express and Spring Boot, with REST and GraphQL APIs.",
+        "c3_title": "Quality & Reliability",
+        "c3_desc": "Test-driven development, data validation and SOLID principles."
+      },
+      "systems": {
+        "title": "Systems, Concurrency & Algorithms",
+        "badge": "42 Systems",
+        "desc": "Low-level programming and algorithms, learned at 42.",
+        "c1_title": "Systems Programming in C/C++",
+        "c1_desc": "Manual memory management, file descriptors, POSIX signals and Makefiles.",
+        "c2_title": "Multithreading & Concurrency",
+        "c2_desc": "Thread synchronization, mutexes and deadlock prevention.",
+        "c3_title": "Networking & Sockets",
+        "c3_desc": "TCP servers and I/O multiplexing with poll and select."
+      },
+      "data_devops": {
+        "title": "Databases, DevOps & Tooling",
+        "badge": "Data & DevOps",
+        "desc": "Data storage, containers and everyday team tooling.",
+        "c1_title": "SQL & NoSQL",
+        "c1_desc": "Relational modeling with PostgreSQL and document data with MongoDB.",
+        "c2_title": "Docker",
+        "c2_desc": "Dockerfiles and multi-container setups with Docker Compose, on Linux.",
+        "c3_title": "Version Control & Collaboration",
+        "c3_desc": "Git, GitHub, GitLab, GitHub Actions CI/CD and Trello for task tracking."
+      }
     }
   },
   "projects": {
-    "heading": "Projects",
-    "subtitle": "Here are a few projects I've worked on recently.",
+    "heading": "Featured Projects",
+    "subtitle": "A selection of projects showing what I build outside of work.",
     "status_completed": "Completed",
     "status_in_progress": "In Progress",
     "btn_code": "Code",
     "btn_live": "Live",
-    "portfolio_desc": "My portfolio that showcases my creative and technical skills in various professional fields. (build with react-ts)",
-    "valentin_desc": "A romantic and interactive digital invitation for a request for Valentine's Day.",
-    "solong_desc": "So Long is a small 2D game. The objective is to navigate a player through a map, collect all the collectibles, and then reach the exit.",
-    "cub3d_desc": "A 3D maze exploration game built from scratch using ray-casting and the MinilibX graphics library, inspired by the classic Wolfenstein 3D to explore the fundamentals of computer graphics and game design.",
-    "coucou_desc": "Coucou API powers the backend of the Coucou chat app, managing authentication, real-time messaging, and conversations. Built with NestJS for scalability and maintainability, it serves as the foundation for a full-featured messenger."
+    "portfolio_desc": "My portfolio, built with React and TypeScript to showcase my projects and experience.",
+    "valentin_desc": "A romantic and interactive digital invitation crafted for a Valentine's Day proposal.",
+    "solong_desc": "A 2D tile-based game navigating a character, collecting items, and finding the exit with clean event handling.",
+    "cub3d_desc": "A 3D maze exploration game built from scratch using raycasting and MinilibX, exploring computer graphics fundamentals.",
+    "coucou_desc": "Real-time chat API powering messaging, authentication, and conversations, built with NestJS for modularity."
   },
   "projects_42": {
-    "heading": "42 Cursus",
-    "subtitle": "Common Core projects representing my progression and mastery of system programing, networks, algorithms, and devops.",
+    "heading": "42 Common Core",
+    "subtitle": "Key projects from the common core, covering systems programming, networks, algorithms, and DevOps.",
     "filter_all": "All Circles",
+    "circle_0": "Circle 0 — Libft (foundation)",
     "circle_badge": "Circle {{num}}",
     "stack_technique": "Tech Stack",
     "btn_close": "Close",
     "swipe_hint": "Swipe to explore the graph",
-    "libft_desc": "My first library of standard C functions, rewritten from scratch to understand the internals of libc.",
-    "get_next_line_desc": "A function that reads a line from a file descriptor, handling multiple file descriptors and static variables.",
-    "ft_printf_desc": "A custom implementation of the formatted output libc function printf, supporting standard formats.",
-    "born2beroot_desc": "Setting up a secure Debian virtual machine with strict password policies, SSH, UFW, sudo, and active monitoring scripts.",
-    "push_swap_desc": "A highly optimized sorting algorithm project using two stacks and a limited instruction set.",
-    "minitalk_desc": "A client-server communication application using UNIX signals (SIGUSR1 and SIGUSR2) for binary data transfer.",
-    "solong_desc": "A small 2D game focusing on window management, event handling (keyboard, mouse) and basic rendering with MiniLibX.",
-    "minishell_desc": "A fully functional shell interpreter mimicking bash, with environment variables, history, paths, redirections, and pipes.",
-    "philosophers_desc": "An implementation of the Dining Philosophers problem, learning thread synchronization, mutexes, and deadlock prevention.",
-    "cub3d_desc": "A 3D graphics game engine inspired by Wolfenstein 3D, implementing raycasting principles to render a first-person perspective.",
-    "netpractice_desc": "A modular, puzzle-based networking project to understand subnets, IP addressing, routing tables, and interface configurations.",
-    "cpp_00_04_desc": "A series of C++ modules designed to learn Object-Oriented Programming (OOP) concepts in C++98.",
-    "inception_desc": "A DevOps project setting up a secure multi-container infrastructure with Nginx, WordPress, and MariaDB using Docker.",
-    "ft_irc_desc": "Writing an IRC server from scratch in C++98, handling TCP sockets, select()/poll() multiplexing, and IRC protocols.",
-    "cpp_05_09_desc": "Advanced C++ modules covering templates, STL containers, iterators, casting, and exception handling."
+    "libft_desc": "First standard C library rewrite from scratch to understand libc internals.",
+    "get_next_line_desc": "Function reading a line from a file descriptor, handling multiple descriptors and static memory.",
+    "ft_printf_desc": "Custom libc printf implementation supporting standard format specifiers.",
+    "born2beroot_desc": "Configured a hardened Debian virtual machine with strict password rules, SSH, UFW, sudo and monitoring.",
+    "push_swap_desc": "Highly optimized sorting algorithm using two stacks and limited instruction set.",
+    "minitalk_desc": "Client-server communication application using UNIX signals (SIGUSR1/SIGUSR2) for binary data transfer.",
+    "solong_desc": "2D game focusing on window management, keyboard/mouse event handling and MiniLibX rendering.",
+    "minishell_desc": "Fully functional shell interpreter mimicking bash with environment variables, paths, pipes, and redirects.",
+    "philosophers_desc": "Dining philosophers implementation focusing on thread synchronization, mutexes, and deadlock prevention.",
+    "cub3d_desc": "3D graphics game engine inspired by Wolfenstein 3D, implementing raycasting principles.",
+    "netpractice_desc": "Networking exercises configuring IP addressing, subnetting, and routing tables.",
+    "cpp_00_04_desc": "C++ modules learning object-oriented programming concepts in C++98.",
+    "inception_desc": "DevOps project configuring a secure multi-container architecture with Nginx, WordPress and MariaDB via Docker.",
+    "ft_irc_desc": "Complete IRC server in C++98 handling TCP sockets, select()/poll() multiplexing, and IRC protocol.",
+    "cpp_05_09_desc": "Advanced C++ modules covering templates, STL containers, iterators, casts and exception handling."
   },
   "contact": {
     "heading": "Let's Connect",
-    "subtitle": "Have a project in mind or just want to say hi? I'd love to hear from you.",
-    "body": "Whether it's a job opportunity, a freelance project, or a technical discussion, my inbox is always open. Fill out the form and I'll get back to you as soon as possible.",
+    "subtitle": "Have a project in mind or an open position? I'd be glad to talk.",
+    "body": "Whether it's a ServiceNow role, a frontend or fullstack project, or just a technical discussion, feel free to write to me.",
     "email_label": "Email",
     "form": {
       "name": "Your Name",
@@ -105,13 +222,13 @@
       "message": "Message",
       "send": "Send Message",
       "sending": "Sending...",
-      "success": "🎉 Thanks! Your message has been sent. I'll get back to you soon.",
-      "error": "❌ Oops! Something went wrong. Please try again.",
+      "success": "Thank you! Your message has been sent. I will get back to you soon.",
+      "error": "Oops! Something went wrong. Please try again.",
       "email_invalid": "Invalid email address."
     }
   },
   "footer": {
-    "tagline": "Crafted with passion & code.",
+    "tagline": "ServiceNow Application Developer & Fullstack Developer.",
     "copyright": "All rights reserved.",
     "built_with": "Built with React & TypeScript"
   }
