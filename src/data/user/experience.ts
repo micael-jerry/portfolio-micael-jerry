@@ -12,6 +12,10 @@ export interface ExperienceType {
 	technologies: string[];
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Professional work experience only (companies, jobs, internships).
+// Add new entries freely — the UI renders them automatically.
+// ─────────────────────────────────────────────────────────────────────────────
 export const EXPERIENCES: ExperienceType[] = [
 	{
 		id: "servicenow-dev",
@@ -67,22 +71,5 @@ export const EXPERIENCES: ExperienceType[] = [
 			"Docker",
 			"REST & GraphQL",
 		],
-	},
-	{
-		id: "student-42-hei",
-		roleKey: "experience.academic.role",
-		entityKey: "experience.academic.entity",
-		periodKey: "experience.academic.period",
-		badgeKey: "experience.academic.badge",
-		domainKey: "experience.academic.domain",
-		locationKey: "experience.academic.location",
-		descriptionKey: "experience.academic.desc",
-		highlightsKeys: [
-			"experience.academic.h1",
-			"experience.academic.h2",
-			"experience.academic.h3",
-			"experience.academic.h4",
-		],
-		technologies: ["C", "C++", "Linux", "Algorithms", "POSIX Threads", "TCP/IP Sockets", "Clean Code", "System Design"],
 	},
 ];

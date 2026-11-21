@@ -1,6 +1,5 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
-import SchoolIcon from "@mui/icons-material/School";
 import SwipeIcon from "@mui/icons-material/Swipe";
 import { Box, Button, Chip, Dialog, Typography, useTheme } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
@@ -11,9 +10,14 @@ import { Project42Type } from "../../types/project.type";
 import { modalSx } from "../../utils/styles";
 import "./Projects42Section.css";
 
-const cx = 450;
-const cy = 450;
-const RADIUS_STEP = 68; // Space between rings
+// ─── Layout constants ────────────────────────────────────────────────────────
+const CX = 450;
+const CY = 450;
+const RADIUS_STEP = 68; // px between rings
+
+// Derive the number of rings from the data so the graph grows automatically
+// when new circles / projects are added to PROJECTS_42.
+const MAX_CIRCLE = Math.max(...PROJECTS_42.map((p) => p.circle));
 
 export const Projects42Section: React.FC = () => {
 	const { t } = useTranslation();
@@ -24,7 +28,7 @@ export const Projects42Section: React.FC = () => {
 
 	const isLight = theme.palette.mode === "light";
 
-	// Group projects by circle to compute spacing
+	// Group projects by circle — computed once from the data
 	const projectsByCircle = useRef<Record<number, Project42Type[]>>({});
 
 	if (Object.keys(projectsByCircle.current).length === 0) {
@@ -44,31 +48,25 @@ export const Projects42Section: React.FC = () => {
 		}
 	}, []);
 
-	// Trigonometric coordinates
+	// Trigonometric coordinates — works for any circle number
 	const getProjectCoords = (project: Project42Type) => {
 		const circle = project.circle;
-		if (circle === 0) {
-			return { x: cx, y: cy };
-		}
+		if (circle === 0) return { x: CX, y: CY };
 		const list = projectsByCircle.current[circle] || [];
 		const index = list.findIndex((p) => p.title === project.title);
 		const count = list.length;
-
 		const r = circle * RADIUS_STEP + 12;
-
-		// Organic rotation offsets per circle
 		const angleOffset = circle * 28 * (Math.PI / 180);
 		const angle = (index / count) * 2 * Math.PI + angleOffset;
-
-		return {
-			x: cx + r * Math.cos(angle),
-			y: cy + r * Math.sin(angle),
-		};
+		return { x: CX + r * Math.cos(angle), y: CY + r * Math.sin(angle) };
 	};
+
+	const ringColor = isLight ? "rgba(0, 0, 0, 0.07)" : "rgba(255, 255, 255, 0.07)";
+	const outerRingStroke = isLight ? "rgba(15, 23, 42, 0.2)" : "rgba(255, 255, 255, 0.2)";
 
 	return (
 		<Box component="section" position="relative" py={{ xs: 6, md: 8 }} maxWidth="100%" width="100%">
-			{/* Header */}
+			{/* ── Header ──────────────────────────────────────────────────── */}
 			<Box pt={2} pb={4} textAlign="center" sx={{ position: "relative", zIndex: 1 }}>
 				<Typography
 					component={motion.h2}
@@ -78,31 +76,57 @@ export const Projects42Section: React.FC = () => {
 						fontSize: { xs: "2rem", md: "2.5rem" },
 						letterSpacing: "-0.025em",
 						color: "text.primary",
-						display: "inline-flex",
-						alignItems: "center",
-						justifyContent: "center",
-						gap: 1.5,
 						mb: 1.5,
 					}}
 				>
-					<SchoolIcon sx={{ fontSize: { xs: "2rem", md: "2.4rem" }, color: "text.primary", opacity: 0.8 }} />
 					{t("projects_42.heading")}
 				</Typography>
 				<Typography variant="body1" sx={{ color: "text.secondary", mb: 2, maxWidth: 680, mx: "auto" }}>
 					{t("projects_42.subtitle")}
 				</Typography>
 
-				{/* Mobile helper badge */}
+				{/* Circle legend */}
+				<Box display="flex" flexWrap="wrap" justifyContent="center" gap={0.8} mb={2} sx={{ maxWidth: 720, mx: "auto" }}>
+					<Chip
+						label={t("projects_42.circle_0")}
+						size="small"
+						sx={{
+							fontWeight: 700,
+							fontSize: "0.72rem",
+							bgcolor: isLight ? "#0F172A" : "#F8FAFC",
+							color: isLight ? "#F8FAFC" : "#0F172A",
+							borderRadius: 9999,
+						}}
+					/>
+					{Array.from({ length: MAX_CIRCLE }, (_, i) => i + 1).map((c) => (
+						<Chip
+							key={c}
+							label={t("projects_42.circle_badge", { num: c })}
+							size="small"
+							sx={{
+								fontWeight: 600,
+								fontSize: "0.72rem",
+								bgcolor: "action.hover",
+								border: "1px solid",
+								borderColor: "divider",
+								color: "text.secondary",
+								borderRadius: 9999,
+							}}
+						/>
+					))}
+				</Box>
+
+				{/* Mobile swipe hint */}
 				<Box className="mobile-swipe-hint">
 					<SwipeIcon fontSize="small" />
 					<Typography variant="caption">{t("projects_42.swipe_hint")}</Typography>
 				</Box>
 			</Box>
 
-			{/* Interactive Map Area */}
+			{/* ── Graph ───────────────────────────────────────────────────── */}
 			<Box ref={scrollRef} className="holy-graph-scroll-container">
 				<Box position="relative" width="900px" height="900px">
-					{/* Floating Hover Tooltip */}
+					{/* Floating hover tooltip */}
 					<AnimatePresence>
 						{hoveredProject &&
 							(() => {
@@ -125,9 +149,7 @@ export const Projects42Section: React.FC = () => {
 											border: "1px solid",
 											borderColor: "divider",
 											borderRadius: 3,
-											boxShadow: isLight
-												? "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
-												: "0 10px 25px -5px rgba(0, 0, 0, 0.6)",
+											boxShadow: isLight ? "0 10px 25px -5px rgba(0,0,0,0.1)" : "0 10px 25px -5px rgba(0,0,0,0.6)",
 											p: 2,
 											width: 250,
 											zIndex: 20,
@@ -141,7 +163,9 @@ export const Projects42Section: React.FC = () => {
 											variant="caption"
 											sx={{ color: "text.secondary", display: "block", mb: 1, fontWeight: 600 }}
 										>
-											{t("projects_42.circle_badge", { num: hoveredProject.circle })}
+											{hoveredProject.circle === 0
+												? t("projects_42.circle_0")
+												: t("projects_42.circle_badge", { num: hoveredProject.circle })}
 										</Typography>
 										<Typography
 											variant="body2"
@@ -179,28 +203,27 @@ export const Projects42Section: React.FC = () => {
 						height="900"
 						style={{ minWidth: "900px", maxWidth: "100%", height: "auto" }}
 					>
-						{/* Background Rings */}
-						{[1, 2, 3, 4, 5, 6].map((c) => (
+						{/* Background rings — rendered for every circle present in data */}
+						{Array.from({ length: MAX_CIRCLE }, (_, i) => i + 1).map((c) => (
 							<circle
 								key={`ring-${c}`}
-								cx={cx}
-								cy={cy}
+								cx={CX}
+								cy={CY}
 								r={c * RADIUS_STEP + 12}
-								stroke={isLight ? "rgba(0, 0, 0, 0.07)" : "rgba(255, 255, 255, 0.07)"}
+								stroke={ringColor}
 								strokeWidth={1}
 								strokeDasharray="4 4"
 								fill="none"
 							/>
 						))}
 
-						{/* Graph Nodes */}
+						{/* Nodes */}
 						{PROJECTS_42.map((project) => {
 							const coords = getProjectCoords(project);
 							const isHovered = hoveredProject?.title === project.title;
 							const isCenter = project.circle === 0;
 
 							const nodeFill = isCenter ? (isLight ? "#0F172A" : "#F8FAFC") : isLight ? "#FFFFFF" : "#171A23";
-
 							const nodeStroke = isCenter
 								? isLight
 									? "#0F172A"
@@ -210,9 +233,8 @@ export const Projects42Section: React.FC = () => {
 										? "#0F172A"
 										: "#FFFFFF"
 									: isLight
-										? "rgba(0, 0, 0, 0.15)"
-										: "rgba(255, 255, 255, 0.15)";
-
+										? "rgba(0,0,0,0.15)"
+										: "rgba(255,255,255,0.15)";
 							const textColor = isCenter ? (isLight ? "#FFFFFF" : "#0F172A") : isLight ? "#0F172A" : "#F8FAFC";
 
 							return (
@@ -223,19 +245,16 @@ export const Projects42Section: React.FC = () => {
 									onMouseEnter={() => setHoveredProject(project)}
 									onMouseLeave={() => setHoveredProject(null)}
 								>
-									{/* Outer ring on hover */}
 									{isHovered && (
 										<circle
 											cx={coords.x}
 											cy={coords.y}
 											r={isCenter ? 35 : 28}
 											fill="none"
-											stroke={isLight ? "rgba(15, 23, 42, 0.2)" : "rgba(255, 255, 255, 0.2)"}
+											stroke={outerRingStroke}
 											strokeWidth={1.5}
 										/>
 									)}
-
-									{/* Main Circle Node */}
 									<circle
 										cx={coords.x}
 										cy={coords.y}
@@ -245,8 +264,6 @@ export const Projects42Section: React.FC = () => {
 										stroke={nodeStroke}
 										strokeWidth={isHovered ? 2 : 1.5}
 									/>
-
-									{/* Label Text */}
 									<text
 										x={coords.x}
 										y={coords.y}
@@ -266,7 +283,7 @@ export const Projects42Section: React.FC = () => {
 				</Box>
 			</Box>
 
-			{/* Project Detail Modal */}
+			{/* ── Detail Modal ─────────────────────────────────────────────── */}
 			<Dialog
 				open={Boolean(selectedProject)}
 				onClose={() => setSelectedProject(null)}
@@ -282,21 +299,20 @@ export const Projects42Section: React.FC = () => {
 			>
 				{selectedProject && (
 					<Box>
-						{/* Title */}
 						<Box display="flex" justifyContent="space-between" alignItems="center" mb={2.5}>
 							<Typography
 								variant="h4"
 								fontWeight={800}
-								sx={{
-									color: "text.primary",
-									letterSpacing: "-0.02em",
-									fontSize: { xs: "1.6rem", sm: "2rem" },
-								}}
+								sx={{ color: "text.primary", letterSpacing: "-0.02em", fontSize: { xs: "1.6rem", sm: "2rem" } }}
 							>
 								{selectedProject.title}
 							</Typography>
 							<Chip
-								label={t("projects_42.circle_badge", { num: selectedProject.circle })}
+								label={
+									selectedProject.circle === 0
+										? t("projects_42.circle_0")
+										: t("projects_42.circle_badge", { num: selectedProject.circle })
+								}
 								sx={{
 									bgcolor: "action.hover",
 									border: "1px solid",
@@ -309,7 +325,6 @@ export const Projects42Section: React.FC = () => {
 							/>
 						</Box>
 
-						{/* Image */}
 						{selectedProject.image && (
 							<Box
 								sx={{
@@ -331,12 +346,10 @@ export const Projects42Section: React.FC = () => {
 							</Box>
 						)}
 
-						{/* Description */}
 						<Typography variant="body1" sx={{ color: "text.secondary", mb: 3, lineHeight: 1.6, fontSize: "0.95rem" }}>
 							{selectedProject.descriptionKey ? t(selectedProject.descriptionKey) : selectedProject.description}
 						</Typography>
 
-						{/* Tech Stack */}
 						<Box mb={4}>
 							<Typography
 								variant="subtitle2"
@@ -371,7 +384,6 @@ export const Projects42Section: React.FC = () => {
 							</Box>
 						</Box>
 
-						{/* Actions */}
 						<Box display="flex" justifyContent="flex-end" alignItems="center" gap={1.5}>
 							<Button
 								variant="text"
@@ -408,12 +420,7 @@ export const Projects42Section: React.FC = () => {
 									startIcon={<LaunchIcon sx={{ fontSize: 18 }} />}
 									href={selectedProject.demoLink}
 									target="_blank"
-									sx={{
-										borderRadius: 9999,
-										fontWeight: 600,
-										fontSize: "0.85rem",
-										px: 2.5,
-									}}
+									sx={{ borderRadius: 9999, fontWeight: 600, fontSize: "0.85rem", px: 2.5 }}
 								>
 									{t("projects.btn_live")}
 								</Button>

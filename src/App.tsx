@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout/Layout";
 import { SectionContainer } from "./components/SectionContainer/SectionContainer";
 import { AboutSection } from "./sections/about/AboutSection";
 import { ContactSection } from "./sections/contact/ContactSection";
+import { EducationSection } from "./sections/education/EducationSection";
 import { ExperienceSection } from "./sections/experience/ExperienceSection";
 import { IntroSection } from "./sections/intro/IntroSection";
 import { ProjectsSection } from "./sections/projects/ProjectsSection";
@@ -27,6 +28,10 @@ const SECTIONS = [
 	{
 		sectionId: SectionIdEnum.SKILLS,
 		component: <SkillsSection />,
+	},
+	{
+		sectionId: SectionIdEnum.EDUCATION,
+		component: <EducationSection />,
 	},
 	{
 		sectionId: SectionIdEnum.PROJECTS,

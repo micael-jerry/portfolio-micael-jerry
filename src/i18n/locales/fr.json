@@ -4,6 +4,7 @@
     "about": "À propos",
     "experience": "Expérience",
     "skills": "Compétences",
+    "education": "Formation",
     "projects": "Projets",
     "projects_42": "Projets 42",
     "contact": "Contact",
@@ -48,8 +49,8 @@
     }
   },
   "experience": {
-    "heading": "Parcours & Expériences",
-    "subtitle": "Un profil polyvalent et rigoureux alliant expertise sur la plateforme ServiceNow, développement fullstack moderne et ingénierie système.",
+    "heading": "Parcours Professionnel",
+    "subtitle": "Mes postes en entreprise : développement ServiceNow ESM/ITSM et ingénierie logicielle fullstack.",
     "current_badge": "Poste Actuel",
     "key_achievements": "Réalisations & Responsabilités Clés",
     "servicenow": {
@@ -90,6 +91,31 @@
       "h2": "Conception d'un interpréteur de commandes (Minishell) et d'un moteur graphique 3D par raycasting (Cub3D).",
       "h3": "Programmation concurrente avancée (Threads, Mutexes, exclusion mutuelle et synchronisation) avec Philosophers.",
       "h4": "Mise en place d'une infrastructure conteneurisée sécurisée multi-services avec Inception (Docker)."
+    }
+  },
+  "education": {
+    "heading": "Formation & Certifications",
+    "subtitle": "Mon parcours académique et mes certifications professionnelles.",
+    "ongoing_badge": "En cours",
+    "42": {
+      "institution": "42 Antananarivo",
+      "degree": "Ingénierie Logicielle — Tronc Commun (Common Core)",
+      "desc": "Cursus intensif par les pairs sans enseignants : apprentissage par la pratique et la collaboration sur des projets système, réseaux, algorithmes et DevOps en C/C++, sans bibliothèques externes.",
+      "period": "2022 — En cours",
+      "location": "Antananarivo, Madagascar",
+      "h1": "Maîtrise de la programmation système bas niveau en C et C++ sans bibliothèques tierces.",
+      "h2": "Développement de projets avancés : shell Unix, moteur 3D raycasting, serveur IRC, infrastructure Docker.",
+      "h3": "Programmation concurrente : threads POSIX, synchronisation par mutex, prévention de deadlocks."
+    },
+    "hei": {
+      "institution": "HEI Madagascar",
+      "degree": "Diplôme d'Ingénieur en Informatique",
+      "desc": "Formation d'ingénieur en sciences informatiques couvrant les fondamentaux du génie logiciel, l'algorithmique avancée, la conception de systèmes et les bases de données.",
+      "period": "2021 — 2024",
+      "location": "Antananarivo, Madagascar",
+      "h1": "Solide formation en algorithmique, structures de données et complexité.",
+      "h2": "Conception orientée objet, patrons de conception et architecture logicielle.",
+      "h3": "Modélisation de bases de données relationnelles et conception de systèmes distribués."
     }
   },
   "skills": {
@@ -165,6 +191,7 @@
     "heading": "Cursus 42",
     "subtitle": "Projets du tronc commun représentant ma progression et ma maîtrise de la programmation système, des réseaux, des algorithmes et du devops.",
     "filter_all": "Tous les Cercles",
+    "circle_0": "Cercle 0 — Libft (socle)",
     "circle_badge": "Cercle {{num}}",
     "stack_technique": "Stack Technique",
     "btn_close": "Fermer",

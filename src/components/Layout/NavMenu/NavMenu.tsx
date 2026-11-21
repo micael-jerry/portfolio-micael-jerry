@@ -42,6 +42,7 @@ export const NavMenu: React.FC = () => {
 		{ to: SectionIdEnum.ABOUT, text: t("nav.about") },
 		{ to: SectionIdEnum.EXPERIENCE, text: t("nav.experience") },
 		{ to: SectionIdEnum.SKILLS, text: t("nav.skills") },
+		{ to: SectionIdEnum.EDUCATION, text: t("nav.education") },
 		{ to: SectionIdEnum.PROJECTS, text: t("nav.projects") },
 		{ to: SectionIdEnum.PROJECTS_42, text: t("nav.projects_42") },
 		{ to: SectionIdEnum.CONTACT, text: t("nav.contact") },

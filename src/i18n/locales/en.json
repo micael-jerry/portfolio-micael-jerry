@@ -4,6 +4,7 @@
     "about": "About",
     "experience": "Experience",
     "skills": "Skills",
+    "education": "Education",
     "projects": "Projects",
     "projects_42": "42 Projects",
     "contact": "Contact",
@@ -48,8 +49,8 @@
     }
   },
   "experience": {
-    "heading": "Career & Experience",
-    "subtitle": "A versatile and rigorous profile combining enterprise ServiceNow expertise, modern fullstack engineering, and low-level systems depth.",
+    "heading": "Professional Experience",
+    "subtitle": "My positions in companies: ServiceNow ESM/ITSM development and fullstack software engineering.",
     "current_badge": "Current Role",
     "key_achievements": "Key Responsibilities & Impact",
     "servicenow": {
@@ -90,6 +91,31 @@
       "h2": "Developing a custom command shell (Minishell) and a 3D raycasting graphics engine (Cub3D).",
       "h3": "Advanced concurrent programming (Threads, Mutexes, deadlock prevention) with Philosophers.",
       "h4": "Deploying secure, multi-service containerized infrastructure with Inception (Docker)."
+    }
+  },
+  "education": {
+    "heading": "Education & Certifications",
+    "subtitle": "My academic background and professional certifications.",
+    "ongoing_badge": "Ongoing",
+    "42": {
+      "institution": "42 Antananarivo",
+      "degree": "Software Engineering — Common Core",
+      "desc": "Intensive peer-to-peer curriculum with no teachers: learning through practice and collaboration on systems programming, networking, algorithms, and DevOps projects in C/C++, without external libraries.",
+      "period": "2022 — Ongoing",
+      "location": "Antananarivo, Madagascar",
+      "h1": "Mastery of low-level systems programming in C and C++ without third-party libraries.",
+      "h2": "Advanced projects: Unix shell interpreter, 3D raycasting engine, IRC server, Docker infrastructure.",
+      "h3": "Concurrent programming: POSIX threads, mutex synchronization, and deadlock prevention."
+    },
+    "hei": {
+      "institution": "HEI Madagascar",
+      "degree": "Computer Science Engineering Degree",
+      "desc": "Engineering degree in computer science covering software engineering fundamentals, advanced algorithms, system design, and databases.",
+      "period": "2021 — 2024",
+      "location": "Antananarivo, Madagascar",
+      "h1": "Strong foundation in algorithms, data structures, and complexity analysis.",
+      "h2": "Object-oriented design, design patterns, and software architecture.",
+      "h3": "Relational database modeling and distributed system design."
     }
   },
   "skills": {
@@ -165,6 +191,7 @@
     "heading": "42 Common Core",
     "subtitle": "Key projects representing mastery in systems programming, networks, algorithms, and DevOps.",
     "filter_all": "All Circles",
+    "circle_0": "Circle 0 — Libft (foundation)",
     "circle_badge": "Circle {{num}}",
     "stack_technique": "Tech Stack",
     "btn_close": "Close",
